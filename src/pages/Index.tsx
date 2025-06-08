@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <Header />
       <main>
         <Hero />
