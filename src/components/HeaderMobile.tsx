@@ -120,12 +120,12 @@ export default function HeaderMobile() {
       <header className="hidden md:block bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors">
         <div className="max-w-7xl mx-auto px-8 py-5">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Desktop Logo - полный логотип */}
             <div className="flex items-center flex-1">
               <a href="/" className="flex items-center gap-2">
                 <img
                   src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                  alt="Notetaker"
+                  alt="notetaker.ru"
                   className="h-8 w-auto"
                 />
               </a>
@@ -235,12 +235,12 @@ export default function HeaderMobile() {
       <header className="md:hidden bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl border-b border-gray-200/80 dark:border-gray-700/80 sticky top-0 z-50 transition-colors">
         <div className="px-3 py-2.5">
           <div className="flex items-center justify-between">
-            {/* Mobile Logo - только иконка */}
+            {/* Mobile Logo - квадратная иконка */}
             <a href="/" className="flex items-center">
               <img
                 src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
                 alt="notetaker.ru"
-                className="w-10 h-10"
+                className="w-9 h-9 rounded-lg"
               />
             </a>
 
@@ -277,7 +277,7 @@ export default function HeaderMobile() {
                         <img
                           src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
                           alt="notetaker.ru"
-                          className="w-8 h-8"
+                          className="w-7 h-7 rounded-md"
                         />
                         <div>
                           <div className="font-semibold text-gray-900 dark:text-white text-sm">
