@@ -252,8 +252,8 @@ export default function BlogAdmin() {
       }
     } catch (error) {
       console.error("Failed to delete post:", error);
-      setGeneralErrors([`Ошибка при удалении статьи: ${error.message || error}`]);
-    }
+      setGeneralErrors([
+        `Ошибка при удалении статьи: ${error.message || error}`,
       ]);
     }
   };
