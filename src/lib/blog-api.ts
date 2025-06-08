@@ -95,18 +95,18 @@ class BlogAPI {
 
   // CRUD operations for posts
   static async createPost(post: Omit<BlogPost, "id">): Promise<BlogPost> {
-    return blogDB.createPost(post);
+    return Promise.resolve(blogDB.createPost(post));
   }
 
   static async updatePost(
     id: string,
     updates: Partial<BlogPost>,
   ): Promise<BlogPost | null> {
-    return blogDB.updatePost(id, updates);
+    return Promise.resolve(blogDB.updatePost(id, updates));
   }
 
   static async deletePost(id: string): Promise<boolean> {
-    return blogDB.deletePost(id);
+    return Promise.resolve(blogDB.deletePost(id));
   }
 
   // Categories API
@@ -126,18 +126,18 @@ class BlogAPI {
   static async createCategory(
     category: Omit<BlogCategory, "id" | "postCount">,
   ): Promise<BlogCategory> {
-    return blogDB.createCategory(category);
+    return Promise.resolve(blogDB.createCategory(category));
   }
 
   static async updateCategory(
     id: string,
     updates: Partial<BlogCategory>,
   ): Promise<BlogCategory | null> {
-    return blogDB.updateCategory(id, updates);
+    return Promise.resolve(blogDB.updateCategory(id, updates));
   }
 
   static async deleteCategory(id: string): Promise<boolean> {
-    return blogDB.deleteCategory(id);
+    return Promise.resolve(blogDB.deleteCategory(id));
   }
 
   // Authors API
