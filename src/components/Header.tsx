@@ -100,14 +100,18 @@ export default function Header() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-56">
+                <DropdownMenuContent
+                  align="center"
+                  side="bottom"
+                  className="w-56 mt-2 shadow-lg border-gray-200 dark:border-gray-700"
+                >
                   {menuItems.solutions.map((item) => (
                     <DropdownMenuItem key={item.href} asChild>
                       <a
                         href={item.href}
-                        className="w-full flex items-center gap-3"
+                        className="w-full flex items-center gap-3 cursor-pointer"
                       >
-                        <item.icon className="h-4 w-4 text-gray-600" />
+                        <item.icon className="h-4 w-4 text-gray-600 dark:text-gray-400" />
                         {item.label}
                       </a>
                     </DropdownMenuItem>
@@ -126,14 +130,18 @@ export default function Header() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-56">
+                <DropdownMenuContent
+                  align="center"
+                  side="bottom"
+                  className="w-56 mt-2 shadow-lg border-gray-200 dark:border-gray-700"
+                >
                   {menuItems.resources.map((item) => (
                     <DropdownMenuItem key={item.href} asChild>
                       <a
                         href={item.href}
-                        className="w-full flex items-center gap-3"
+                        className="w-full flex items-center gap-3 cursor-pointer"
                       >
-                        <item.icon className="h-4 w-4 text-gray-600" />
+                        <item.icon className="h-4 w-4 text-gray-600 dark:text-gray-400" />
                         {item.label}
                       </a>
                     </DropdownMenuItem>

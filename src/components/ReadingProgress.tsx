@@ -24,10 +24,15 @@ export default function ReadingProgress({ className }: ReadingProgressProps) {
   }, []);
 
   return (
-    <div className={cn("fixed top-0 left-0 right-0 z-[60]", className)}>
-      <div className="h-1 bg-gray-200 dark:bg-gray-700">
+    <div
+      className={cn(
+        "fixed top-0 left-0 right-0 z-[60] pointer-events-none",
+        className,
+      )}
+    >
+      <div className="h-1 bg-gray-200/80 dark:bg-gray-700/80 backdrop-blur-sm">
         <div
-          className="h-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-150 ease-out shadow-sm"
           style={{ width: `${progress}%` }}
         />
       </div>
