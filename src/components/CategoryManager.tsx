@@ -170,10 +170,9 @@ export default function CategoryManager({
       return;
 
     try {
-      await blogDB.deleteCategory(categoryId);
-      await loadCategories();
-      onCategoriesChange?.();
-    } catch (error: any) {
+      await BlogAPI.deleteCategory(categoryId);
+      loadCategories();
+    } catch (error) {
       console.error("Failed to delete category:", error);
       setError(error.message || "Ошибка при удалении категории");
     }
