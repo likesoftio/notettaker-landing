@@ -300,7 +300,7 @@ export class BlogAPI {
     }
 
     if (!post.excerpt || post.excerpt.trim().length < 50) {
-      errors.push("Краткое описание должно содержать минимум 50 символов");
+      errors.push("Краткое описание должно содержать минимум 50 ��имволов");
     }
 
     if (!post.category) {
@@ -323,3 +323,4 @@ export class BlogAPI {
 }
 
 export default BlogAPI;
+export { BlogAPI };
