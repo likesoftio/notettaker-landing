@@ -159,7 +159,7 @@ export default function BlogArticle() {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900">
           <Head
             title="Статья не найдена"
-            description="Запрашиваемая статья блога не найдена"
+            description="Запрашиваема�� статья блога не найдена"
             noindex
           />
           <Header />
@@ -459,100 +459,6 @@ export default function BlogArticle() {
                       </FadeInWhenVisible>
                     ))}
                   </div>
-
-                  {/* Action buttons */}
-                  <GlowingBorder color="blue" intensity={0.2}>
-                    <div className="flex items-center justify-between p-6 bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-xl">
-                      <div className="flex items-center gap-4">
-                        <span className="heading-sm text-gray-900 dark:text-white">
-                          Поделиться:
-                        </span>
-                        {shareUrls && (
-                          <div className="flex gap-2">
-                            <MagneticElement>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="gap-2 border-blue-200 hover:bg-blue-50 hover:border-blue-300 rounded-xl btn-magnetic"
-                                asChild
-                              >
-                                <a
-                                  href={shareUrls.twitter}
-                                  target="_blank"
-                                  rel="noopener"
-                                >
-                                  <Twitter size={16} />
-                                  Twitter
-                                </a>
-                              </Button>
-                            </MagneticElement>
-                            <MagneticElement>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="gap-2 border-blue-200 hover:bg-blue-50 hover:border-blue-300 rounded-xl btn-magnetic"
-                                asChild
-                              >
-                                <a
-                                  href={shareUrls.linkedin}
-                                  target="_blank"
-                                  rel="noopener"
-                                >
-                                  <Linkedin size={16} />
-                                  LinkedIn
-                                </a>
-                              </Button>
-                            </MagneticElement>
-                            <MagneticElement>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="gap-2 border-blue-200 hover:bg-blue-50 hover:border-blue-300 rounded-xl btn-magnetic"
-                                asChild
-                              >
-                                <a
-                                  href={shareUrls.telegram}
-                                  target="_blank"
-                                  rel="noopener"
-                                >
-                                  <ShareIcon size={16} />
-                                  Telegram
-                                </a>
-                              </Button>
-                            </MagneticElement>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <MagneticElement>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={handleLike}
-                            className={`gap-2 transition-all rounded-xl btn-magnetic ${isLiked ? "bg-red-50 border-red-200 text-red-600 animate-heartbeat" : "border-gray-200 hover:bg-gray-50"}`}
-                          >
-                            <HeartIcon size="sm" filled={isLiked} />
-                            <span>{isLiked ? "Нравится" : "Мне нравится"}</span>
-                          </Button>
-                        </MagneticElement>
-
-                        <MagneticElement>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={handleBookmark}
-                            className={`gap-2 transition-all rounded-xl btn-magnetic ${isBookmarked ? "bg-blue-50 border-blue-200 text-blue-600 animate-bounce-in" : "border-gray-200 hover:bg-gray-50"}`}
-                          >
-                            <BookmarkIcon size="sm" filled={isBookmarked} />
-                            <span>
-                              {isBookmarked ? "Сохранено" : "Сохранить"}
-                            </span>
-                          </Button>
-                        </MagneticElement>
-                      </div>
-                    </div>
-                  </GlowingBorder>
                 </header>
               </FadeInWhenVisible>
 
