@@ -14,6 +14,7 @@ import BlogArticle from "./pages/BlogArticle";
 import BlogArticleClassic from "./pages/BlogArticleClassic";
 import TestBlogDatabase from "./pages/TestBlogDatabase";
 import TestBlogOperations from "./pages/TestBlogOperations";
+import DRFSetup from "./pages/DRFSetup";
 import BlogArticleV2 from "./pages/BlogArticleV2";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -50,6 +51,7 @@ const App = () => (
                     path="/test/blog-ops"
                     element={<TestBlogOperations />}
                   />
+                  <Route path="/admin/drf-setup" element={<DRFSetup />} />
                   <Route path="/blog/v2/:slug" element={<BlogArticleV2 />} />
                   <Route path="/terms" element={<TermsOfService />} />
                   <Route path="/privacy" element={<PrivacyPolicy />} />
