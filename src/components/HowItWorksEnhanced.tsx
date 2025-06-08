@@ -19,10 +19,11 @@ export default function HowItWorksEnhanced() {
       const scrolled = window.pageYOffset;
       const rate = scrolled * -0.5;
 
+      // Применяем параллакс только к фоновым элементам
       const parallaxElements =
-        sectionRef.current.querySelectorAll(".parallax-element");
+        sectionRef.current.querySelectorAll(".parallax-bg");
       parallaxElements.forEach((element, index) => {
-        const speed = 0.5 + index * 0.1;
+        const speed = 0.3 + index * 0.1;
         (element as HTMLElement).style.transform =
           `translateY(${rate * speed}px)`;
       });
