@@ -57,7 +57,7 @@ export default function CategoryManager({
     { value: "bg-orange-600", label: "Оранжевый", class: "bg-orange-600" },
     { value: "bg-red-600", label: "Красный", class: "bg-red-600" },
     { value: "bg-indigo-600", label: "Индиго", class: "bg-indigo-600" },
-    { value: "bg-yellow-600", label: "Же��тый", class: "bg-yellow-600" },
+    { value: "bg-yellow-600", label: "Желтый", class: "bg-yellow-600" },
     { value: "bg-pink-600", label: "Розовый", class: "bg-pink-600" },
   ];
 
@@ -249,26 +249,50 @@ export default function CategoryManager({
       </div>
 
       <div>
+        <Label htmlFor="categoryImage">Изображение категории (URL)</Label>
+        <Input
+          id="categoryImage"
+          value={formData.image}
+          onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+          placeholder="https://example.com/image.jpg"
+          type="url"
+        />
+        <Caption className="mt-1">
+          Введите URL изображения для категории (необязательно)
+        </Caption>
+        {formData.image && (
+          <div className="mt-3">
+            <Label>Предварительный просмотр:</Label>
+            <div className="mt-2 w-24 h-24 rounded-lg overflow-hidden border border-gray-200">
+              <img
+                src={formData.image}
+                alt="Предварительный просмотр"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div>
         <Label>Цвет категории</Label>
-        <div className="grid grid-cols-4 gap-3 mt-2">
-          {colorOptions.map((color) => (
+        <div className="grid grid-cols-4 gap-2 mt-2">
+          {colorOptions.map((option) => (
             <button
-              key={color.value}
+              key={option.value}
               type="button"
-              onClick={() => setFormData({ ...formData, color: color.value })}
-              className={`relative p-3 rounded-lg border-2 transition-all ${
-                formData.color === color.value
+              onClick={() => setFormData({ ...formData, color: option.value })}
+              className={`p-3 rounded-lg border-2 transition-all ${
+                formData.color === option.value
                   ? "border-blue-500 ring-2 ring-blue-200"
                   : "border-gray-200 hover:border-gray-300"
               }`}
             >
-              <div className={`w-full h-6 rounded ${color.class}`}></div>
-              <Caption className="mt-1">{color.label}</Caption>
-              {formData.color === color.value && (
-                <div className="absolute top-1 right-1 w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-              )}
+              <div className={`w-full h-6 rounded ${option.class}`}></div>
+              <span className="text-xs mt-1 block">{option.label}</span>
             </button>
           ))}
         </div>
