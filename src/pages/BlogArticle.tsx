@@ -159,7 +159,7 @@ export default function BlogArticle() {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900">
           <Head
             title="Статья не найдена"
-            description="Запрашиваемая статья блога не найдена"
+            description="Запрашиваемая статья блога не ��айдена"
             noindex
           />
           <Header />
@@ -269,7 +269,7 @@ export default function BlogArticle() {
           {/* Back button - скрыта на мобильных */}
           <FadeInWhenVisible>
             <div className="mb-8 hidden md:block">
-              <MagneticElement>
+              <div>
                 <Link to="/blog">
                   <Button
                     variant="ghost"
@@ -278,7 +278,7 @@ export default function BlogArticle() {
                     <ArrowIcon direction="left" className="mr-2" />К блогу
                   </Button>
                 </Link>
-              </MagneticElement>
+              </div>
             </div>
           </FadeInWhenVisible>
 
