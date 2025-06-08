@@ -31,7 +31,7 @@ export default function Index() {
       <div className="page-container">
         <Head
           title="notetaker.ru - Умная транскрипция и анализ встреч с помощью ИИ"
-          description="Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых ре��ений. Поддержка 73 языков. 180 минут бесплатно."
+          description="Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых решений. Поддержка 73 языков. 180 минут бесплатно."
           keywords={[
             "транскрипция встреч",
             "ИИ анализ встреч",
@@ -60,25 +60,61 @@ export default function Index() {
         />
 
         <Header />
-        <main>
-          <Hero />
-          <HowItWorksEnhanced />
-          <TranscriptionQuality />
-          <FeaturesWithTabs />
-          <ProcessSteps />
-          <Features />
-          <ContinueDiscussion />
-          <AdvantagesSection />
-          <CompanyLogos />
-          <SecuritySection />
-          <IntegrationsSection />
-          <CallToActionSection />
-          <UseCasesSection />
-          <HowItWorksSection />
-          <TestimonialsSection />
-          <Pricing />
-          <CTASection />
-          <FAQ />
+        <main className="mobile-safe-area">
+          <div className="mobile-fade-in">
+            <Hero />
+          </div>
+          <div className="mobile-slide-up">
+            <HowItWorksEnhanced />
+          </div>
+          <div className="mobile-fade-in">
+            <TranscriptionQuality />
+          </div>
+          <div className="mobile-scale-in">
+            <FeaturesWithTabs />
+          </div>
+          <div className="mobile-slide-right">
+            <ProcessSteps />
+          </div>
+          <div className="mobile-fade-in">
+            <Features />
+          </div>
+          <div className="mobile-slide-up">
+            <ContinueDiscussion />
+          </div>
+          <div className="mobile-fade-in">
+            <AdvantagesSection />
+          </div>
+          <div className="mobile-scale-in">
+            <CompanyLogos />
+          </div>
+          <div className="mobile-slide-right">
+            <SecuritySection />
+          </div>
+          <div className="mobile-fade-in">
+            <IntegrationsSection />
+          </div>
+          <div className="mobile-slide-up">
+            <CallToActionSection />
+          </div>
+          <div className="mobile-fade-in">
+            <UseCasesSection />
+          </div>
+          <div className="mobile-scale-in">
+            <HowItWorksSection />
+          </div>
+          <div className="mobile-slide-right">
+            <TestimonialsSection />
+          </div>
+          <div className="mobile-fade-in">
+            <Pricing />
+          </div>
+          <div className="mobile-slide-up">
+            <CTASection />
+          </div>
+          <div className="mobile-fade-in">
+            <FAQ />
+          </div>
         </main>
         <Footer />
       </div>
