@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import BlogAPI from "../lib/blog-api";
 import { BlogPost, BlogCategory } from "../lib/database";
+import "../styles/blog-mobile-enhanced.css";
 
 export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -128,7 +129,7 @@ export default function Blog() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
         <Head
           title="Блог notetaker.ru - Статьи о продуктивности встреч и ИИ"
-          description="Читайте наш блог о технологиях ИИ, эффективности встреч, управлении задачами и новостях продукта notetaker.ru. Полезные советы и инсайты для профессионалов."
+          description="Читайте наш блог о технологиях ИИ, эффективности встреч, управ��ении задачами и новостях продукта notetaker.ru. Полезные советы и инсайты для профессионалов."
           keywords={[
             "блог notetaker.ru",
             "статьи об ИИ",
@@ -143,45 +144,38 @@ export default function Blog() {
 
         <Header />
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 blog-mobile-container">
           {/* Mobile Header */}
           <div className="lg:hidden mb-6">
-            <div className="text-center mb-6">
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                📚 Блог notetaker.ru
-              </h1>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Советы по встречам, ИИ-технологии и новости продукта
-              </p>
+            <div className="blog-mobile-header blog-mobile-fade-in">
+              <h1>📚 Блог notetaker.ru</h1>
+              <p>Советы по встречам, ИИ-технологии и новости продукта</p>
             </div>
 
             {/* Mobile Search */}
-            <div className="relative mb-4">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <div className="blog-mobile-search blog-mobile-slide-up">
+              <Search className="w-4 h-4" />
               <Input
                 type="text"
                 placeholder="Поиск статей..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 py-3 rounded-xl border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm"
               />
             </div>
 
             {/* Mobile Categories - Horizontal Scroll */}
-            <div className="mb-6">
-              <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+            <div className="blog-mobile-categories blog-mobile-slide-up">
+              <div className="blog-mobile-categories-scroll">
                 <button
                   onClick={() => setActiveCategory("all")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                    activeCategory === "all"
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm"
+                  className={`blog-mobile-category-pill ${
+                    activeCategory === "all" ? "active" : ""
                   }`}
                 >
                   <BookOpen className="w-4 h-4" />
                   Все статьи
                   {activeCategory === "all" && (
-                    <span className="bg-white/20 text-xs px-2 py-0.5 rounded-full">
+                    <span className="blog-mobile-category-count">
                       {filteredPosts.length}
                     </span>
                   )}
@@ -191,20 +185,12 @@ export default function Blog() {
                   <button
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                      activeCategory === category.id
-                        ? "bg-blue-600 text-white shadow-lg"
-                        : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm"
+                    className={`blog-mobile-category-pill ${
+                      activeCategory === category.id ? "active" : ""
                     }`}
                   >
                     {category.name}
-                    <span
-                      className={`text-xs px-2 py-0.5 rounded-full ${
-                        activeCategory === category.id
-                          ? "bg-white/20"
-                          : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
-                      }`}
-                    >
+                    <span className="blog-mobile-category-count">
                       {category.postCount}
                     </span>
                   </button>

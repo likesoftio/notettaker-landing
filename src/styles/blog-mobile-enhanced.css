@@ -1,0 +1,625 @@
+/* Стильная мобильная версия блога notetaker.ru */
+
+/* Базовые переменные для мобильного дизайна */
+:root {
+  --mobile-header-height: 60px;
+  --mobile-padding: 1rem;
+  --mobile-card-radius: 16px;
+  --mobile-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --mobile-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --mobile-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --mobile-gradient-secondary: linear-gradient(
+    135deg,
+    #f093fb 0%,
+    #f5576c 100%
+  );
+  --mobile-gradient-neutral: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+/* Мобильный макет блога */
+@media (max-width: 768px) {
+  /* Основной контейнер */
+  .blog-mobile-container {
+    padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Мобильный заголовок блога */
+  .blog-mobile-header {
+    background: var(--mobile-gradient-primary);
+    padding: 2rem 1rem 3rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-mobile-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      repeat;
+    opacity: 0.3;
+  }
+
+  .blog-mobile-header h1 {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-mobile-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Мобильный поиск */
+  .blog-mobile-search {
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .blog-mobile-search input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: none;
+    border-radius: var(--mobile-card-radius);
+    background: white;
+    box-shadow: var(--mobile-shadow);
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .blog-mobile-search input:focus {
+    outline: none;
+    box-shadow:
+      var(--mobile-shadow-hover),
+      0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .blog-mobile-search svg {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+    z-index: 1;
+  }
+
+  /* Горизонтальные категории */
+  .blog-mobile-categories {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-mobile-categories-scroll {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .blog-mobile-categories-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .blog-mobile-category-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    background: white;
+    box-shadow: var(--mobile-shadow);
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+  }
+
+  .blog-mobile-category-pill.active {
+    background: var(--mobile-gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--mobile-shadow-hover);
+  }
+
+  .blog-mobile-category-pill:not(.active):hover {
+    transform: translateY(-1px);
+    box-shadow: var(--mobile-shadow-hover);
+    border-color: rgba(102, 126, 234, 0.2);
+  }
+
+  .blog-mobile-category-count {
+    background: rgba(255, 255, 255, 0.2);
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .blog-mobile-category-pill:not(.active) .blog-mobile-category-count {
+    background: #f3f4f6;
+    color: #6b7280;
+  }
+
+  /* Мобильные карточки статей */
+  .blog-mobile-grid {
+    padding: 0 1rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .blog-mobile-hero-card {
+    background: var(--mobile-gradient-secondary);
+    color: white;
+    border-radius: var(--mobile-card-radius);
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--mobile-shadow-hover);
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-mobile-hero-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpolygon points='20,0 40,20 20,40 0,20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      repeat;
+    opacity: 0.3;
+  }
+
+  .blog-mobile-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .blog-mobile-hero-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-mobile-hero-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-mobile-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-mobile-hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  /* Обычные карточки статей */
+  .blog-mobile-article-card {
+    background: white;
+    border-radius: var(--mobile-card-radius);
+    overflow: hidden;
+    box-shadow: var(--mobile-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .blog-mobile-article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mobile-shadow-hover);
+  }
+
+  .blog-mobile-article-image {
+    width: 100%;
+    height: 200px;
+    background: var(--mobile-gradient-neutral);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-mobile-article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-mobile-article-card:hover .blog-mobile-article-image img {
+    transform: scale(1.05);
+  }
+
+  .blog-mobile-article-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+  }
+
+  .blog-mobile-article-badge.featured {
+    background: linear-gradient(45deg, #f59e0b, #f97316);
+  }
+
+  .blog-mobile-article-badge.new {
+    background: linear-gradient(45deg, #10b981, #059669);
+  }
+
+  .blog-mobile-article-content {
+    padding: 1.25rem;
+  }
+
+  .blog-mobile-article-category {
+    color: #667eea;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-mobile-article-title {
+    color: #1f2937;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-mobile-article-excerpt {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-mobile-article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+
+  .blog-mobile-article-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .blog-mobile-article-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .blog-mobile-article-date {
+    font-weight: 500;
+  }
+
+  /* Пустое состояние */
+  .blog-mobile-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .blog-mobile-empty-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--mobile-gradient-neutral);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+  }
+
+  .blog-mobile-empty-title {
+    color: #374151;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-mobile-empty-description {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-mobile-empty-button {
+    background: var(--mobile-gradient-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: var(--mobile-shadow);
+  }
+
+  .blog-mobile-empty-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--mobile-shadow-hover);
+    color: white;
+  }
+
+  /* Кнопка "Показать больше" */
+  .blog-mobile-load-more {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .blog-mobile-load-more button {
+    background: var(--mobile-gradient-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--mobile-shadow);
+    cursor: pointer;
+  }
+
+  .blog-mobile-load-more button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--mobile-shadow-hover);
+  }
+
+  /* Темная тема */
+  .dark .blog-mobile-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  }
+
+  .dark .blog-mobile-search input {
+    background: #374151;
+    color: white;
+    border: 1px solid #4b5563;
+  }
+
+  .dark .blog-mobile-search input::placeholder {
+    color: #9ca3af;
+  }
+
+  .dark .blog-mobile-category-pill {
+    background: #374151;
+    color: #d1d5db;
+    border-color: #4b5563;
+  }
+
+  .dark .blog-mobile-category-pill.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+  }
+
+  .dark .blog-mobile-article-card {
+    background: #374151;
+    border-color: #4b5563;
+  }
+
+  .dark .blog-mobile-article-title {
+    color: #f9fafb;
+  }
+
+  .dark .blog-mobile-article-excerpt {
+    color: #d1d5db;
+  }
+
+  .dark .blog-mobile-article-meta {
+    color: #9ca3af;
+  }
+
+  .dark .blog-mobile-empty-title {
+    color: #f9fafb;
+  }
+
+  .dark .blog-mobile-empty-description {
+    color: #d1d5db;
+  }
+}
+
+/* Маленькие мобильные экраны */
+@media (max-width: 480px) {
+  .blog-mobile-header {
+    padding: 1.5rem 0.75rem 2.5rem 0.75rem;
+  }
+
+  .blog-mobile-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .blog-mobile-search {
+    padding: 0 0.75rem;
+  }
+
+  .blog-mobile-categories {
+    padding: 0 0.75rem;
+  }
+
+  .blog-mobile-grid {
+    padding: 0 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .blog-mobile-hero-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .blog-mobile-hero-title {
+    font-size: 1.25rem;
+  }
+
+  .blog-mobile-article-content {
+    padding: 1rem;
+  }
+
+  .blog-mobile-article-title {
+    font-size: 1rem;
+  }
+
+  .blog-mobile-category-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Анимации для мобильных */
+@media (max-width: 768px) {
+  .blog-mobile-fade-in {
+    animation: blogMobileFadeIn 0.6s ease-out;
+  }
+
+  .blog-mobile-slide-up {
+    animation: blogMobileSlideUp 0.8s ease-out;
+  }
+
+  .blog-mobile-scale-in {
+    animation: blogMobileScaleIn 0.5s ease-out;
+  }
+
+  @keyframes blogMobileFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blogMobileSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blogMobileScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Отключение сложных анимаций на медленных устройствах */
+  @media (prefers-reduced-motion: reduce) {
+    .blog-mobile-fade-in,
+    .blog-mobile-slide-up,
+    .blog-mobile-scale-in {
+      animation: none;
+    }
+
+    .blog-mobile-article-card,
+    .blog-mobile-category-pill,
+    .blog-mobile-search input {
+      transition: none;
+    }
+  }
+}
+
+/* Оптимизация производительности */
+@media (max-width: 768px) {
+  /* Используем will-change для оптимизации анимаций */
+  .blog-mobile-article-card:hover {
+    will-change: transform, box-shadow;
+  }
+
+  .blog-mobile-category-pill {
+    will-change: transform, box-shadow;
+  }
+
+  .blog-mobile-search input:focus {
+    will-change: transform, box-shadow;
+  }
+
+  /* Оптимизация для touch устройств */
+  .blog-mobile-article-card,
+  .blog-mobile-category-pill,
+  .blog-mobile-empty-button,
+  .blog-mobile-load-more button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Плавная прокрутка */
+  .blog-mobile-categories-scroll {
+    scroll-snap-type: x mandatory;
+  }
+
+  .blog-mobile-category-pill {
+    scroll-snap-align: start;
+  }
+}
