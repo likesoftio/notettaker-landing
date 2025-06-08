@@ -1,5 +1,5 @@
 // Sitemap generator for SEO
-import BlogAPI from "./blog-api";
+import BlogAPI from "./blog-api-switcher";
 
 export interface SitemapUrl {
   url: string;
@@ -253,7 +253,7 @@ export const SEOUtils = {
       warnings.push("Отсутствует описание страницы");
     } else if (data.description.length > 160) {
       warnings.push(
-        `Описание слишком длинное (${data.description.length} символов). Рекомендуется до 160.`,
+        `Описани�� слишком длинное (${data.description.length} символов). Рекомендуется до 160.`,
       );
     } else if (data.description.length < 120) {
       warnings.push(

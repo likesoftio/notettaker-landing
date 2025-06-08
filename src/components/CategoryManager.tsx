@@ -24,7 +24,7 @@ import {
   Tag,
 } from "lucide-react";
 import { BlogCategory } from "../lib/database";
-import BlogAPI from "../lib/blog-api";
+import BlogAPI from "../lib/blog-api-switcher";
 import { HeadingXL, BodyMD, Caption } from "./Typography";
 
 interface CategoryManagerProps {
@@ -218,7 +218,7 @@ export default function CategoryManager({
             id="categoryName"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            placeholder="Название категории"
+            placeholder="Назван��е категории"
           />
         </div>
         <div>

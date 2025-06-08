@@ -32,7 +32,7 @@ import {
 } from "../components/ModernIcons";
 import { Button } from "../components/ui/button";
 import { MessageCircle, Twitter, Linkedin, ThumbsUp } from "lucide-react";
-import BlogAPI from "../lib/blog-api";
+import BlogAPI from "../lib/blog-api-switcher";
 import { BlogPost, BlogCategory, BlogAuthor } from "../lib/database";
 
 export default function BlogArticle() {
@@ -159,7 +159,7 @@ export default function BlogArticle() {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900">
           <Head
             title="Статья не найдена"
-            description="Запрашиваемая статья блога не ��айдена"
+            description="Запрашиваемая статья блога не найдена"
             noindex
           />
           <Header />

@@ -22,7 +22,7 @@ import {
   FileText,
   Sparkles,
 } from "lucide-react";
-import BlogAPI from "../lib/blog-api";
+import BlogAPI from "../lib/blog-api-switcher";
 import { BlogPost, BlogCategory, BlogAuthor } from "../lib/database";
 
 export default function BlogArticleV2() {
@@ -158,7 +158,7 @@ export default function BlogArticleV2() {
               Статья не найдена
             </h1>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              К сожалению, запрашиваемая статья не существует или была удалена.
+              К сожалению, запрашиваемая стать�� не существует или была удалена.
             </p>
             <Button asChild>
               <Link to="/blog">Вернуться к блогу</Link>
@@ -304,7 +304,7 @@ export default function BlogArticleV2() {
                     {post.difficulty && (
                       <Badge variant="outline">
                         {post.difficulty === "beginner" && "Начинающий"}
-                        {post.difficulty === "intermediate" && "С��едний"}
+                        {post.difficulty === "intermediate" && "Средний"}
                         {post.difficulty === "advanced" && "Продвинутый"}
                       </Badge>
                     )}
@@ -479,7 +479,7 @@ export default function BlogArticleV2() {
                     </div>
                     <div className="text-center">
                       <Sparkles className="w-4 h-4 mx-auto mb-1" />
-                      <span>Все данные за��ищены</span>
+                      <span>Все данные защищены</span>
                     </div>
                   </div>
                 </div>
