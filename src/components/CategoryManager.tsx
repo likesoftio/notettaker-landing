@@ -358,8 +358,24 @@ export default function CategoryManager({
           <Card key={category.id} className="card-base p-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                {/* Color indicator */}
-                <div className={`w-4 h-4 rounded-full ${category.color}`}></div>
+                {/* Image or color indicator */}
+                {category.image ? (
+                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-200 flex-shrink-0">
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.parentElement!.innerHTML = `<div class="${category.color} w-full h-full rounded-lg"></div>`;
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={`w-4 h-4 rounded-full ${category.color}`}
+                  ></div>
+                )}
 
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
