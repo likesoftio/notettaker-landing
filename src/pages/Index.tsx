@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProcessSteps from "../components/ProcessSteps";
 import Features from "../components/Features";
+import AdvantagesSection from "../components/AdvantagesSection";
 import CompanyLogos from "../components/CompanyLogos";
 import SecuritySection from "../components/SecuritySection";
 import IntegrationsSection from "../components/IntegrationsSection";
@@ -22,6 +23,7 @@ export default function Index() {
         <Hero />
         <ProcessSteps />
         <Features />
+        <AdvantagesSection />
         <CompanyLogos />
         <SecuritySection />
         <IntegrationsSection />
