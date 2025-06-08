@@ -46,6 +46,8 @@ const App = () => (
                   />
                   <Route path="/test/blog" element={<TestBlogDatabase />} />
                   <Route path="/blog/v2/:slug" element={<BlogArticleV2 />} />
+                  <Route path="/terms" element={<TermsOfService />} />
+                  <Route path="/privacy" element={<PrivacyPolicy />} />
                   <Route path="/admin/blog" element={<BlogAdmin />} />
                   <Route path="/debug/blog" element={<DebugBlog />} />
                   <Route path="/test/blog" element={<TestBlog />} />
