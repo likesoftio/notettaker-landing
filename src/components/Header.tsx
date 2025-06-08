@@ -100,7 +100,7 @@ export default function Header() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuContent align="center" className="w-56">
                   {menuItems.solutions.map((item) => (
                     <DropdownMenuItem key={item.href} asChild>
                       <a
@@ -126,7 +126,7 @@ export default function Header() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuContent align="center" className="w-56">
                   {menuItems.resources.map((item) => (
                     <DropdownMenuItem key={item.href} asChild>
                       <a

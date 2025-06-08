@@ -24,7 +24,7 @@ export default function ReadingProgress({ className }: ReadingProgressProps) {
   }, []);
 
   return (
-    <div className={cn("fixed top-0 left-0 right-0 z-50", className)}>
+    <div className={cn("fixed top-0 left-0 right-0 z-[60]", className)}>
       <div className="h-1 bg-gray-200 dark:bg-gray-700">
         <div
           className="h-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-150 ease-out"
