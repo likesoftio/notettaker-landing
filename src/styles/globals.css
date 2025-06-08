@@ -20,6 +20,7 @@
 @import "./hero-mobile.css";
 @import "./sections-mobile.css";
 @import "./footer-mobile.css";
+@import "./cta-mobile.css";
 
 /* Global font configuration */
 @layer base {
