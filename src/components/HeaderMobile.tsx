@@ -9,6 +9,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSelector from "./ThemeSelector";
+import { DesktopLogo, MobileLogo, MenuLogo } from "./Logo";
 import { useLanguage } from "../contexts/LanguageContext";
 import {
   Menu,
@@ -123,11 +124,7 @@ export default function HeaderMobile() {
             {/* Desktop Logo - полный логотип */}
             <div className="flex items-center flex-1">
               <a href="/" className="flex items-center gap-2">
-                <img
-                  src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                  alt="notetaker.ru"
-                  className="h-8 w-auto"
-                />
+                <DesktopLogo />
               </a>
             </div>
 
@@ -237,11 +234,7 @@ export default function HeaderMobile() {
           <div className="flex items-center justify-between">
             {/* Mobile Logo - квадратная иконка */}
             <a href="/" className="flex items-center">
-              <img
-                src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                alt="notetaker.ru"
-                className="w-9 h-9 rounded-lg"
-              />
+              <MobileLogo />
             </a>
 
             {/* Mobile Controls */}
@@ -274,11 +267,7 @@ export default function HeaderMobile() {
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700">
                       <div className="flex items-center gap-3">
-                        <img
-                          src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                          alt="notetaker.ru"
-                          className="w-7 h-7 rounded-md"
-                        />
+                        <MenuLogo />
                         <div>
                           <div className="font-semibold text-gray-900 dark:text-white text-sm">
                             notetaker.ru
