@@ -17,6 +17,8 @@
 /* Global Mobile Styles */
 @import "./global-mobile.css";
 @import "./blog-mobile-enhanced.css";
+@import "./hero-mobile.css";
+@import "./sections-mobile.css";
 
 /* Global font configuration */
 @layer base {

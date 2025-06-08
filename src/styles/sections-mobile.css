@@ -1,0 +1,523 @@
+/* Мобильные стили для основных секций */
+
+@media (max-width: 768px) {
+  /* Общие стили секций */
+  .section-mobile {
+    padding: 3rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .section-mobile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .section-mobile-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .section-mobile-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #6b7280;
+    max-width: 100%;
+  }
+
+  /* Features секция */
+  .features-mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .features-mobile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .features-mobile-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+  }
+
+  .features-mobile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .features-mobile-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  }
+
+  .features-mobile-icon svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+  }
+
+  .features-mobile-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+  }
+
+  .features-mobile-card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #6b7280;
+  }
+
+  /* Process Steps секция */
+  .process-mobile-container {
+    position: relative;
+  }
+
+  .process-mobile-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .process-mobile-step {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .process-mobile-step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .process-mobile-step:not(:last-child) .process-mobile-step-number::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(180deg, #667eea, transparent);
+    z-index: -1;
+  }
+
+  .process-mobile-step-content {
+    flex: 1;
+    padding-top: 0.25rem;
+  }
+
+  .process-mobile-step-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+  }
+
+  .process-mobile-step-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #6b7280;
+  }
+
+  /* Pricing секция */
+  .pricing-mobile-container {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 24px;
+    padding: 2rem 1rem;
+    margin: 0 -1rem;
+  }
+
+  .pricing-mobile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .pricing-mobile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .pricing-mobile-card.popular {
+    border: 2px solid #667eea;
+    transform: scale(1.02);
+  }
+
+  .pricing-mobile-card.popular::before {
+    content: "Популярный";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .pricing-mobile-card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-mobile-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+  }
+
+  .pricing-mobile-card-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-mobile-card-period {
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  .pricing-mobile-card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+
+  .pricing-mobile-card-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #374151;
+  }
+
+  .pricing-mobile-card-feature::before {
+    content: "✓";
+    width: 20px;
+    height: 20px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .pricing-mobile-card-button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .pricing-mobile-card-button.primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+
+  .pricing-mobile-card-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  }
+
+  .pricing-mobile-card-button.secondary {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+  }
+
+  .pricing-mobile-card-button.secondary:hover {
+    background: #667eea;
+    color: white;
+  }
+
+  /* Testimonials секция */
+  .testimonials-mobile-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 24px;
+    padding: 2rem 1rem;
+    margin: 0 -1rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials-mobile-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpolygon points='20,0 40,20 20,40 0,20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      repeat;
+    opacity: 0.3;
+  }
+
+  .testimonials-mobile-title {
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonials-mobile-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonials-mobile-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonials-mobile-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .testimonials-mobile-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .testimonials-mobile-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testimonials-mobile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+  .testimonials-mobile-author-info {
+    flex: 1;
+  }
+
+  .testimonials-mobile-author-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .testimonials-mobile-author-title {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  /* FAQ секция */
+  .faq-mobile-container {
+    margin-top: 2rem;
+  }
+
+  .faq-mobile-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-mobile-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .faq-mobile-question {
+    width: 100%;
+    padding: 1.25rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .faq-mobile-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #667eea;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-mobile-question.open::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-mobile-answer {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
+
+/* Маленькие мобильные экраны */
+@media (max-width: 480px) {
+  .section-mobile {
+    padding: 2rem 0.75rem;
+  }
+
+  .section-mobile-title {
+    font-size: 1.5rem;
+  }
+
+  .features-mobile-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .features-mobile-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pricing-mobile-container {
+    margin: 0 -0.75rem;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .testimonials-mobile-container {
+    margin: 0 -0.75rem;
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+/* Темная тема */
+.dark .section-mobile-title {
+  color: #f9fafb;
+}
+
+.dark .section-mobile-subtitle {
+  color: #d1d5db;
+}
+
+.dark .features-mobile-card {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .features-mobile-card-title {
+  color: #f9fafb;
+}
+
+.dark .features-mobile-card-description {
+  color: #d1d5db;
+}
+
+.dark .process-mobile-step-title {
+  color: #f9fafb;
+}
+
+.dark .process-mobile-step-description {
+  color: #d1d5db;
+}
+
+.dark .pricing-mobile-card {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .pricing-mobile-card-title {
+  color: #f9fafb;
+}
+
+.dark .pricing-mobile-card-feature {
+  color: #e5e7eb;
+}
+
+.dark .faq-mobile-item {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .faq-mobile-question {
+  color: #f9fafb;
+}
+
+.dark .faq-mobile-answer {
+  color: #d1d5db;
+}
