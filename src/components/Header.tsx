@@ -54,22 +54,38 @@ export default function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56">
                 <DropdownMenuItem asChild>
-                  <a href="/solutions/transcription" className="w-full">
+                  <a
+                    href="/solutions/transcription"
+                    className="w-full flex items-center gap-3"
+                  >
+                    <Mic className="h-4 w-4 text-gray-600" />
                     {t("solutions.transcription")}
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/solutions/analysis" className="w-full">
+                  <a
+                    href="/solutions/analysis"
+                    className="w-full flex items-center gap-3"
+                  >
+                    <BarChart3 className="h-4 w-4 text-gray-600" />
                     {t("solutions.analysis")}
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/solutions/integrations" className="w-full">
+                  <a
+                    href="/solutions/integrations"
+                    className="w-full flex items-center gap-3"
+                  >
+                    <Plug className="h-4 w-4 text-gray-600" />
                     {t("solutions.integration")}
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/solutions/api" className="w-full">
+                  <a
+                    href="/solutions/api"
+                    className="w-full flex items-center gap-3"
+                  >
+                    <Code className="h-4 w-4 text-gray-600" />
                     {t("solutions.api")}
                   </a>
                 </DropdownMenuItem>
