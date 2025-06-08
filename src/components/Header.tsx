@@ -105,22 +105,29 @@ export default function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56">
                 <DropdownMenuItem asChild>
-                  <a href="/blog" className="w-full">
+                  <a href="/blog" className="w-full flex items-center gap-3">
+                    <PenTool className="h-4 w-4 text-gray-600" />
                     {t("resources.blog")}
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/help" className="w-full">
+                  <a href="/help" className="w-full flex items-center gap-3">
+                    <HelpCircle className="h-4 w-4 text-gray-600" />
                     {t("resources.helpCenter")}
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/docs" className="w-full">
+                  <a href="/docs" className="w-full flex items-center gap-3">
+                    <FileText className="h-4 w-4 text-gray-600" />
                     {t("resources.documentation")}
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/tutorials" className="w-full">
+                  <a
+                    href="/tutorials"
+                    className="w-full flex items-center gap-3"
+                  >
+                    <PlayCircle className="h-4 w-4 text-gray-600" />
                     {t("resources.tutorials")}
                   </a>
                 </DropdownMenuItem>
