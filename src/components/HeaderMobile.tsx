@@ -109,7 +109,7 @@ export default function HeaderMobile() {
         href: "/tutorials",
         icon: PlayCircle,
         label: t("resources.tutorials") || "Уроки",
-        description: "Видео и ��уководства",
+        description: "Видео и руководства",
       },
     ],
   };
@@ -237,13 +237,11 @@ export default function HeaderMobile() {
           <div className="flex items-center justify-between">
             {/* Mobile Logo - только иконка */}
             <a href="/" className="flex items-center">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                <img
-                  src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                  alt="notetaker.ru"
-                  className="w-6 h-6"
-                />
-              </div>
+              <img
+                src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
+                alt="notetaker.ru"
+                className="w-10 h-10"
+              />
             </a>
 
             {/* Mobile Controls */}
