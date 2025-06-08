@@ -546,7 +546,7 @@ export default function BlogArticle() {
                           >
                             <BookmarkIcon size="sm" filled={isBookmarked} />
                             <span>
-                              {isBookmarked ? "Сох��анено" : "Сохранить"}
+                              {isBookmarked ? "Сохранено" : "Сохранить"}
                             </span>
                           </Button>
                         </MagneticElement>
@@ -646,56 +646,99 @@ export default function BlogArticle() {
                   )}
 
                   {/* CTA Section */}
-                  <GlowingBorder color="blue" intensity={0.5}>
-                    <div className="mb-12 p-4 md:p-8 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl text-white shadow-2xl animate-gradient cta-mobile-container">
-                      <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
-                        <FloatingElement>
-                          <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 shadow-xl cta-mobile-icon">
-                            <MessageCircle
-                              size={24}
-                              className="md:w-8 md:h-8 text-white"
-                            />
-                          </div>
-                        </FloatingElement>
-                        <div className="flex-1 text-overflow-fix">
-                          <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-3 text-glow cta-mobile-title">
-                            Попробуйте notetaker.ru в действии
-                          </h3>
-                          <p className="text-sm md:text-lg text-blue-100 mb-4 md:mb-6 leading-relaxed cta-mobile-description">
-                            Начните использовать ИИ для анализа ваших встреч уже
-                            сегодня. 180 минут бесплатно, кредитная карта не
-                            требуется.
-                          </p>
-                          <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                            <MagneticElement>
-                              <Button
-                                asChild
-                                className="bg-white text-blue-600 hover:bg-blue-50 rounded-xl px-4 py-2 md:px-6 md:py-3 font-semibold btn-magnetic cta-mobile-button w-full sm:w-auto"
-                              >
-                                <a
-                                  href="https://app.notetaker.ru/"
-                                  target="_blank"
-                                  rel="noopener"
+                  <div className="mb-12 hidden md:block">
+                    <GlowingBorder color="blue" intensity={0.5}>
+                      <div className="p-8 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl text-white shadow-2xl animate-gradient">
+                        <div className="flex items-start gap-6">
+                          <FloatingElement>
+                            <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 shadow-xl">
+                              <MessageCircle size={32} className="text-white" />
+                            </div>
+                          </FloatingElement>
+                          <div className="flex-1">
+                            <h3 className="heading-xl text-white mb-3 text-glow">
+                              Попробуйте notetaker.ru в действии
+                            </h3>
+                            <p className="body-lg text-blue-100 mb-6 leading-relaxed">
+                              Начните использовать ИИ для анализа ваших встреч
+                              уже сегодня. 180 минут бесплатно, кредитная карта
+                              не требуется.
+                            </p>
+                            <div className="flex gap-4">
+                              <MagneticElement>
+                                <Button
+                                  asChild
+                                  className="bg-white text-blue-600 hover:bg-blue-50 rounded-xl px-6 py-3 font-semibold btn-magnetic"
                                 >
-                                  <ExternalLinkIcon className="mr-2 w-4 h-4" />
-                                  Попробовать бесплатно
-                                </a>
-                              </Button>
-                            </MagneticElement>
-                            <MagneticElement>
-                              <Button
-                                asChild
-                                variant="outline"
-                                className="border-white text-white hover:bg-white/10 rounded-xl px-4 py-2 md:px-6 md:py-3 btn-magnetic w-full sm:w-auto"
-                              >
-                                <a href="/contact">Узнать больше</a>
-                              </Button>
-                            </MagneticElement>
+                                  <a
+                                    href="https://app.notetaker.ru/"
+                                    target="_blank"
+                                    rel="noopener"
+                                  >
+                                    <ExternalLinkIcon
+                                      className="mr-2"
+                                      size="sm"
+                                    />
+                                    Попробовать бесплатно
+                                  </a>
+                                </Button>
+                              </MagneticElement>
+                              <MagneticElement>
+                                <Button
+                                  asChild
+                                  variant="outline"
+                                  className="border-white text-white hover:bg-white/10 rounded-xl px-6 py-3 btn-magnetic"
+                                >
+                                  <a href="/contact">Узнать больше</a>
+                                </Button>
+                              </MagneticElement>
+                            </div>
                           </div>
                         </div>
                       </div>
+                    </GlowingBorder>
+                  </div>
+
+                  {/* Mobile CTA Section */}
+                  <div className="mb-12 md:hidden">
+                    <div className="px-4">
+                      <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 text-white text-center shadow-xl">
+                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 backdrop-filter backdrop-blur-sm">
+                          <MessageCircle className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3 leading-tight">
+                          Попробуйте notetaker.ru в действии
+                        </h3>
+                        <p className="text-blue-100 mb-6 text-sm leading-relaxed">
+                          Начните использовать ИИ для анализа ваших встреч уже
+                          сегодня. 180 минут бесплатно, кредитная карта не
+                          требуется.
+                        </p>
+                        <div className="space-y-3">
+                          <Button
+                            asChild
+                            className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 rounded-xl"
+                          >
+                            <a
+                              href="https://app.notetaker.ru/"
+                              target="_blank"
+                              rel="noopener"
+                            >
+                              <ExternalLinkIcon className="w-4 h-4 mr-2" />
+                              Попробовать бесплатно
+                            </a>
+                          </Button>
+                          <Button
+                            asChild
+                            variant="outline"
+                            className="w-full border-white text-white hover:bg-white/10 py-3 rounded-xl"
+                          >
+                            <a href="/contact">Узнать больше</a>
+                          </Button>
+                        </div>
+                      </div>
                     </div>
-                  </GlowingBorder>
+                  </div>
                 </footer>
               </FadeInWhenVisible>
             </article>
