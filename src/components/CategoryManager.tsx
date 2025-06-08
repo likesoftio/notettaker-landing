@@ -24,7 +24,7 @@ import {
   Tag,
 } from "lucide-react";
 import { BlogCategory } from "../lib/database";
-import { BlogAPI } from "../lib/blog-api";
+import BlogAPI from "../lib/blog-api";
 import { HeadingXL, BodyMD, Caption } from "./Typography";
 
 interface CategoryManagerProps {
