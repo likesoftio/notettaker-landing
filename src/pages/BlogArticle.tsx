@@ -237,10 +237,10 @@ export default function BlogArticle() {
         <Header />
 
         <main className="container mx-auto px-4 py-8">
-          {/* Breadcrumbs */}
+          {/* Breadcrumbs - скрыты на мобильных */}
           {breadcrumbs.length > 0 && (
             <FadeInWhenVisible>
-              <nav className="mb-8" aria-label="Breadcrumb">
+              <nav className="mb-8 hidden md:block" aria-label="Breadcrumb">
                 <ol className="flex items-center space-x-2 text-sm">
                   {breadcrumbs.map((crumb, index) => (
                     <li key={crumb.href} className="flex items-center">
@@ -266,9 +266,9 @@ export default function BlogArticle() {
             </FadeInWhenVisible>
           )}
 
-          {/* Back button */}
+          {/* Back button - скрыта на мобильных */}
           <FadeInWhenVisible>
-            <div className="mb-8">
+            <div className="mb-8 hidden md:block">
               <MagneticElement>
                 <Link to="/blog">
                   <Button
