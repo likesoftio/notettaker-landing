@@ -1,0 +1,512 @@
+/* Глобальные мобильные стили для notetaker.ru */
+
+/* CSS переменные для мобильного дизайна */
+:root {
+  --mobile-header-height: 64px;
+  --mobile-padding: 1rem;
+  --mobile-padding-sm: 0.75rem;
+  --mobile-border-radius: 16px;
+  --mobile-border-radius-sm: 12px;
+  --mobile-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --mobile-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --mobile-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --mobile-gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --mobile-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Базовые мобильные стили */
+@media (max-width: 768px) {
+  /* Отключение горизонтального скролла */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Улучшенная прокрутка на iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Контейнеры */
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-4xl {
+    padding-left: var(--mobile-padding);
+    padding-right: var(--mobile-padding);
+    max-width: 100%;
+  }
+
+  /* Отступы секций */
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Заголовки */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 0.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 0.625rem;
+  }
+
+  /* Текст */
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .text-lg {
+    font-size: 1.125rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+  }
+
+  /* Кнопки мобильные */
+  .btn-mobile {
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--mobile-border-radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--mobile-transition);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-mobile-primary {
+    background: var(--mobile-gradient-primary);
+    color: white;
+    border: none;
+    box-shadow: var(--mobile-shadow);
+  }
+
+  .btn-mobile-primary:hover,
+  .btn-mobile-primary:active {
+    transform: translateY(-2px);
+    box-shadow: var(--mobile-shadow-lg);
+  }
+
+  .btn-mobile-secondary {
+    background: white;
+    color: #374151;
+    border: 2px solid #e5e7eb;
+    box-shadow: var(--mobile-shadow);
+  }
+
+  .btn-mobile-secondary:hover,
+  .btn-mobile-secondary:active {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+  }
+
+  /* Карточки мобильные */
+  .card-mobile {
+    background: white;
+    border-radius: var(--mobile-border-radius);
+    box-shadow: var(--mobile-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--mobile-transition);
+  }
+
+  .card-mobile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mobile-shadow-lg);
+  }
+
+  .card-mobile-gradient {
+    background: var(--mobile-gradient-primary);
+    color: white;
+  }
+
+  .card-mobile-accent {
+    background: var(--mobile-gradient-accent);
+    color: white;
+  }
+
+  /* Сетка мобильная */
+  .grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid-mobile-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* Формы мобильные */
+  .form-mobile input,
+  .form-mobile textarea,
+  .form-mobile select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--mobile-border-radius-sm);
+    font-size: 1rem;
+    transition: var(--mobile-transition);
+    background: white;
+  }
+
+  .form-mobile input:focus,
+  .form-mobile textarea:focus,
+  .form-mobile select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+
+  /* Анимации мобильные */
+  .mobile-fade-in {
+    animation: mobileFadeIn 0.6s ease-out;
+  }
+
+  .mobile-slide-up {
+    animation: mobileSlideUp 0.8s ease-out;
+  }
+
+  .mobile-scale-in {
+    animation: mobileScaleIn 0.5s ease-out;
+  }
+
+  .mobile-slide-right {
+    animation: mobileSlideRight 0.6s ease-out;
+  }
+
+  @keyframes mobileFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mobileSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mobileScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes mobileSlideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Touch оптимизация */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Скрытие desktop элементов */
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  /* Спейсеры мобильные */
+  .mobile-spacer-sm {
+    height: 1rem;
+  }
+
+  .mobile-spacer {
+    height: 2rem;
+  }
+
+  .mobile-spacer-lg {
+    height: 3rem;
+  }
+
+  /* Гибкие контейнеры */
+  .mobile-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mobile-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mobile-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Центрирование контента */
+  .mobile-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Скролл контейнеры */
+  .mobile-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mobile-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Sticky элементы */
+  .mobile-sticky {
+    position: sticky;
+    top: var(--mobile-header-height);
+    z-index: 10;
+  }
+}
+
+/* Средние мобильные экраны */
+@media (max-width: 640px) {
+  :root {
+    --mobile-padding: 0.875rem;
+    --mobile-border-radius: 14px;
+    --mobile-border-radius-sm: 10px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .btn-mobile {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .card-mobile {
+    padding: 1.25rem;
+  }
+
+  .grid-mobile-2 {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+}
+
+/* Маленькие мобильные экраны */
+@media (max-width: 480px) {
+  :root {
+    --mobile-padding: 0.75rem;
+    --mobile-border-radius: 12px;
+    --mobile-border-radius-sm: 8px;
+  }
+
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+  }
+
+  .btn-mobile {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .card-mobile {
+    padding: 1rem;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+  :root {
+    --mobile-padding: 0.625rem;
+  }
+
+  .mobile-flex-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mobile-flex-between {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Темная тема для мобильных */
+@media (max-width: 768px) {
+  .dark .card-mobile {
+    background: #374151;
+    border-color: #4b5563;
+  }
+
+  .dark .card-mobile-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  }
+
+  .dark .btn-mobile-secondary {
+    background: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+  }
+
+  .dark .btn-mobile-secondary:hover,
+  .dark .btn-mobile-secondary:active {
+    background: #4b5563;
+    border-color: #6b7280;
+  }
+
+  .dark .form-mobile input,
+  .dark .form-mobile textarea,
+  .dark .form-mobile select {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+
+  .dark .form-mobile input:focus,
+  .dark .form-mobile textarea:focus,
+  .dark .form-mobile select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Производительность на мобильных */
+@media (max-width: 768px) {
+  /* Оптимизация для будущих изменений */
+  .mobile-will-change {
+    will-change: transform, opacity;
+  }
+
+  /* Отключение анимаций для медленных устройств */
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-fade-in,
+    .mobile-slide-up,
+    .mobile-scale-in,
+    .mobile-slide-right {
+      animation: none;
+    }
+
+    .card-mobile,
+    .btn-mobile,
+    .form-mobile input {
+      transition: none;
+    }
+  }
+
+  /* Touch оптимизация */
+  .mobile-touch-optimization {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Предотвращение zoom на iOS */
+  .mobile-no-zoom {
+    font-size: 16px;
+  }
+}
+
+/* Ландшафтная ориентация */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-landscape-adjust {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Safe area для новых iPhone */
+@supports (padding: max(0px)) {
+  @media (max-width: 768px) {
+    .mobile-safe-area {
+      padding-left: max(var(--mobile-padding), env(safe-area-inset-left));
+      padding-right: max(var(--mobile-padding), env(safe-area-inset-right));
+    }
+
+    .mobile-safe-area-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+  }
+}
