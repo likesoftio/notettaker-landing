@@ -153,7 +153,7 @@ export default function HowItWorksEnhanced() {
         </div>
 
         {/* Интеграции */}
-        <div className="parallax-element bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+        <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200 dark:border-gray-700 z-10">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Работаем с популярными платформами
