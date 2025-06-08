@@ -23,6 +23,9 @@
 @import "./cta-mobile.css";
 @import "./cta-overflow-fix.css";
 
+/* Rich Text Editor Styles */
+@import "./rich-text-editor.css";
+
 /* Utility classes */
 @layer utilities {
   .line-clamp-2 {

@@ -1,0 +1,320 @@
+/* Rich Text Editor Styles */
+
+/* Основные стили для редактора */
+.ProseMirror {
+  outline: none;
+  padding: 1.5rem;
+  min-height: 400px;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: white;
+  border-radius: 0.5rem;
+}
+
+.dark .ProseMirror {
+  color: #d1d5db;
+  background: #111827;
+}
+
+/* Стили для заголовков */
+.ProseMirror h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.ProseMirror h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.75rem 0;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.ProseMirror h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem 0;
+  line-height: 1.4;
+  color: #111827;
+}
+
+.dark .ProseMirror h1,
+.dark .ProseMirror h2,
+.dark .ProseMirror h3 {
+  color: #f9fafb;
+}
+
+/* Стили для параграфов */
+.ProseMirror p {
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+.ProseMirror p:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror p:last-child {
+  margin-bottom: 0;
+}
+
+/* Стили для списков */
+.ProseMirror ul,
+.ProseMirror ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+}
+
+.ProseMirror li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.ProseMirror li p {
+  margin: 0.25rem 0;
+}
+
+/* Вложенные списки */
+.ProseMirror ul ul,
+.ProseMirror ol ol {
+  margin: 0.5rem 0;
+}
+
+.ProseMirror ul ul {
+  list-style-type: circle;
+}
+
+.ProseMirror ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* Стили для цитат */
+.ProseMirror blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+  background: #f8fafc;
+  padding: 1rem 1.5rem;
+  border-radius: 0.375rem;
+}
+
+.dark .ProseMirror blockquote {
+  border-left-color: #60a5fa;
+  color: #9ca3af;
+  background: #1f2937;
+}
+
+/* Стили для ссылок */
+.ProseMirror a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.ProseMirror a:hover {
+  color: #1d4ed8;
+}
+
+.dark .ProseMirror a {
+  color: #60a5fa;
+}
+
+.dark .ProseMirror a:hover {
+  color: #93c5fd;
+}
+
+/* Стили для изображений */
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.ProseMirror img:hover {
+  transform: scale(1.02);
+}
+
+/* Стили для выделения текста */
+.ProseMirror strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .ProseMirror strong {
+  color: #f9fafb;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
+.ProseMirror u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ProseMirror s {
+  text-decoration: line-through;
+}
+
+/* Стили для кода */
+.ProseMirror code {
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    monospace;
+  font-size: 0.875em;
+  color: #ef4444;
+}
+
+.dark .ProseMirror code {
+  background: #374151;
+  color: #fca5a5;
+}
+
+.ProseMirror pre {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    monospace;
+}
+
+.dark .ProseMirror pre {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+/* Стили для выравнивания текста */
+.ProseMirror[style*="text-align: center"] {
+  text-align: center;
+}
+
+.ProseMirror[style*="text-align: right"] {
+  text-align: right;
+}
+
+.ProseMirror[style*="text-align: left"] {
+  text-align: left;
+}
+
+/* Стили для плейсхолдера */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #9ca3af;
+  pointer-events: none;
+  height: 0;
+}
+
+.dark .ProseMirror p.is-editor-empty:first-child::before {
+  color: #6b7280;
+}
+
+/* Стили для выделения */
+.ProseMirror ::selection {
+  background: #bfdbfe;
+}
+
+.dark .ProseMirror ::selection {
+  background: #1e40af;
+}
+
+/* Стили для фокуса */
+.ProseMirror:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Анимации для hover эффектов */
+.ProseMirror img,
+.ProseMirror a {
+  transition: all 0.2s ease;
+}
+
+/* Responsive стили */
+@media (max-width: 768px) {
+  .ProseMirror {
+    padding: 1rem;
+    font-size: 15px;
+  }
+
+  .ProseMirror h1 {
+    font-size: 1.875rem;
+  }
+
+  .ProseMirror h2 {
+    font-size: 1.5rem;
+  }
+
+  .ProseMirror h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Стили для toolbar кнопок */
+.rich-editor-toolbar {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.dark .rich-editor-toolbar {
+  border-bottom-color: #374151;
+  background: #1f2937;
+}
+
+/* Дополнительные утилиты */
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.prose-lg h1 {
+  font-size: 2.5rem;
+}
+
+.prose-lg h2 {
+  font-size: 2rem;
+}
+
+.prose-lg h3 {
+  font-size: 1.625rem;
+}
