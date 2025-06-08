@@ -53,7 +53,7 @@ export default function MobileCTA({
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .mobile-cta-fixed {
           position: relative;
           width: 100%;

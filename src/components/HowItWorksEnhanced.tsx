@@ -52,7 +52,7 @@ export default function HowItWorksEnhanced() {
       bgColor: "bg-purple-50",
       title: "Получите инсайты",
       description:
-        "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
+        "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с отве��ственными и дедлайнами",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     },
@@ -61,7 +61,7 @@ export default function HowItWorksEnhanced() {
       icon: FileText,
       iconColor: "text-green-600",
       bgColor: "bg-green-50",
-      title: "Отредактир��йте и поделитесь",
+      title: "Отредактируйте и поделитесь",
       description:
         "Переименуйте спикеров и отредактируйте транскрипт. Итоговый отчёт можно отправить команде на почту или скачать в нужном формате",
       image:
@@ -192,7 +192,7 @@ export default function HowItWorksEnhanced() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes blob {
           0% {
             transform: translate(0px, 0px) scale(1);

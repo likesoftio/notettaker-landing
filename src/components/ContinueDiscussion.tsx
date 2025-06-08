@@ -145,7 +145,7 @@ export default function ContinueDiscussion() {
                         </p>
                         <p className="text-xs text-gray-600 dark:text-gray-400 pl-3">
                           Илья также упомянул необходимость "более
-                          персонализированного подхода к клиентам"
+                          персонализированн��го подхода к клиентам"
                         </p>
                         <p>
                           <strong>3. Обработка входящих заявок</strong>
@@ -262,7 +262,7 @@ export default function ContinueDiscussion() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes blob {
           0% {
             transform: translate(0px, 0px) scale(1);
