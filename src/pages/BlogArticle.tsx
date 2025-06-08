@@ -558,7 +558,7 @@ export default function BlogArticle() {
 
               {/* Article Content */}
               <FadeInWhenVisible delay={200}>
-                <div className="prose-content">
+                <div className="blog-content">
                   <div
                     className="animate-fade-in"
                     dangerouslySetInnerHTML={{
