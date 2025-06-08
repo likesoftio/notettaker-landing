@@ -7,6 +7,7 @@ import Head from "../../components/SEO/Head";
 import AdminLogin from "../../components/AdminLogin";
 import ImageUpload from "../../components/ImageUpload";
 import CategoryManager from "../../components/CategoryManager";
+import RichTextEditor from "../../components/RichTextEditor";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
@@ -348,19 +349,15 @@ export default function BlogAdmin() {
       </div>
 
       <div>
-        <Label htmlFor="content">Содержание *</Label>
-        <Textarea
-          id="content"
-          value={formData.content}
-          onChange={(e) =>
-            setFormData({ ...formData, content: e.target.value })
-          }
-          placeholder="HTML содержание статьи (минимум 100 символов)"
-          rows={10}
+        <Label htmlFor="content">Содержание статьи *</Label>
+        <RichTextEditor
+          content={formData.content}
+          onChange={(content) => setFormData({ ...formData, content })}
+          placeholder="Начните писать статью... Используйте панель инструментов для форматирования."
+          className="mt-2"
         />
-        <Caption className="mt-1">
-          {formData.content.length} символов | ~
-          {BlogAPI.calculateReadTime(formData.content)} мин чтения
+        <Caption className="mt-2">
+          Время чтения: ~{BlogAPI.calculateReadTime(formData.content)} мин
         </Caption>
       </div>
 
@@ -728,7 +725,7 @@ export default function BlogAdmin() {
                                 </div>
                                 <div className="flex items-center gap-1">
                                   <Eye className="w-3 h-3" />
-                                  <span>{post.views} просмотров</span>
+                                  <span>{post.views} ��росмотров</span>
                                 </div>
                               </div>
                             </div>
