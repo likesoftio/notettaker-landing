@@ -9,6 +9,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { AuthProvider } from "./hooks/useAuth";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
+import BlogCategory from "./pages/BlogCategory";
 import BlogArticle from "./pages/BlogArticle";
 import BlogArticleClassic from "./pages/BlogArticleClassic";
 import TestBlogDatabase from "./pages/TestBlogDatabase";
@@ -34,6 +35,10 @@ const App = () => (
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/blog" element={<Blog />} />
+                  <Route
+                    path="/blog/category/:categorySlug"
+                    element={<BlogCategory />}
+                  />
                   <Route path="/blog/:slug" element={<BlogArticle />} />
                   <Route
                     path="/blog/classic/:slug"
