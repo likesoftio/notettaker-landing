@@ -131,7 +131,7 @@ class BlogDatabase {
           id: "meeting-tips",
           name: "Советы по встречам",
           slug: "meeting-tips",
-          description: "Практические советы для проведения эффективных встреч",
+          description: "Практические сове��ы для проведения эффективных встреч",
           color: "bg-orange-600",
           image:
             "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&h=400&fit=crop",
@@ -314,7 +314,7 @@ class BlogDatabase {
           shares: 67,
           difficulty: "advanced",
           language: "ru",
-          series: "Технологии будущего",
+          series: "Техн��логии будущего",
           seriesOrder: 1,
           relatedPosts: ["ai-future-meetings", "effective-online-meetings"],
           socialMedia: {
@@ -376,8 +376,7 @@ class BlogDatabase {
         },
         {
           id: "productivity-tools-2024",
-          title:
-            "15 инструментов продуктивности, которы�� изменят ваш 2024 год",
+          title: "15 инструментов продуктивности, которые изменят ваш 2024 год",
           slug: "productivity-tools-2024",
           content: this.getSampleContent("default"),
           excerpt:
@@ -531,7 +530,7 @@ class BlogDatabase {
           tableOfContents: [
             { id: "company-background", title: "О компании", level: 1 },
             { id: "challenges", title: "Вызовы", level: 1 },
-            { id: "solution", title: "��ешение", level: 1 },
+            { id: "solution", title: "Решение", level: 1 },
             { id: "results", title: "Результаты", level: 1 },
             { id: "lessons", title: "Выводы", level: 1 },
           ],
@@ -751,7 +750,7 @@ class BlogDatabase {
         },
         {
           id: "agile-retrospectives-virtual",
-          title: "Виртуальные ретроспективы в Agile: инструменты и методики",
+          title: "Виртуальные ��етроспективы в Agile: инструменты и методики",
           slug: "agile-retrospectives-virtual",
           content: this.getSampleContent("default"),
           excerpt:
@@ -774,7 +773,7 @@ class BlogDatabase {
           tableOfContents: [
             {
               id: "agile-basics",
-              title: "Основы Agile ретроспектив",
+              title: "Осно��ы Agile ретроспектив",
               level: 1,
             },
             {
@@ -990,8 +989,8 @@ class BlogDatabase {
       "chrome-extensions": `
         <p class="lead">В современном мире эффективность и скорость обработки информации играют ключевую роль в успехе любого бизнеса. Расширения Chrome для преобразования речи в текст стали незаменимыми инструментами для профессионалов различных сфер.</p>
 
-        <h2 id="intro">Вве��ение</h2>
-        <p>Технологии распознавания речи значительно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
+        <h2 id="intro">Введение</h2>
+        <p>Технологии распознавания речи значительно ��родвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
 
         <h3 id="why-important">Почему это важно</h3>
         <p>Скорость набора текста голосом в 3-4 раза превышает скорость печати на клавиатуре. Это особенно важно для:</p>
@@ -1192,9 +1191,13 @@ class BlogDatabase {
 
   // CRUD operations for posts
   createPost(post: Omit<BlogPost, "id">): BlogPost {
+    const now = new Date().toISOString();
     const newPost: BlogPost = {
       ...post,
       id: Date.now().toString(),
+      views: 0,
+      publishedAt: post.status === "published" ? now : "",
+      updatedAt: now,
     };
 
     const posts = this.getAllPosts();
