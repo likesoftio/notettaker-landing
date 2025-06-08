@@ -17,8 +17,8 @@ npm install
 npm run dev
 
 # Запуск с DRF backend
-echo "REACT_APP_API_URL=http://localhost:8000" > .env
-echo "REACT_APP_USE_DRF=true" >> .env
+echo "VITE_API_URL=http://localhost:8000" > .env
+echo "VITE_USE_DRF=true" >> .env
 npm run dev
 ```
 
@@ -57,8 +57,8 @@ python manage.py runserver 8000
 ```javascript
 // В blog-api-switcher.ts
 const useDRF =
-  process.env.REACT_APP_USE_DRF === "true" ||
-  process.env.REACT_APP_API_URL !== undefined;
+  import.meta.env.VITE_USE_DRF === "true" ||
+  import.meta.env.VITE_API_URL !== undefined;
 ```
 
 ### В интерфейсе (ручное переключение)
@@ -90,14 +90,18 @@ src/
 ### Frontend (.env)
 
 ```bash
-# DRF Backend URL
-REACT_APP_API_URL=http://localhost:8000
+# DRF Backend URL (Vite format)
+VITE_API_URL=http://localhost:8000
 
 # Принудительное использование DRF
-REACT_APP_USE_DRF=true
+VITE_USE_DRF=true
 
 # Необязательные
-REACT_APP_UNSPLASH_ACCESS_KEY=your_key
+VITE_UNSPLASH_ACCESS_KEY=your_key
+
+# Legacy support (также будет работать)
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_USE_DRF=true
 ```
 
 ### Backend (Django settings.py)
@@ -212,8 +216,8 @@ LOGGING = {
 
 ```bash
 # Переменные окружения
-REACT_APP_API_URL=https://your-api.domain.com
-REACT_APP_USE_DRF=true
+VITE_API_URL=https://your-api.domain.com
+VITE_USE_DRF=true
 ```
 
 ### Backend (Heroku/Railway)
@@ -247,4 +251,4 @@ DEBUG=False
 - Backend: Django 4.2+ + DRF 3.14+ + PostgreSQL
 - Аутентификация: JWT tokens
 - CORS: django-cors-headers
-- Тестирование: Встроенная страница диагностики
+- Тестирование: Встроенная с��раница диагностики
