@@ -1,0 +1,299 @@
+/* Жесткое исправление переполнения CTA блоков */
+
+/* Базовые правила для всех CTA блоков */
+.cta-mobile-container,
+.bg-gradient-to-r,
+.bg-gradient-to-br,
+[class*="bg-gradient"] {
+  overflow: hidden !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
+  box-sizing: border-box !important;
+}
+
+.cta-mobile-container *,
+.bg-gradient-to-r *,
+.bg-gradient-to-br *,
+[class*="bg-gradient"] * {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  /* Принудительное ограничение ширины для всех CTA элементов */
+  .cta-mobile-container,
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  [class*="bg-gradient"] {
+    max-width: 100vw !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    border-radius: 0 !important;
+  }
+
+  /* Заголовки в CTA блоках */
+  .cta-mobile-container h1,
+  .cta-mobile-container h2,
+  .cta-mobile-container h3,
+  .bg-gradient-to-r h1,
+  .bg-gradient-to-r h2,
+  .bg-gradient-to-r h3,
+  .bg-gradient-to-br h1,
+  .bg-gradient-to-br h2,
+  .bg-gradient-to-br h3,
+  [class*="bg-gradient"] h1,
+  [class*="bg-gradient"] h2,
+  [class*="bg-gradient"] h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Параграфы в CTA блоках */
+  .cta-mobile-container p,
+  .bg-gradient-to-r p,
+  .bg-gradient-to-br p,
+  [class*="bg-gradient"] p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Кнопки в CTA блоках */
+  .cta-mobile-container button,
+  .cta-mobile-container a,
+  .bg-gradient-to-r button,
+  .bg-gradient-to-r a,
+  .bg-gradient-to-br button,
+  .bg-gradient-to-br a,
+  [class*="bg-gradient"] button,
+  [class*="bg-gradient"] a {
+    font-size: 0.85rem !important;
+    padding: 0.75rem 1rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+  }
+
+  /* Флекс контейнеры в CTA */
+  .cta-mobile-container .flex,
+  .bg-gradient-to-r .flex,
+  .bg-gradient-to-br .flex,
+  [class*="bg-gradient"] .flex {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+  }
+
+  /* Иконки в CTA блоках */
+  .cta-mobile-container [class*="w-16"],
+  .bg-gradient-to-r [class*="w-16"],
+  .bg-gradient-to-br [class*="w-16"],
+  [class*="bg-gradient"] [class*="w-16"] {
+    width: 3rem !important;
+    height: 3rem !important;
+    flex-shrink: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Специфичные исправления для конкретных классов */
+  .text-glow {
+    text-shadow: none !important;
+  }
+
+  .heading-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .body-lg {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Отключение анимаций на мобильных */
+  .animate-gradient {
+    animation: none !important;
+  }
+
+  /* Принудительное скрытие переполнения */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .container,
+  .mx-auto,
+  [class*="max-w"] {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .cta-mobile-container,
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  [class*="bg-gradient"] {
+    margin-left: -0.75rem !important;
+    margin-right: -0.75rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .cta-mobile-container h1,
+  .cta-mobile-container h2,
+  .cta-mobile-container h3,
+  .bg-gradient-to-r h1,
+  .bg-gradient-to-r h2,
+  .bg-gradient-to-r h3,
+  .bg-gradient-to-br h1,
+  .bg-gradient-to-br h2,
+  .bg-gradient-to-br h3,
+  [class*="bg-gradient"] h1,
+  [class*="bg-gradient"] h2,
+  [class*="bg-gradient"] h3 {
+    font-size: 1.125rem !important;
+  }
+
+  .cta-mobile-container p,
+  .bg-gradient-to-r p,
+  .bg-gradient-to-br p,
+  [class*="bg-gradient"] p {
+    font-size: 0.85rem !important;
+  }
+
+  .cta-mobile-container button,
+  .cta-mobile-container a,
+  .bg-gradient-to-r button,
+  .bg-gradient-to-r a,
+  .bg-gradient-to-br button,
+  .bg-gradient-to-br a,
+  [class*="bg-gradient"] button,
+  [class*="bg-gradient"] a {
+    font-size: 0.8rem !important;
+    padding: 0.625rem 0.75rem !important;
+  }
+}
+
+/* Особо маленькие экраны */
+@media (max-width: 360px) {
+  .cta-mobile-container,
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  [class*="bg-gradient"] {
+    margin-left: -0.5rem !important;
+    margin-right: -0.5rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .cta-mobile-container h1,
+  .cta-mobile-container h2,
+  .cta-mobile-container h3,
+  .bg-gradient-to-r h1,
+  .bg-gradient-to-r h2,
+  .bg-gradient-to-r h3,
+  .bg-gradient-to-br h1,
+  .bg-gradient-to-br h2,
+  .bg-gradient-to-br h3,
+  [class*="bg-gradient"] h1,
+  [class*="bg-gradient"] h2,
+  [class*="bg-gradient"] h3 {
+    font-size: 1rem !important;
+  }
+
+  .cta-mobile-container p,
+  .bg-gradient-to-r p,
+  .bg-gradient-to-br p,
+  [class*="bg-gradient"] p {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Фиксы для Tailwind классов */
+@media (max-width: 768px) {
+  .md\\:flex-row {
+    flex-direction: column !important;
+  }
+
+  .md\\:gap-6 {
+    gap: 0.75rem !important;
+  }
+
+  .md\\:text-2xl {
+    font-size: 1.25rem !important;
+  }
+
+  .md\\:text-lg {
+    font-size: 0.9rem !important;
+  }
+
+  .lg\\:text-3xl {
+    font-size: 1.25rem !important;
+  }
+
+  .sm\\:flex-row {
+    flex-direction: column !important;
+  }
+
+  .sm\\:w-auto {
+    width: 100% !important;
+  }
+}
+
+/* Принудительное ограничение viewport */
+html {
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+#root {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Дополнительные правила для гарантированного исправления */
+@media (max-width: 768px) {
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Исключения для элементов, которые должны быть маленькими */
+  svg,
+  img,
+  button svg,
+  .w-4,
+  .h-4,
+  .w-8,
+  .h-8,
+  .w-12,
+  .h-12 {
+    max-width: initial !important;
+  }
+}

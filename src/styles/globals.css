@@ -21,6 +21,7 @@
 @import "./sections-mobile.css";
 @import "./footer-mobile.css";
 @import "./cta-mobile.css";
+@import "./cta-overflow-fix.css";
 
 /* Global font configuration */
 @layer base {
