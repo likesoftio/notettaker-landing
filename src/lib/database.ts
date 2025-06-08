@@ -254,7 +254,7 @@ class BlogDatabase {
         },
         {
           id: "machine-learning-transcription",
-          title: "Машинное обучение в транскрипции: от теории к практике",
+          title: "Машинное обуч��ние в транскрипции: от теории к практике",
           slug: "machine-learning-transcription",
           content: this.getSampleContent("ml-transcription"),
           excerpt:
@@ -276,7 +276,7 @@ class BlogDatabase {
           slug: "nlp-meeting-analysis",
           content: this.getSampleContent("nlp-analysis"),
           excerpt:
-            "Применение обработки естественного языка для автоматического анализа содержания встреч.",
+            "Применение обработки естественного языка для автоматического а��ализа содержания встреч.",
           heroImage:
             "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
           category: "tech-ai",
@@ -509,7 +509,7 @@ class BlogDatabase {
         },
         {
           id: "meeting-note-taking-tips",
-          title: "Искусство ведения заметок: лучшие практики для встреч",
+          title: "Искус��тво ведения заметок: лучшие практики для встреч",
           slug: "meeting-note-taking-tips",
           content: this.getSampleContent("note-taking"),
           excerpt:
@@ -567,111 +567,150 @@ class BlogDatabase {
 
         // Искусство продаж (1 статья)
         {
-          id: 'sales-call-analysis',
-          title: 'Анализ продажных звонков с ИИ: находим точки роста',
-          slug: 'sales-call-analysis',
-          content: this.getSampleContent('sales-analysis'),
-          excerpt: 'Как использовать ИИ-анализ для улучшения техник продаж и повышения конверсии.',
-          heroImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
-          category: 'sales-art',
-          tags: ['продажи', 'анализ звонков', 'конверсия', 'ИИ'],
-          author: 'andrey-shcherbina',
-          publishedAt: new Date('2024-11-05').toISOString(),
-          updatedAt: new Date('2024-11-05').toISOString(),
-          status: 'published',
+          id: "sales-call-analysis",
+          title: "Анализ продажных звонков с ИИ: находим точки роста",
+          slug: "sales-call-analysis",
+          content: this.getSampleContent("sales-analysis"),
+          excerpt:
+            "Как использовать ИИ-анализ для улучшения техник продаж и повышения конверсии.",
+          heroImage:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
+          category: "sales-art",
+          tags: ["продажи", "анализ звонков", "конверсия", "ИИ"],
+          author: "andrey-shcherbina",
+          publishedAt: new Date("2024-11-05").toISOString(),
+          updatedAt: new Date("2024-11-05").toISOString(),
+          status: "published",
           readTime: 14,
           views: 2134,
         },
 
         // 5 новых статей для наполнения
         {
-          id: 'virtual-reality-meetings',
-          title: 'VR-встречи: новое измерение виртуального сотрудничества',
-          slug: 'virtual-reality-meetings',
-          content: this.getSampleContent('vr-meetings'),
-          excerpt: 'Исследуем возможности виртуальной реальности для проведения иммерсивных встреч и командной работы.',
-          heroImage: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=400&fit=crop',
-          category: 'tech-ai',
-          tags: ['VR', 'виртуальная реальность', 'иммерсивные встречи', 'будущее'],
-          author: 'maria-petrov',
-          publishedAt: new Date('2024-12-18').toISOString(),
-          updatedAt: new Date('2024-12-18').toISOString(),
-          status: 'published',
+          id: "virtual-reality-meetings",
+          title: "VR-встречи: новое измерение виртуального сотрудничества",
+          slug: "virtual-reality-meetings",
+          content: this.getSampleContent("vr-meetings"),
+          excerpt:
+            "Исследуем возможности виртуальной реальности для проведения иммерсивных встреч и командной работы.",
+          heroImage:
+            "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=400&fit=crop",
+          category: "tech-ai",
+          tags: [
+            "VR",
+            "виртуальная реальность",
+            "иммерсивные встречи",
+            "будущее",
+          ],
+          author: "maria-petrov",
+          publishedAt: new Date("2024-12-18").toISOString(),
+          updatedAt: new Date("2024-12-18").toISOString(),
+          status: "published",
           featured: true,
-          seoTitle: 'VR-встречи 2024: как виртуальная реальность меняет деловые коммуникации',
-          seoDescription: 'Узнайте о преимуществах VR-встреч, лучших платформах и том, как виртуальная реальность революционизирует удаленную работу.',
-          seoKeywords: ['VR встречи', 'виртуальная реальность', 'удаленная работа', 'метавселенная'],
+          seoTitle:
+            "VR-встречи 2024: как виртуальная реальность меняет деловые коммуникации",
+          seoDescription:
+            "Узнайте о преимуществах VR-встреч, лучших платформах и том, как виртуальная реальность революционизирует удаленную работу.",
+          seoKeywords: [
+            "VR встречи",
+            "виртуальная реальность",
+            "удаленная работа",
+            "метавселенная",
+          ],
           readTime: 12,
           views: 1876,
         },
         {
-          id: 'burnout-prevention-meetings',
-          title: 'Профилактика выгорания: как организовать здоровые встречи',
-          slug: 'burnout-prevention-meetings',
-          content: this.getSampleContent('burnout-prevention'),
-          excerpt: 'Практические советы по предотвраще��ию эмоционального выгорания через правильную организацию рабочих встреч.',
-          heroImage: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&h=400&fit=crop',
-          category: 'meeting-tips',
-          tags: ['выгорание', 'здоровье', 'баланс работы', 'психология'],
-          author: 'team-mymeet',
-          publishedAt: new Date('2024-12-16').toISOString(),
-          updatedAt: new Date('2024-12-16').toISOString(),
-          status: 'published',
+          id: "burnout-prevention-meetings",
+          title: "Профилактика выгорания: как организовать здоровые встречи",
+          slug: "burnout-prevention-meetings",
+          content: this.getSampleContent("burnout-prevention"),
+          excerpt:
+            "Практические советы по предотвращению эмоционального выгорания через правильную организацию рабочих встреч.",
+          heroImage:
+            "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&h=400&fit=crop",
+          category: "meeting-tips",
+          tags: ["выгорание", "здоровье", "баланс работы", "психология"],
+          author: "team-mymeet",
+          publishedAt: new Date("2024-12-16").toISOString(),
+          updatedAt: new Date("2024-12-16").toISOString(),
+          status: "published",
           readTime: 9,
           views: 2543,
         },
         {
-          id: 'kanban-integration-meetings',
-          title: 'Kanban + Встречи: как синхронизировать планирование задач',
-          slug: 'kanban-integration-meetings',
-          content: this.getSampleContent('kanban-meetings'),
-          excerpt: 'Интеграция методологии Kanban с результатами встреч для эффективного управления проектами.',
-          heroImage: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop',
-          category: 'task-management',
-          tags: ['Kanban', 'управление проектами', 'интеграция', 'п��анирование'],
-          author: 'maria-petrov',
-          publishedAt: new Date('2024-12-14').toISOString(),
-          updatedAt: new Date('2024-12-14').toISOString(),
-          status: 'published',
+          id: "kanban-integration-meetings",
+          title: "Kanban + Встречи: как синхронизировать планирование задач",
+          slug: "kanban-integration-meetings",
+          content: this.getSampleContent("kanban-meetings"),
+          excerpt:
+            "Интеграция методологии Kanban с результатами встреч для эффективного управления проектами.",
+          heroImage:
+            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
+          category: "task-management",
+          tags: [
+            "Kanban",
+            "управление проектами",
+            "интеграция",
+            "планирование",
+          ],
+          author: "maria-petrov",
+          publishedAt: new Date("2024-12-14").toISOString(),
+          updatedAt: new Date("2024-12-14").toISOString(),
+          status: "published",
           readTime: 11,
           views: 1432,
         },
         {
-          id: 'security-update-december',
-          title: 'Обновление безопасности: новые протоколы защиты данных',
-          slug: 'security-update-december',
-          content: this.getSampleContent('security-update'),
-          excerpt: 'Анонсируем важные обновления в системе безопасности mymeet.ai и новые функции защиты конфиденциальности.',
-          heroImage: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop',
-          category: 'product-news',
-          tags: ['безопасность', 'обновления', 'защита данных', 'конфиденциальность'],
-          author: 'team-mymeet',
-          publishedAt: new Date('2024-12-13').toISOString(),
-          updatedAt: new Date('2024-12-13').toISOString(),
-          status: 'published',
+          id: "security-update-december",
+          title: "Обновление безопасности: новые протоколы защиты данных",
+          slug: "security-update-december",
+          content: this.getSampleContent("security-update"),
+          excerpt:
+            "Анонсируем важные обновления в системе безопасности mymeet.ai и новые функции защиты конфиденциальности.",
+          heroImage:
+            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop",
+          category: "product-news",
+          tags: [
+            "безопасность",
+            "обновления",
+            "защита данных",
+            "конфиденциальность",
+          ],
+          author: "team-mymeet",
+          publishedAt: new Date("2024-12-13").toISOString(),
+          updatedAt: new Date("2024-12-13").toISOString(),
+          status: "published",
           featured: true,
-          seoTitle: 'Обновления безопасности mymeet.ai декабрь 2024',
-          seoDescription: 'Новые функции защиты данных, усиленное шифрование и улучшенные протоколы безопасности в mymeet.ai.',
-          seoKeywords: ['безопасность mymeet.ai', 'защита данных', 'шифрование', 'конфиденциальность'],
+          seoTitle: "Обновления безопасности mymeet.ai декабрь 2024",
+          seoDescription:
+            "Новые функции защиты данных, усиленное шифрование и улучшенные протоколы безопасности в mymeet.ai.",
+          seoKeywords: [
+            "безопасность mymeet.ai",
+            "защита данных",
+            "шифрование",
+            "конфиденциальность",
+          ],
           readTime: 7,
           views: 3421,
         },
         {
-          id: 'fintech-case-study',
-          title: 'Кейс финтех-компании: оптимизация compliance-встреч',
-          slug: 'fintech-case-study',
-          content: this.getSampleContent('fintech-case'),
-          excerpt: 'Как крупная финтех-компания использует mymeet.ai для автоматизации compliance-процедур и регуляторной отчетности.',
-          heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
-          category: 'customer-stories',
-          tags: ['финтех', 'compliance', 'регулирование', 'автоматизация'],
-          author: 'team-mymeet',
-          publishedAt: new Date('2024-12-11').toISOString(),
-          updatedAt: new Date('2024-12-11').toISOString(),
-          status: 'published',
+          id: "fintech-case-study",
+          title: "Кейс финтех-компании: оптимизация compliance-встреч",
+          slug: "fintech-case-study",
+          content: this.getSampleContent("fintech-case"),
+          excerpt:
+            "Как крупная финтех-компания использует mymeet.ai для автоматизации compliance-процедур и регуляторной отчетности.",
+          heroImage:
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+          category: "customer-stories",
+          tags: ["финтех", "compliance", "регулирование", "автоматизация"],
+          author: "team-mymeet",
+          publishedAt: new Date("2024-12-11").toISOString(),
+          updatedAt: new Date("2024-12-11").toISOString(),
+          status: "published",
           readTime: 13,
           views: 1987,
-        },
         },
       ];
       this.saveData(STORAGE_KEYS.POSTS, samplePosts);
@@ -691,7 +730,7 @@ class BlogDatabase {
         <p>В современном мире эффективность и скорость обработки информации играют ключевую роль в успехе любого бизнеса. Расширения Chrome для преобразования речи в текст стали незаменимыми инструментами для профессионалов различных сфер.</p>
 
         <h2 id="intro">Введение</h2>
-        <p>Технологии распознавания речи значительно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
+        <p>Технологии распознавания речи значи��ельно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
 
         <h2 id="top-extensions">ТОП-9 расширений Chrome</h2>
 
@@ -716,7 +755,7 @@ class BlogDatabase {
         <h2>Что ждет нас в будущем</h2>
         <p>Прогнозируется развитие технологий реального времени перевода, эмоционального анализа и автоматического планирования встреч.</p>
       `,
-      'vr-meetings': `
+      "vr-meetings": `
         <p>Виртуальная реальность открывает новые горизонты для деловых встреч. Современные VR-платформы позволяют создавать иммерсивные пространства для командной работы, где участники могут взаимодействовать с 3D-объектами и совместно решать задачи.</p>
 
         <h2>Преимущества VR-встреч</h2>
@@ -725,16 +764,16 @@ class BlogDatabase {
         <h2>Популярные VR-платформы</h2>
         <p>Обзор ведущих решений для проведения VR-встреч: от Meta Horizon Workrooms до специализированных бизнес-платформ.</p>
       `,
-      'burnout-prevention': `
+      "burnout-prevention": `
         <p>Эмоциональное выгорание стало серьезной проблемой современного рабочего мира. Неправильно организованные встречи часто становятся источником стресса и усталости для сотрудников.</p>
 
         <h2>Признаки выгорания от встреч</h2>
         <p>Как распознать первые симптомы усталости от постоянных совещаний и видеоконференций.</p>
 
-        <h2>Стратегии здоровых встреч</h2>
+        <h2>Стратегии здоровых в��треч</h2>
         <p>Практические рекомендации по планированию встреч с учетом психологического комфорта участников.</p>
       `,
-      'kanban-meetings': `
+      "kanban-meetings": `
         <p>Интеграция методологии Kanban с результатами встреч создает мощную систему управления задачами. Автоматическое создание карточек из решений встреч помогает не потерять важные договоренности.</p>
 
         <h2>Принципы Kanban</h2>
@@ -743,7 +782,7 @@ class BlogDatabase {
         <h2>Автоматизация процесса</h2>
         <p>Как настроить автоматическое создание задач в Kanban-доске из транскриптов встреч.</p>
       `,
-      'security-update': `
+      "security-update": `
         <p>В декабре 2024 года мы представляем масштабное обновление системы безопасности mymeet.ai. Новые протоколы шифрования и усиленная защита данных обеспечивают максимальную конфиденциальность ваших встреч.</p>
 
         <h2>Ключевые улучшения</h2>
@@ -752,7 +791,7 @@ class BlogDatabase {
         <h2>Соответствие стандартам</h2>
         <p>Обновления обеспечивают полное соответствие требованиям GDPR, SOC 2 и других международных стандартов безопасности.</p>
       `,
-      'fintech-case': `
+      "fintech-case": `
         <p>Крупная финтех-компания с 2000+ сотрудниками внедрила mymeet.ai для автоматизации compliance-процедур. Результат: сокращение времени на подготовку регуляторной отчетности на 70%.</p>
 
         <h2>Вызовы регулирования</h2>
@@ -761,7 +800,7 @@ class BlogDatabase {
         <h2>Решение с mymeet.ai</h2>
         <p>Автоматическая генерация compliance-отчетов из записей встреч и их интеграция с системами управления рисками.</p>
       `,
-      'default': `
+      default: `
         <p>Это образец контента для статьи. В реальном приложении здесь будет полноценная статья с подробным содержанием, изображениями и структурированной информацией.</p>
 
         <h2>Основное содержание</h2>
