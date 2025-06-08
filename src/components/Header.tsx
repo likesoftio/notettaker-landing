@@ -8,7 +8,18 @@ import {
 import LanguageSelector from "./LanguageSelector";
 import ThemeSelector from "./ThemeSelector";
 import { useLanguage } from "../contexts/LanguageContext";
-import { ChevronDown, Calendar } from "lucide-react";
+import {
+  ChevronDown,
+  Calendar,
+  Mic,
+  BarChart3,
+  Plug,
+  Code,
+  PenTool,
+  HelpCircle,
+  FileText,
+  PlayCircle,
+} from "lucide-react";
 
 export default function Header() {
   const { t } = useLanguage();
