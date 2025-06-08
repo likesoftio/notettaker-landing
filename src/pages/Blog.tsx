@@ -47,183 +47,180 @@ const blogPosts = [
     title: "Как перевести видео: 7 лучших способов для разных языков",
     category: "Технологии и ИИ",
     description:
-      "Сравнение методов локализации видеоконтента и выбор оптимального решения",
+      "Подробный обзор методов перевода видеоконтента с субтитрами и озвучкой",
     image:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
-    featured: true,
-    color: "bg-blue-100",
+      "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=500&h=300&fit=crop",
+    featured: false,
   },
   {
     id: 4,
-    slug: "moderation-style-guide",
-    title: "Как найти свой стиль модерации: личный бренд ведущего встреч",
-    category: "Советы по встречам",
+    slug: "meeting-notes-ai",
+    title: "ИИ для заметок встреч: революция в корпоративном общении",
+    category: "Управление задачами",
     description:
-      "Развитие уникального подхода к проведению онлайн и офлайн мероприятий",
+      "Как искусственный интеллект меняет подход к ведению протоколов встреч",
     image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
     featured: false,
-    color: "bg-gray-200",
   },
   {
     id: 5,
-    slug: "online-meeting-gamification",
-    title: "Игровые механики для вовлечения участников в онлайн-встречи",
+    slug: "productivity-tips",
+    title: "10 советов для повышения продуктивности удаленных встреч",
     category: "Советы по встречам",
     description:
-      "Эффективные техники геймификации для повышения активности на виртуальных совещаниях",
+      "Практические рекомендации для эффективного проведения онлайн-совещаний",
     image:
-      "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop",
     featured: false,
-    color: "bg-gray-800",
   },
   {
     id: 6,
-    slug: "international-meeting-culture",
-    title: "Культура встреч в разных странах: особенности деловых переговоров",
-    category: "Советы по встречам",
+    slug: "client-success-story",
+    title: "Как Компания X увеличила продажи на 40% с помощью транскрипции",
+    category: "Истории клиентов",
     description:
-      "Международная специфика организации и проведения деловых встреч",
+      "Реальная история успеха клиента и его результаты от использования ИИ-транскрипции",
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
     featured: false,
-    color: "bg-purple-100",
   },
 ];
 
 export default function Blog() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Последние статьи");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredPosts = blogPosts.filter((post) => {
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = post.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
     const matchesCategory =
       selectedCategory === "Последние статьи" ||
       post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
+  const featuredPosts = filteredPosts.filter((post) => post.featured);
+  const regularPosts = filteredPosts.filter((post) => !post.featured);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       <Header />
-
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+        <div className="flex flex-col xl:flex-row gap-6 lg:gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-8">
-            {/* Header */}
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-4">
-                Статьи и обновления
-              </h1>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Советы по эффективным встречам, ИИ-технологии и новости продукта
-              </p>
+          <aside className="xl:w-72 flex-shrink-0">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 sm:p-6 mb-6">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                <Input
+                  type="text"
+                  placeholder="Поиск статей..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
+                />
+              </div>
             </div>
 
-            {/* Search */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Поиск"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-
-            {/* Categories */}
-            <div className="space-y-4">
-              <h3 className="font-semibold text-gray-900">Последние статьи</h3>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 sm:p-6">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                Категории
+              </h3>
               <div className="space-y-2">
                 {categories.map((category) => (
                   <button
                     key={category.name}
                     onClick={() => setSelectedCategory(category.name)}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
+                    className={`w-full flex items-center justify-between p-2 sm:p-3 rounded-lg text-left transition-colors ${
                       selectedCategory === category.name
-                        ? "bg-blue-50 text-blue-700 font-medium"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                        ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                        : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                     }`}
                   >
-                    <div className="flex justify-between items-center">
-                      <span>{category.name}</span>
-                      <span className="text-xs text-gray-400">
-                        {category.count}
-                      </span>
-                    </div>
+                    <span className="text-sm">{category.name}</span>
+                    <span
+                      className={`text-xs px-2 py-1 rounded-full ${
+                        selectedCategory === category.name
+                          ? "bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300"
+                          : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                      }`}
+                    >
+                      {category.count}
+                    </span>
                   </button>
                 ))}
               </div>
             </div>
-          </div>
+          </aside>
 
           {/* Main Content */}
-          <div className="lg:col-span-3">
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                {selectedCategory}
-              </h2>
-              {filteredPosts.length > 0 && (
-                <p className="text-gray-600">
-                  {filteredPosts.length}{" "}
-                  {filteredPosts.length === 1 ? "статья" : "статей"}
-                </p>
-              )}
+          <div className="flex-1 min-w-0">
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Блог
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+                Последние новости, советы и истории о транскрипции и ИИ
+              </p>
             </div>
 
-            {/* Blog Posts Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredPosts.map((post) => (
-                <Link
-                  key={post.id}
-                  to={`/blog/${post.slug}`}
-                  className={post.featured ? "md:col-span-2" : ""}
-                >
-                  <Card className="group cursor-pointer overflow-hidden hover:shadow-lg transition-shadow h-full">
-                    <div className="relative overflow-hidden">
-                      <div
-                        className={`${post.color} h-48 ${post.featured ? "md:h-64" : ""} relative`}
-                      >
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-
-                        {/* Category Badge */}
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium px-3 py-1 rounded-full">
+            {/* Featured Articles */}
+            {featuredPosts.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  Рекомендуемые статьи
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                  {featuredPosts.map((post) => (
+                    <Link key={post.id} to={`/blog/${post.slug}`}>
+                      <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                        <div className="relative">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-40 sm:h-48 object-cover"
+                          />
+                          <div
+                            className={`absolute top-3 sm:top-4 left-3 sm:left-4 px-2 sm:px-3 py-1 rounded-full text-xs font-medium text-white ${post.color}`}
+                          >
                             {post.category}
-                          </span>
-                        </div>
-
-                        {/* Notetaker Logo */}
-                        <div className="absolute top-4 right-4">
-                          <div className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <img
-                              src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                              alt="N"
-                              className="w-6 h-3 object-contain"
-                            />
                           </div>
                         </div>
-                      </div>
-                    </div>
+                        <div className="p-4 sm:p-6">
+                          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                            {post.title}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+                            {post.description}
+                          </p>
+                        </div>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
-                    <div className="p-6">
-                      <h3
-                        className={`font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors ${
-                          post.featured ? "text-xl md:text-2xl" : "text-lg"
-                        }`}
-                      >
+            {/* Regular Articles */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
+              {regularPosts.map((post) => (
+                <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-32 sm:h-40 object-cover"
+                    />
+                    <div className="p-3 sm:p-4">
+                      <div className="text-xs text-blue-600 dark:text-blue-400 font-medium mb-2">
+                        {post.category}
+                      </div>
+                      <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm line-clamp-3">
                         {post.description}
                       </p>
                     </div>
@@ -234,15 +231,15 @@ export default function Blog() {
 
             {filteredPosts.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">
-                  Статьи не найдены. Попробуйте изменить критерии поиска.
+                <p className="text-gray-500 dark:text-gray-400">
+                  Статьи не найдены. Попробуйте изменить поисковый запрос или
+                  выбрать другую категорию.
                 </p>
               </div>
             )}
           </div>
         </div>
-      </div>
-
+      </main>
       <Footer />
     </div>
   );
