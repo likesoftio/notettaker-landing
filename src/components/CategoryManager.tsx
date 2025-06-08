@@ -227,7 +227,7 @@ export default function CategoryManager({
             placeholder="category-slug"
           />
           <Caption className="mt-1">
-            Авт��матически генерируется из названия
+            Автоматически генерируется из названия
           </Caption>
         </div>
       </div>
@@ -318,9 +318,8 @@ export default function CategoryManager({
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-2xl">
-            <DialogHeader>
-              <DialogTitle>Создать новую категорию</DialogTitle>
-            </DialogHeader>
+            <DialogTitle>Создать новую категорию</DialogTitle>
+            <DialogHeader></DialogHeader>
             <CategoryForm />
           </DialogContent>
         </Dialog>
@@ -416,9 +415,8 @@ export default function CategoryManager({
         onOpenChange={(open) => !open && setEditingCategory(null)}
       >
         <DialogContent className="max-w-2xl">
-          <DialogHeader>
-            <DialogTitle>Редактировать категорию</DialogTitle>
-          </DialogHeader>
+          <DialogTitle>Редактировать категорию</DialogTitle>
+          <DialogHeader></DialogHeader>
           <CategoryForm />
         </DialogContent>
       </Dialog>

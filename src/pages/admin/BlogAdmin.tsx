@@ -469,7 +469,7 @@ export default function BlogAdmin() {
               onChange={(e) =>
                 setFormData({ ...formData, seoDescription: e.target.value })
               }
-              placeholder="SEO описан��е (оставьте пустым для автоматического)"
+              placeholder="SEO описание (оставьте пустым для автоматического)"
               rows={3}
             />
             <Caption className="mt-1">
@@ -645,9 +645,8 @@ export default function BlogAdmin() {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-4xl">
-                    <DialogHeader>
-                      <DialogTitle>Создать новую статью</DialogTitle>
-                    </DialogHeader>
+                    <DialogTitle>Создать новую статью</DialogTitle>
+                    <DialogHeader></DialogHeader>
                     <PostForm />
                   </DialogContent>
                 </Dialog>
@@ -842,9 +841,8 @@ export default function BlogAdmin() {
             onOpenChange={(open) => !open && setEditingPost(null)}
           >
             <DialogContent className="max-w-4xl">
-              <DialogHeader>
-                <DialogTitle>Редактировать статью</DialogTitle>
-              </DialogHeader>
+              <DialogTitle>Редактировать статью</DialogTitle>
+              <DialogHeader></DialogHeader>
               <PostForm />
             </DialogContent>
           </Dialog>
