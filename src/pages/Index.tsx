@@ -31,7 +31,7 @@ export default function Index() {
       <div className="page-container">
         <Head
           title="notetaker.ru - Умная транскрипция и анализ встреч с помощью ИИ"
-          description="Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых решений. Поддержка 73 языков. 180 минут бесплатно."
+          description="Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых ре��ений. Поддержка 73 языков. 180 минут бесплатно."
           keywords={[
             "транскрипция встреч",
             "ИИ анализ встреч",
@@ -64,10 +64,10 @@ export default function Index() {
           <Hero />
           <HowItWorksEnhanced />
           <TranscriptionQuality />
-          {/* <FeaturesWithTabs /> */}
+          <FeaturesWithTabs />
           <ProcessSteps />
           <Features />
-          {/* <ContinueDiscussion /> */}
+          <ContinueDiscussion />
           <AdvantagesSection />
           <CompanyLogos />
           <SecuritySection />
