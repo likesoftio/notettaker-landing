@@ -110,12 +110,30 @@ export class BlogAPI {
   }
 
   // Categories API
-  static async getAllCategories(): Promise<BlogCategory[]> {
-    return await blogDB.getAllCategories();
+  static async getCategoriesWithPosts(): Promise<BlogCategory[]> {
+    return await blogDB.getCategoriesWithPosts();
   }
 
   static async getCategoryBySlug(slug: string): Promise<BlogCategory | null> {
     return await blogDB.getCategoryBySlug(slug);
+  }
+
+  // CRUD operations for categories
+  static async createCategory(
+    category: Omit<BlogCategory, "id" | "postCount">,
+  ): Promise<BlogCategory> {
+    return blogDB.createCategory(category);
+  }
+
+  static async updateCategory(
+    id: string,
+    updates: Partial<BlogCategory>,
+  ): Promise<BlogCategory | null> {
+    return blogDB.updateCategory(id, updates);
+  }
+
+  static async deleteCategory(id: string): Promise<boolean> {
+    return blogDB.deleteCategory(id);
   }
 
   static async getCategoriesWithPosts(): Promise<BlogCategory[]> {
