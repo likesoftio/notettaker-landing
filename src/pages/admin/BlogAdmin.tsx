@@ -161,6 +161,8 @@ export default function BlogAdmin() {
     if (!validateForm()) return;
 
     try {
+      console.log("Creating post with formData:", formData);
+
       const tagsArray = formData.tags
         .split(",")
         .map((tag) => tag.trim())
@@ -179,13 +181,18 @@ export default function BlogAdmin() {
         tableOfContents: BlogAPI.generateTableOfContents(formData.content),
       };
 
-      await BlogAPI.createPost(newPost);
+      console.log("Calling BlogAPI.createPost with:", newPost);
+      const createdPost = await BlogAPI.createPost(newPost);
+      console.log("Post created successfully:", createdPost);
+
       await loadData();
       setIsCreateDialogOpen(false);
       resetForm();
     } catch (error) {
       console.error("Failed to create post:", error);
-      setValidationErrors(["Ошибка при создании статьи"]);
+      setValidationErrors([
+        `Ошибка при создании статьи: ${error.message || error}`,
+      ]);
     }
   };
 
@@ -193,6 +200,8 @@ export default function BlogAdmin() {
     if (!editingPost || !validateForm()) return;
 
     try {
+      console.log("Updating post:", editingPost.id, "with formData:", formData);
+
       const tagsArray = formData.tags
         .split(",")
         .map((tag) => tag.trim())
@@ -211,13 +220,18 @@ export default function BlogAdmin() {
         tableOfContents: BlogAPI.generateTableOfContents(formData.content),
       };
 
-      await BlogAPI.updatePost(editingPost.id, updates);
+      console.log("Calling BlogAPI.updatePost with:", updates);
+      const updatedPost = await BlogAPI.updatePost(editingPost.id, updates);
+      console.log("Post updated successfully:", updatedPost);
+
       await loadData();
       setEditingPost(null);
       resetForm();
     } catch (error) {
       console.error("Failed to update post:", error);
-      setValidationErrors(["Ошибка при обновлении статьи"]);
+      setValidationErrors([
+        `Ошибка при обновлении статьи: ${error.message || error}`,
+      ]);
     }
   };
 
@@ -225,10 +239,20 @@ export default function BlogAdmin() {
     if (!confirm("Вы уверены, что хотите удалить эту статью?")) return;
 
     try {
-      await BlogAPI.deletePost(postId);
-      await loadData();
+      console.log("Deleting post:", postId);
+      const result = await BlogAPI.deletePost(postId);
+      console.log("Delete result:", result);
+
+      if (result) {
+        await loadData();
+      } else {
+        setValidationErrors(["Не удалось удалить статью"]);
+      }
     } catch (error) {
       console.error("Failed to delete post:", error);
+      setValidationErrors([
+        `Ошибка при удалении статьи: ${error.message || error}`,
+      ]);
     }
   };
 
@@ -725,7 +749,7 @@ export default function BlogAdmin() {
                                 </div>
                                 <div className="flex items-center gap-1">
                                   <Eye className="w-3 h-3" />
-                                  <span>{post.views} ��росмотров</span>
+                                  <span>{post.views} просмотров</span>
                                 </div>
                               </div>
                             </div>
