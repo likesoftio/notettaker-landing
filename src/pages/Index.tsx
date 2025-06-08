@@ -20,10 +20,10 @@ import Head from "../components/SEO/Head";
 // Новые компоненты
 import HowItWorksEnhanced from "../components/HowItWorksEnhanced";
 import TranscriptionQuality from "../components/TranscriptionQuality";
-import ContinueDiscussion from "../components/ContinueDiscussion";
-import FeaturesWithTabs from "../components/FeaturesWithTabs";
-import TestimonialsEnhanced from "../components/TestimonialsEnhanced";
-import SecurityEnhanced from "../components/SecurityEnhanced";
+// import ContinueDiscussion from "../components/ContinueDiscussion";
+// import FeaturesWithTabs from "../components/FeaturesWithTabs";
+// import TestimonialsEnhanced from "../components/TestimonialsEnhanced";
+// import SecurityEnhanced from "../components/SecurityEnhanced";
 
 export default function Index() {
   return (
@@ -31,7 +31,7 @@ export default function Index() {
       <div className="page-container">
         <Head
           title="notetaker.ru - Умная транскрипция и анализ встреч с помощью ИИ"
-          description="Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых решений. Поддержка 73 языков. 180 минут бесплатно."
+          description="Превратите л��бую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых решений. Поддержка 73 языков. 180 минут бесплатно."
           keywords={[
             "транскрипция встреч",
             "ИИ анализ встреч",
