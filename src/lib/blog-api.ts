@@ -136,11 +136,6 @@ export class BlogAPI {
     return blogDB.deleteCategory(id);
   }
 
-  static async getCategoriesWithPosts(): Promise<BlogCategory[]> {
-    const categories = await blogDB.getAllCategories();
-    return categories.filter((cat) => cat.postCount > 0);
-  }
-
   // Authors API
   static async getAllAuthors(): Promise<BlogAuthor[]> {
     return await blogDB.getAllAuthors();
