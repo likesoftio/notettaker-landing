@@ -52,7 +52,7 @@ export default function HowItWorksEnhanced() {
       bgColor: "bg-purple-50",
       title: "Получите инсайты",
       description:
-        "Обработанная встреча состоит из транскрипт�� с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
+        "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     },
@@ -61,7 +61,7 @@ export default function HowItWorksEnhanced() {
       icon: FileText,
       iconColor: "text-green-600",
       bgColor: "bg-green-50",
-      title: "Отредактируйте и поделитесь",
+      title: "Отредактир��йте и поделитесь",
       description:
         "Переименуйте спикеров и отредактируйте транскрипт. Итоговый отчёт можно отправить команде на почту или скачать в нужном формате",
       image:
@@ -80,7 +80,7 @@ export default function HowItWorksEnhanced() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 overflow-hidden"
+      className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 overflow-hidden z-0"
     >
       {/* Параллакс фон */}
       <div className="parallax-bg absolute inset-0 opacity-30">
