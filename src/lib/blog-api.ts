@@ -110,6 +110,10 @@ export class BlogAPI {
   }
 
   // Categories API
+  static async getAllCategories(): Promise<BlogCategory[]> {
+    return await blogDB.getAllCategories();
+  }
+
   static async getCategoriesWithPosts(): Promise<BlogCategory[]> {
     return await blogDB.getCategoriesWithPosts();
   }
