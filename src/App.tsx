@@ -16,11 +16,6 @@ import BlogArticleV2 from "./pages/BlogArticleV2";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogAdmin from "./pages/admin/BlogAdmin";
-import DebugBlog from "./pages/DebugBlog";
-import TestBlog from "./pages/TestBlog";
-import TermsOfService from "./pages/TermsOfService";
-import OfferAgreement from "./pages/OfferAgreement";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
