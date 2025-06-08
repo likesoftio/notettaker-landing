@@ -13,6 +13,8 @@ import BlogArticle from "./pages/BlogArticle";
 import BlogArticleClassic from "./pages/BlogArticleClassic";
 import TestBlogDatabase from "./pages/TestBlogDatabase";
 import BlogArticleV2 from "./pages/BlogArticleV2";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import DebugBlog from "./pages/DebugBlog";
 import TestBlog from "./pages/TestBlog";
