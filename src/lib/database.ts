@@ -97,7 +97,7 @@ class BlogDatabase {
       const sampleCategories: BlogCategory[] = [
         {
           id: "tech-ai",
-          name: "Технологии и ИИ",
+          name: "Те��нологии и ИИ",
           slug: "tech-ai",
           description: "Статьи о новых технологиях и искусственном интеллекте",
           color: "bg-blue-600",
@@ -245,7 +245,7 @@ class BlogDatabase {
             twitter:
               "Обзор 9 лучших расширений Chrome для преобразования речи в текст. Повысьте свою продуктивность! #Chrome #SpeechToText #mymeetai",
             linkedin:
-              "Подробный анализ расширений Chrome для транскрипции. Какое выбрать для вашей работы?",
+              "Подробный анализ расширений Chrome для тра��скрипции. Какое выбрать для вашей работы?",
           },
           tableOfContents: [
             { id: "intro", title: "Введение", level: 1 },
@@ -288,7 +288,7 @@ class BlogDatabase {
           seoTitle:
             "VR-встречи 2024: как виртуальная реальность меняет деловые коммуникации",
           seoDescription:
-            "Узнайте �� преимуществах VR-встреч, лучших платформах и том, как виртуальная реальность революционизирует удаленную работу.",
+            "Узнайте о преимуществах VR-встреч, лучших платформах и том, как виртуальная реальность революционизирует удаленную работу.",
           seoKeywords: [
             "VR встречи",
             "виртуальная реальность",
@@ -590,11 +590,11 @@ class BlogDatabase {
         },
         {
           id: "meeting-fatigue-solutions",
-          title: "Усталость от встреч: ди��гностика и практические решения",
+          title: "Усталость от встреч: диагностика и практические решения",
           slug: "meeting-fatigue-solutions",
           content: this.getSampleContent("default"),
           excerpt:
-            "Изучаем феномен meeting fatigue и предлагаем конкретные стратегии для снижения нагрузки на сотрудников.",
+            "Изучаем феномен meeting fatigue и предлагаем конкретные стратегии для сн��жения нагрузки на сотрудников.",
           heroImage:
             "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=400&fit=crop",
           category: "meeting-tips",
@@ -645,7 +645,7 @@ class BlogDatabase {
           language: "ru",
           tableOfContents: [
             { id: "intro", title: "Введение", level: 1 },
-            { id: "benefits", title: "Преимущества ин��еграции", level: 1 },
+            { id: "benefits", title: "Преимущества интеграции", level: 1 },
             { id: "implementation", title: "Этапы внедрения", level: 1 },
             { id: "best-practices", title: "Лучшие практики", level: 1 },
             { id: "common-mistakes", title: "Частые ошибки", level: 1 },
@@ -730,7 +730,7 @@ class BlogDatabase {
           tableOfContents: [
             { id: "threat-landscape", title: "Угрозы и риски", level: 1 },
             { id: "encryption", title: "Шифрование", level: 1 },
-            { id: "access-control", title: "��онтроль доступа", level: 1 },
+            { id: "access-control", title: "Контроль доступа", level: 1 },
             { id: "compliance", title: "Соответствие требованиям", level: 1 },
             { id: "best-practices", title: "Лучшие практики", level: 1 },
           ],
@@ -741,7 +741,7 @@ class BlogDatabase {
           slug: "agile-retrospectives-virtual",
           content: this.getSampleContent("default"),
           excerpt:
-            "Как проводить эффективные ретроспективы в распределенных Agile-командах. Инструменты, форматы и лучшие практики.",
+            "Как проводить эффективные ретроспективы в ра��пределенных Agile-командах. Инструменты, форматы и лучшие практики.",
           heroImage:
             "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
           category: "task-management",
@@ -810,7 +810,7 @@ class BlogDatabase {
           slug: "b2b-sales-discovery-questions",
           content: this.getSampleContent("default"),
           excerpt:
-            "Большая коллекция проверенных вопросов для этапа исследования потребностей в B2B продажах. Категории и примеры использования.",
+            "Большая коллекция проверенных вопросов для этапа исследования потребностей в B2B продажах. Категории и примеры испол��зования.",
           heroImage:
             "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
           category: "sales-art",
@@ -885,7 +885,7 @@ class BlogDatabase {
             },
             { id: "lighting", title: "Освещение", level: 1 },
             { id: "furniture", title: "Мебель и планировка", level: 1 },
-            { id: "software", title: "Программное обеспечение", level: 1 },
+            { id: "software", title: "Пр��граммное обеспечение", level: 1 },
           ],
         },
         {
@@ -1000,7 +1000,7 @@ class BlogDatabase {
             <li>Работает на любом сайте</li>
             <li>Поддержка команд пунктуации</li>
             <li>Настраиваемые горячие клавиши</li>
-            <li>Авто��атическая капитализация</li>
+            <li>Автоматическая капитализация</li>
           </ul>
         </div>
 
@@ -1008,7 +1008,7 @@ class BlogDatabase {
         <p>Расширения Chrome для преобразования речи в текст значительно повышают продуктивность работы. Выбор конкретного инструмента зависит от ваших потребностей и бюджета.</p>
       `,
       "vr-meetings": `
-        <p class="lead">Виртуальная реальность открывает новые горизонты для деловых встреч. Современные VR-платформы позволяют создавать иммерсивные пространства для командной работы, где участники могут взаимодействовать с 3D-объектами и совместно решать задачи.</p>
+        <p class="lead">Виртуальная реальность открывает новые горизонты для деловы�� встреч. Современные VR-платформы позволяют создавать иммерсивные пространства для командной работы, где участники могут взаимодействовать с 3D-объектами и совместно решать задачи.</p>
 
         <h2 id="intro">Введение</h2>
         <p>Пандемия COVID-19 ускорила переход к удаленной работе, но традиционные видеоконференции не всегда обеспечивают достаточный уровень взаимодействия. VR-технологии предлагают революционный подход к проведению встреч, создавая ощущение физического присутствия в одном пространстве.</p>
@@ -1274,6 +1274,56 @@ class BlogDatabase {
     const text = content.replace(/<[^>]*>/g, ""); // Strip HTML tags
     const wordCount = text.trim().split(/\s+/).length;
     return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+  }
+
+  // Method to increment views
+  incrementViews(slug: string): void {
+    const posts = this.getAllPosts();
+    const postIndex = posts.findIndex((post) => post.slug === slug);
+
+    if (postIndex !== -1) {
+      posts[postIndex].views = (posts[postIndex].views || 0) + 1;
+      this.saveData(STORAGE_KEYS.POSTS, posts);
+    }
+  }
+
+  // Method to get blog statistics
+  getBlogStats(): BlogStats {
+    return this.getStats();
+  }
+
+  // Method to generate slug from title
+  generateSlug(title: string): string {
+    return title
+      .toLowerCase()
+      .replace(/[^a-zа-яё0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .trim();
+  }
+
+  // Method to generate table of contents
+  generateTableOfContents(
+    content: string,
+  ): Array<{ id: string; title: string; level: number }> {
+    const toc: Array<{ id: string; title: string; level: number }> = [];
+    const headingRegex = /<h([1-6])[^>]*>([^<]*)<\/h[1-6]>/gi;
+    let match;
+
+    while ((match = headingRegex.exec(content)) !== null) {
+      const level = parseInt(match[1]);
+      const title = match[2].trim();
+      const id = title
+        .toLowerCase()
+        .replace(/[^a-zа-яё0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .trim();
+
+      toc.push({ id, title, level });
+    }
+
+    return toc;
   }
 }
 
