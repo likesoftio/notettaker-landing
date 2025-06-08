@@ -8,19 +8,17 @@ const LOGO_SOURCES = {
   desktop:
     "https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png",
 
-  // Квадратная иконка для мобильных (когда будет готова отдельная версия)
-  // Пока используем тот же источник, но с квадратными размерами
+  // Квадратная иконка для мобильных - новый URL без фона
   mobile:
-    "https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png",
+    "https://cdn.builder.io/api/v1/image/assets%2Fd3e6c3e469bf4359bcff15eeac24fd04%2Ff3164cd251b24a75be1293b1a463daef",
 
-  // Иконка для меню
-  menu: "https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png",
+  // Иконка для меню - тоже используем новый URL
+  menu: "https://cdn.builder.io/api/v1/image/assets%2Fd3e6c3e469bf4359bcff15eeac24fd04%2Ff3164cd251b24a75be1293b1a463daef",
 };
-
 const LOGO_STYLES = {
   desktop: "h-8 w-auto", // Полный логотип
   mobile: "w-9 h-9 rounded-lg", // Квадратная иконка
-  menu: "w-7 h-7 rounded-md", // Мале��ькая иконка для меню
+  menu: "w-7 h-7 rounded-md", // Маленькая иконка для меню
 };
 
 export default function Logo({
