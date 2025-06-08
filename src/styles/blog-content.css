@@ -1,0 +1,454 @@
+/* Стильная типографика для контента блога */
+
+.blog-content {
+  /* Базовые настройки текста */
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  max-width: none;
+}
+
+.dark .blog-content {
+  color: #d1d5db;
+}
+
+/* Заголовки */
+.blog-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111827;
+  margin: 3rem 0 1.5rem 0;
+  letter-spacing: -0.025em;
+}
+
+.blog-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111827;
+  margin: 2.5rem 0 1.25rem 0;
+  letter-spacing: -0.025em;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+.blog-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.blog-content h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.blog-content h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* Темная тема для заголовков */
+.dark .blog-content h1,
+.dark .blog-content h2,
+.dark .blog-content h3,
+.dark .blog-content h4,
+.dark .blog-content h5,
+.dark .blog-content h6 {
+  color: #f9fafb;
+}
+
+.dark .blog-content h2 {
+  border-bottom-color: #374151;
+}
+
+/* Параграфы */
+.blog-content p {
+  margin: 1.25rem 0;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.blog-content p:first-child {
+  margin-top: 0;
+}
+
+.blog-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Вводный параграф */
+.blog-content p.lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #4b5563;
+  margin: 1.5rem 0;
+}
+
+.dark .blog-content p.lead {
+  color: #9ca3af;
+}
+
+/* Списки */
+.blog-content ul,
+.blog-content ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  margin: 0.5rem 0;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.dark .blog-content li {
+  color: #d1d5db;
+}
+
+.blog-content li p {
+  margin: 0.25rem 0;
+}
+
+/* Вложенные списки */
+.blog-content ul ul,
+.blog-content ol ol,
+.blog-content ul ol,
+.blog-content ol ul {
+  margin: 0.5rem 0;
+}
+
+.blog-content ul ul {
+  list-style-type: circle;
+}
+
+.blog-content ul ul ul {
+  list-style-type: square;
+}
+
+/* Ссылки */
+.blog-content a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.blog-content a:hover {
+  color: #1d4ed8;
+  border-bottom-color: #2563eb;
+}
+
+.dark .blog-content a {
+  color: #60a5fa;
+}
+
+.dark .blog-content a:hover {
+  color: #93c5fd;
+  border-bottom-color: #60a5fa;
+}
+
+/* В��деленный текст */
+.blog-content strong,
+.blog-content b {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .blog-content strong,
+.dark .blog-content b {
+  color: #f9fafb;
+}
+
+.blog-content em,
+.blog-content i {
+  font-style: italic;
+}
+
+/* Код */
+.blog-content code {
+  font-family: "SF Mono", "Monaco", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.875rem;
+  background-color: #f3f4f6;
+  color: #ef4444;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.dark .blog-content code {
+  background-color: #374151;
+  color: #fca5a5;
+}
+
+.blog-content pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: "SF Mono", "Monaco", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Цитаты */
+.blog-content blockquote {
+  border-left: 4px solid #2563eb;
+  background-color: #f8fafc;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: #475569;
+}
+
+.dark .blog-content blockquote {
+  background-color: #1e293b;
+  border-left-color: #60a5fa;
+  color: #cbd5e1;
+}
+
+.blog-content blockquote p {
+  margin: 0.5rem 0;
+}
+
+.blog-content blockquote p:first-child {
+  margin-top: 0;
+}
+
+.blog-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Таблицы */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.blog-content thead {
+  background-color: #f9fafb;
+}
+
+.dark .blog-content thead {
+  background-color: #374151;
+}
+
+.blog-content th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .blog-content th {
+  color: #f9fafb;
+  border-bottom-color: #4b5563;
+}
+
+.blog-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.dark .blog-content td {
+  color: #d1d5db;
+  border-bottom-color: #4b5563;
+}
+
+.blog-content tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.dark .blog-content tbody tr:hover {
+  background-color: #374151;
+}
+
+/* Разделители */
+.blog-content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 2rem 0;
+}
+
+.dark .blog-content hr {
+  background: linear-gradient(to right, transparent, #4b5563, transparent);
+}
+
+/* Изображения */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+/* Видео */
+.blog-content video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Специальные блоки */
+.blog-content .info-block {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.dark .blog-content .info-block {
+  background-color: #1e3a8a;
+  border-color: #3b82f6;
+}
+
+.blog-content .warning-block {
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.dark .blog-content .warning-block {
+  background-color: #92400e;
+  border-color: #f59e0b;
+}
+
+.blog-content .success-block {
+  background-color: #ecfdf5;
+  border: 1px solid #86efac;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.dark .blog-content .success-block {
+  background-color: #14532d;
+  border-color: #22c55e;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 15px;
+  }
+
+  .blog-content h1 {
+    font-size: 2rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .blog-content h4 {
+    font-size: 1.125rem;
+  }
+
+  .blog-content pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .blog-content table {
+    font-size: 0.875rem;
+  }
+
+  .blog-content th,
+  .blog-content td {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* С��или для улучшенной читаемости */
+.blog-content {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Фокус для доступности */
+.blog-content a:focus,
+.blog-content button:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Плавные переходы */
+.blog-content * {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Выделение текста */
+.blog-content ::selection {
+  background-color: #2563eb;
+  color: white;
+}
+
+.blog-content ::-moz-selection {
+  background-color: #2563eb;
+  color: white;
+}

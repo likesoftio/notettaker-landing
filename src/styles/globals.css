@@ -10,6 +10,7 @@
 
 /* Blog Article Styles */
 @import "./blog-article.css";
+@import "./blog-content.css";
 
 /* Global font configuration */
 @layer base {
