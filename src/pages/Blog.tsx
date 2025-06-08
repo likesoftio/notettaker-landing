@@ -24,26 +24,11 @@ export default function Blog() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [loading, setLoading] = useState(true);
+  const [initAttempts, setInitAttempts] = useState(0);
 
   useEffect(() => {
-    // Force database initialization first
-    initializeDatabase();
-  }, []);
-
-  const initializeDatabase = async () => {
-    console.log("🔄 Initializing blog database...");
-
-    // Clear any existing data to force refresh
-    localStorage.removeItem("blog_posts");
-    localStorage.removeItem("blog_categories");
-    localStorage.removeItem("blog_authors");
-
-    // Wait a bit for localStorage to clear
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    // Now load data which will trigger reinitialization
     loadData();
-  };
+  }, []);
 
   const loadData = async () => {
     setLoading(true);
@@ -67,30 +52,37 @@ export default function Blog() {
       setPosts(postsData);
       setCategories(categoriesData);
 
-      // If still no posts, force database reinitialization
-      if (postsData.length === 0) {
-        console.log("❌ No posts found, forcing database reinitialization...");
-        localStorage.clear();
-        setTimeout(() => window.location.reload(), 500);
+      // If no posts and this is first attempt, try to reinitialize ONCE
+      if (postsData.length === 0 && initAttempts === 0) {
+        console.log("❌ No posts found, attempting ONE reinitialization...");
+        setInitAttempts(1);
+
+        // Clear and try to reinitialize
+        localStorage.removeItem("blog_posts");
+        localStorage.removeItem("blog_categories");
+        localStorage.removeItem("blog_authors");
+
+        // Wait and try again
+        setTimeout(async () => {
+          try {
+            const { blogDB: freshDB } = await import("../lib/database");
+            const freshPosts = await freshDB.getPublishedPosts();
+            const freshCategories = await freshDB.getCategoriesWithPosts();
+
+            console.log(`🔄 Retry loaded ${freshPosts.length} posts`);
+            setPosts(freshPosts);
+            setCategories(freshCategories);
+            setLoading(false);
+          } catch (retryError) {
+            console.error("❌ Retry failed:", retryError);
+            setLoading(false);
+          }
+        }, 1000);
+
+        return; // Don't set loading to false yet
       }
     } catch (error) {
       console.error("❌ Failed to load blog data:", error);
-
-      // Try to reinitialize database on error
-      try {
-        localStorage.clear();
-        const { blogDB } = await import("../lib/database");
-        const posts = await blogDB.getAllPosts();
-        console.log(`🔄 Reinitialized database with ${posts.length} posts`);
-
-        if (posts.length > 0) {
-          setPosts(posts.filter((p) => p.status === "published"));
-          const cats = await blogDB.getCategoriesWithPosts();
-          setCategories(cats);
-        }
-      } catch (retryError) {
-        console.error("❌ Retry failed:", retryError);
-      }
     }
 
     setLoading(false);
@@ -438,7 +430,36 @@ export default function Blog() {
               )}
 
               {/* No Results */}
-              {filteredPosts.length === 0 && (
+              {filteredPosts.length === 0 && posts.length === 0 && !loading && (
+                <div className="text-center py-24">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                    <Search className="w-8 h-8 text-gray-400" />
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+                    Статьи пока не загружены
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    База данных инициализируется. Попробуйте обновить страницу
+                    или перейдите на /test/blog для диагностики.
+                  </p>
+                  <div className="flex gap-4 justify-center">
+                    <button
+                      onClick={() => window.location.reload()}
+                      className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    >
+                      Обновить страницу
+                    </button>
+                    <a
+                      href="/test/blog"
+                      className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
+                    >
+                      Ди��гностика
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {filteredPosts.length === 0 && posts.length > 0 && (
                 <div className="text-center py-24">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
                     <Search className="w-8 h-8 text-gray-400" />
