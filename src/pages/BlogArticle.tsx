@@ -159,7 +159,7 @@ export default function BlogArticle() {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900">
           <Head
             title="Статья не найдена"
-            description="Запрашиваема�� статья блога не найдена"
+            description="Запрашиваемая статья блога не найдена"
             noindex
           />
           <Header />
@@ -275,11 +275,7 @@ export default function BlogArticle() {
                     variant="ghost"
                     className="group text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 rounded-xl px-4 py-2"
                   >
-                    <ArrowIcon
-                      direction="left"
-                      className="mr-2 transition-transform group-hover:-translate-x-1"
-                    />
-                    К блогу
+                    <ArrowIcon direction="left" className="mr-2" />К блогу
                   </Button>
                 </Link>
               </MagneticElement>
