@@ -568,7 +568,7 @@ export default function Blog() {
 
         <Footer />
 
-        <style jsx>{`
+        <style>{`
           .scrollbar-hide {
             -ms-overflow-style: none;
             scrollbar-width: none;
