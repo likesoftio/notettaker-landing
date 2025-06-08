@@ -77,6 +77,10 @@ class BlogDatabase {
   private initializeData() {
     if (this.initialized) return;
 
+    // Force clear and reinitialize for demo
+    // Remove these lines in production
+    console.log("Initializing blog database...");
+
     // Initialize sample categories
     if (!localStorage.getItem(STORAGE_KEYS.CATEGORIES)) {
       const sampleCategories: BlogCategory[] = [
@@ -171,8 +175,9 @@ class BlogDatabase {
       this.saveData(STORAGE_KEYS.AUTHORS, sampleAuthors);
     }
 
-    // Initialize sample posts
-    if (!localStorage.getItem(STORAGE_KEYS.POSTS)) {
+    // Initialize sample posts (force reload for demo)
+    const existingPosts = localStorage.getItem(STORAGE_KEYS.POSTS);
+    if (!existingPosts || JSON.parse(existingPosts).length === 0) {
       const samplePosts: BlogPost[] = [
         // Технологии и ИИ (6 статей)
         {
@@ -192,9 +197,9 @@ class BlogDatabase {
           status: "published",
           featured: true,
           seoTitle:
-            "9 лучших расширений Chrome для преобразования речи в текст 2024",
+            "9 лучших расширений Chrome для преобразования речи в тек��т 2024",
           seoDescription:
-            "Пол��ый обзор лучших расширений Chrome для транскрипции речи в текст. Сравнение функций, точности и удобства использования.",
+            "Полный обзор лучших расширений Chrome для транскрипции речи в текст. Сравнение функций, точности и удобства использования.",
           seoKeywords: [
             "Chrome расширения",
             "речь в текст",
@@ -216,7 +221,7 @@ class BlogDatabase {
           slug: "ai-future-meetings",
           content: this.getSampleContent("ai-future"),
           excerpt:
-            "Исследуем, как искусственный интеллект революционизирует способы проведения встреч и деловых переговоров.",
+            "Исследуем, как искусственный интеллект революционизирует способы проведения встреч и деловых пере��оворов.",
           heroImage:
             "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
           category: "tech-ai",
@@ -267,7 +272,7 @@ class BlogDatabase {
         },
         {
           id: "nlp-meeting-analysis",
-          title: "NLP для анализа встреч: извлекаем смысл из раз��оворов",
+          title: "NLP для анализа встреч: извлекаем смы��л из разговоров",
           slug: "nlp-meeting-analysis",
           content: this.getSampleContent("nlp-analysis"),
           excerpt:
@@ -386,7 +391,7 @@ class BlogDatabase {
           slug: "mymeet-ai-2024-updates",
           content: this.getSampleContent("product-updates"),
           excerpt:
-            "Обзор всех новых функций и улучшений, добавле��ных в mymeet.ai в течение 2024 года.",
+            "Обзор всех новых функций и улучшений, добавленных в mymeet.ai в течение 2024 года.",
           heroImage:
             "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop",
           category: "product-news",
@@ -567,7 +572,7 @@ class BlogDatabase {
           slug: "sales-call-analysis",
           content: this.getSampleContent("sales-analysis"),
           excerpt:
-            "Как использовать ИИ-анализ для улучшения те��ник продаж и повышения конверсии.",
+            "Как использовать ИИ-анализ для улучшения техник продаж и повышения конверсии.",
           heroImage:
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
           category: "sales-art",
@@ -581,9 +586,14 @@ class BlogDatabase {
         },
       ];
       this.saveData(STORAGE_KEYS.POSTS, samplePosts);
+      console.log(`Saved ${samplePosts.length} sample posts to localStorage`);
     }
 
+    // Update category post counts after initialization
+    this.updateCategoryPostCount();
+
     this.initialized = true;
+    console.log("Blog database initialization completed");
   }
 
   private getSampleContent(type: string): string {
@@ -595,7 +605,7 @@ class BlogDatabase {
         <p>Технологии распознавания речи значительно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
 
         <h2 id="top-extensions">ТОП-9 расширений Chrome</h2>
-        
+
         <h3>1. Voice In Voice Typing</h3>
         <p>Универсальное расширение для голосового ввода в любых текстовых полях браузера. Поддерживает более 120 языков и диалектов.</p>
 

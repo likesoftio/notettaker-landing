@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import BlogAdmin from "./pages/admin/BlogAdmin";
+import DebugBlog from "./pages/DebugBlog";
 import TermsOfService from "./pages/TermsOfService";
 import OfferAgreement from "./pages/OfferAgreement";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -34,6 +35,7 @@ const App = () => (
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogArticle />} />
                   <Route path="/admin/blog" element={<BlogAdmin />} />
+                  <Route path="/debug/blog" element={<DebugBlog />} />
                   <Route
                     path="/terms-and-conditions"
                     element={<TermsOfService />}

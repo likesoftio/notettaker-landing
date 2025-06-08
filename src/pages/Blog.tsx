@@ -32,13 +32,26 @@ export default function Blog() {
   const loadData = async () => {
     setLoading(true);
     try {
+      console.log("Loading blog data...");
+
       const [postsData, categoriesData] = await Promise.all([
         BlogAPI.getPublishedPosts(),
         BlogAPI.getCategoriesWithPosts(),
       ]);
 
+      console.log(
+        `Loaded ${postsData.length} posts and ${categoriesData.length} categories`,
+      );
+
       setPosts(postsData);
       setCategories(categoriesData);
+
+      // If no posts found, try to reinitialize
+      if (postsData.length === 0) {
+        console.log("No posts found, attempting to reinitialize...");
+        // Force refresh of data
+        window.location.reload();
+      }
     } catch (error) {
       console.error("Failed to load blog data:", error);
     }
@@ -93,7 +106,7 @@ export default function Blog() {
             "продуктивность встреч",
             "управление задачами",
             "новости продукта",
-            "советы по встречам",
+            "сове��ы по встречам",
             "истории клиентов",
           ]}
           url="https://mymeet.ai/blog"
@@ -220,7 +233,7 @@ export default function Blog() {
                           <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-1">
                             Пошаговое руководство по mymeet.ai. Узнайте, как
                             записывать встречи, создавать транскрипты,
-                            использовать AI Отчеты и чат для эффективной работы
+                            использовать AI Отчеты и чат для эффективной работ��
                             с информацией из онлайн-встреч.
                           </p>
                           <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
