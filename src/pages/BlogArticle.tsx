@@ -10,6 +10,9 @@ import {
   MessageCircle,
   Twitter,
   Linkedin,
+  Clock,
+  User,
+  Tag,
 } from "lucide-react";
 
 // Sample article data - in a real app this would come from an API
@@ -99,147 +102,80 @@ const articleData = {
 
       <h2 id="mymeet-ai">mymeet.ai — лидер в транскрипции и распознавании речи</h2>
 
-      <p>Прежде чем перейти к расширениям Chrome, стоит упомянуть о mymeet.ai — одном из ведущих решений для преобразования речи в текст с феноменальной точностью распознавания русского языка — 95%.</p>
+      <p>Наше расширение mymeet.ai предлагает наиболее точную и быструю транскрипцию для встреч и видеоконференций. Основные преимущества:</p>
 
-      <div class="article-image">
-        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&h=400&fit=crop" alt="mymeet.ai интерфейс" />
-        <p class="image-caption">Сервис предлагает AI-ассистента для транскрипции встреч, с интеллектуальной обработкой записанного аудио, автоматическим определением спикеров и созданием структурированных отчетов.</p>
-      </div>
-
-      <div class="article-image">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=400&fit=crop" alt="Пример транскрипции" />
-        <p class="image-caption">Пример автоматической транскрипции встречи с выделением ключевых моментов и структурированием по темам.</p>
-      </div>
+      <ul>
+        <li>Поддержка 19 языков с высокой точностью</li>
+        <li>Автоматическое определение спикеров</li>
+        <li>ИИ-анализ и создание кратких резюме</li>
+        <li>Интеграция с популярными платформами для встреч</li>
+        <li>Экспорт в различные форматы</li>
+      </ul>
 
       <h2 id="top-extensions">ТОП лучших расширений Chrome для преобразования речи в текст в 2025 году</h2>
 
-      <p>После тщательного тестирования мы составили рейтинг лучших расширений Chrome для речевого ввода:</p>
-
-      <h3>1. Voice In Voice Typing</h3>
-      <p>Самое популярное и функциональное расширение с поддержкой более 120 языков и голосовых команд.</p>
-
-      <h3>2. Speechnotes</h3>
-      <p>Простое и надежное решение для быстрой диктовки с автоматической пунктуацией.</p>
-
-      <h3>3. VoiceNote II</h3>
-      <p>Продвинутое расширение с возможностью сохранения заметок и синхронизации между устройствами.</p>
-
-      <h2 id="comparison-table">Сравнительная таблица расширений по ключевым параметрам</h2>
-
-      <p>Мы сравнили основные характеристики лучших расширений по важнейшим критериям:</p>
-
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Расширение</th>
-              <th>Точность</th>
-              <th>Языки</th>
-              <th>Цена</th>
-              <th>Особенности</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Voice In</td>
-              <td>95%</td>
-              <td>120+</td>
-              <td>Freemium</td>
-              <td>Голосовые команды</td>
-            </tr>
-            <tr>
-              <td>Speechnotes</td>
-              <td>92%</td>
-              <td>60+</td>
-              <td>Бесплатно</td>
-              <td>Автопунктуация</td>
-            </tr>
-            <tr>
-              <td>VoiceNote II</td>
-              <td>90%</td>
-              <td>40+</td>
-              <td>$5/мес</td>
-              <td>Синхронизация</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 id="specialized-extensions">Расширения для специализированных задач</h2>
-
-      <p>Некоторые расширения созданы для решения конкретных задач:</p>
-
-      <h3>Для студентов и исследователей</h3>
-      <p>Расширения с возможностью создания конспектов лекций и автоматического форматирования научных текстов.</p>
-
-      <h3>Для бизнеса</h3>
-      <p>Решения для транскрипции деловых встреч с интеграцией в корпоративные системы.</p>
-
-      <h2 id="effectiveness-tips">Советы по эффективному использованию расширений для преобразования речи в текст</h2>
-
-      <p>Чтобы получить максимальную отдачу от расширений, следуйте этим рекомендациям:</p>
+      <p>Мы протестирова��и десятки расширений и составили рейтинг лучших решений:</p>
 
       <ol>
-        <li>Говорите четко и с нормальной скоростью</li>
-        <li>Используйте качественный микрофон</li>
-        <li>Проговаривайте знаки препинания</li>
-        <li>Регулярно обновляйте расширения</li>
-        <li>Настройте горячие клавиши для быстрого доступа</li>
+        <li><strong>mymeet.ai</strong> — лучшее для встреч и видеоконференций</li>
+        <li><strong>Voice In</strong> — универсальный диктант для веб-форм</li>
+        <li><strong>SpeechTexter</strong> — простое решение для коротких заметок</li>
+        <li><strong>LipSurf</strong> — голосовое управление браузером</li>
+        <li><strong>Dictanote</strong> — заметки с голосовым вводом</li>
+        <li><strong>Speeko</strong> — анализ речи и улучшение навыков</li>
+        <li><strong>Otter.ai</strong> — транскрипция встреч</li>
+        <li><strong>Read&Write</strong> — инструменты для людей с дислексией</li>
+        <li><strong>Dragon Anywhere</strong> — профессиональная диктовка</li>
       </ol>
 
-      <h2 id="limitations">Ограничения и подводные камни</h2>
-
-      <p>Несмотря на прогресс в области ИИ, расширения для преобразования речи в текст имеют свои ограничения:</p>
-
-      <ul>
-        <li>Зависимость от качества интернет-соединения</li>
-        <li>Сложности с техническими терминами</li>
-        <li>Необходимость постобработки текста</li>
-        <li>Проблемы с акцентами и диалектами</li>
-      </ul>
-
-      <h2 id="future-technologies">Будущее технологии преобразования речи в текст в браузерах</h2>
-
-      <p>Технология продолжает развиваться. В ближайшем будущем мы увидим:</p>
-
-      <ul>
-        <li>Еще более высокую точность распознавания</li>
-        <li>Поддержку редких языков и диалектов</li>
-        <li>Интеграцию с ИИ-помощниками</li>
-        <li>Обработку речи в реальном времени без задержек</li>
-      </ul>
+      <p>Каждое из этих расширений имеет свои сильные стороны и лучше всего подходит для определенных задач.</p>
 
       <h2 id="conclusion">Заключение</h2>
 
-      <p>Расширения Chrome для преобразования речи в текст значительно упрощают работу с текстовым контентом. Выбор конкретного решения зависит от ваших потребностей: для простой диктовки подойдет Speechnotes, для профессиональной работы — Voice In, а для корпоративных задач стоит рассмотреть специализированн��е решения.</p>
+      <p>Расширения Chrome для преобразования речи в текст значительно ускоряют работу и делают интернет более доступным. Выбор конкретного решения зависит от ваших потребностей:</p>
 
-      <h2 id="faq">Часто задаваемые вопросы</h2>
+      <ul>
+        <li>Для встреч и видеоконференций — mymeet.ai</li>
+        <li>Для универсальной диктовки — Voice In</li>
+        <li>Для быстрых заметок — SpeechTexter</li>
+        <li>Для голосового управления — LipSurf</li>
+      </ul>
 
-      <h3>Какое расширение лучше всего работает с русским языком?</h3>
-      <p>Voice In показывает лучшие результаты для русского языка с точностью до 95%.</p>
-
-      <h3>Можно ли использовать расширения офлайн?</h3>
-      <p>Большинство расширений требуют интернет-соединения, так как используют облачные сервисы для обработки речи.</p>
-
-      <h3>Безопасно ли использовать расширения для конфиденциальной информации?</h3>
-      <p>Рекомендуется внимательно изучать политику конфиденциальности каждого расширения перед использованием с чувствительными данными.</p>
+      <p>Попробуйте несколько вариантов и выберите тот, который лучше всего соответствует вашему рабочему процессу.</p>
     `,
   },
 };
 
+const relatedArticles = [
+  {
+    id: "video-transcription-guide",
+    title: "Как извлечь максимум из видео: транскрибация, перевод, конспекты",
+    category: "Технологии и ИИ",
+    readTime: "6 мин",
+  },
+  {
+    id: "meeting-notes-ai",
+    title: "ИИ для заметок встреч: революция в корпоративном общении",
+    category: "Управление задачами",
+    readTime: "5 мин",
+  },
+  {
+    id: "productivity-tips",
+    title: "10 советов для повышения продуктивности удаленных встреч",
+    category: "Советы по встречам",
+    readTime: "7 мин",
+  },
+];
+
 export default function BlogArticle() {
-  const { slug } = useParams();
+  const { slug } = useParams<{ slug: string }>();
   const [activeSection, setActiveSection] = useState("");
 
-  // Get article data (in real app would fetch from API)
   const article = articleData[slug as keyof typeof articleData];
 
-  if (!article) {
-    return <div>Статья не найдена</div>;
-  }
-
-  // Handle scroll to update active section in TOC
   useEffect(() => {
+    if (!article) return;
+
     const handleScroll = () => {
       const sections = article.tableOfContents
         .map((item) => document.getElementById(item.id))
@@ -258,283 +194,187 @@ export default function BlogArticle() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [article.tableOfContents]);
+  }, [article]);
 
-  const handleTOCClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  if (!article) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+        <Header />
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Статья не найдена
+            </h1>
+            <Link to="/blog">
+              <Button>Вернуться к блогу</Button>
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Back Button */}
-        <div className="mb-8">
-          <Link
-            to="/blog"
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Назад
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+        {/* Back button */}
+        <div className="mb-6">
+          <Link to="/blog">
+            <Button
+              variant="ghost"
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />К блогу
+            </Button>
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          {/* Table of Contents Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-4">СОДЕРЖАНИЕ</h3>
-                <nav className="space-y-2">
-                  {article.tableOfContents.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleTOCClick(item.id)}
-                      className={`block w-full text-left text-sm py-2 px-3 rounded-md transition-colors ${
-                        activeSection === item.id
-                          ? "bg-blue-50 text-blue-700 font-medium"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                      }`}
-                    >
-                      {item.title}
-                    </button>
-                  ))}
-                </nav>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Main Content */}
+          <article className="lg:col-span-3">
+            {/* Hero Image */}
+            <div className="relative mb-8 rounded-lg overflow-hidden">
+              <img
+                src={article.heroImage}
+                alt={article.title}
+                className="w-full h-48 sm:h-64 lg:h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
+                <span className="inline-block px-3 py-1 bg-blue-600 text-white text-xs sm:text-sm font-medium rounded-full mb-2">
+                  {article.category}
+                </span>
               </div>
             </div>
-          </div>
 
-          {/* Main Content */}
-          <div className="lg:col-span-2">
             {/* Article Header */}
-            <div className="mb-8">
-              <div className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-4">
-                {article.category}
-              </div>
-
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <header className="mb-8">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
                 {article.title}
               </h1>
 
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium text-gray-600">
-                      {article.author
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-900">
-                      {article.author}
-                    </p>
-                    <p className="text-sm text-gray-500">{article.date}</p>
-                  </div>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  <span>{article.author}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>{article.readTime}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Tag className="w-4 h-4" />
+                  <span>{article.date}</span>
                 </div>
               </div>
 
               {/* Social Share */}
-              <div className="flex items-center space-x-3 pb-6 border-b">
-                <Button variant="outline" size="sm">
-                  <Share2 className="w-4 h-4 mr-2" />
-                  Поделиться
-                </Button>
-                <Button variant="outline" size="sm">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Комментарии
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Twitter className="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Linkedin className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Hero Image */}
-            <div className="mb-8">
-              <div className="relative bg-blue-600 rounded-2xl overflow-hidden h-64 lg:h-80">
-                <img
-                  src={article.heroImage}
-                  alt={article.title}
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/50 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-white">
-                    Speech-to-Text расширения
-                  </h2>
-                </div>
-                <div className="absolute top-6 right-6">
-                  <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <img
-                      src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                      alt="N"
-                      className="w-8 h-4 object-contain"
-                    />
-                  </div>
+              <div className="flex items-center gap-3 mt-6">
+                <span className="text-sm text-gray-600 dark:text-gray-400">
+                  Поделиться:
+                </span>
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline" className="p-2">
+                    <Twitter className="w-4 h-4" />
+                  </Button>
+                  <Button size="sm" variant="outline" className="p-2">
+                    <Linkedin className="w-4 h-4" />
+                  </Button>
+                  <Button size="sm" variant="outline" className="p-2">
+                    <Share2 className="w-4 h-4" />
+                  </Button>
                 </div>
               </div>
-            </div>
+            </header>
 
             {/* Article Content */}
             <div
-              className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{
-                __html: article.content.replace(/\n\s*/g, "").trim(),
-              }}
+              className="prose prose-gray dark:prose-invert max-w-none prose-lg prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:mb-4 prose-ul:mb-4 prose-ol:mb-4 prose-li:mb-2"
+              dangerouslySetInnerHTML={{ __html: article.content }}
             />
-          </div>
 
-          {/* Right Sidebar - AI Assistant Widget */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <Card className="p-6 bg-gradient-to-br from-purple-50 to-blue-50 border-purple-200">
-                <div className="text-center space-y-4">
-                  <div className="w-12 h-12 bg-purple-600 rounded-xl mx-auto flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">
-                      ИИ-ассистент для встреч
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-4">
-                      180 минут бесплатно
-                    </p>
-                  </div>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                    Попробовать →
+            {/* AI Assistant Widget */}
+            <Card className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-blue-200 dark:border-blue-800">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                    ИИ-помощник mymeet.ai
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                    Есть вопросы по статье? Спросите нашего ИИ-помощника о
+                    транскрипции, встречах или любых других темах из статьи.
+                  </p>
+                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                    Задать вопрос ИИ
                   </Button>
                 </div>
+              </div>
+            </Card>
+          </article>
 
-                {/* Mock interface preview */}
-                <div className="mt-6 bg-white rounded-lg p-3 border">
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                      <div className="text-xs text-gray-600">Интервью</div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <div className="text-xs text-gray-600">Совещания</div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                      <div className="text-xs text-gray-600">Вебинары</div>
-                    </div>
-                    <div className="text-xs text-gray-500 mt-3">
-                      🎯 95% точность
-                    </div>
-                  </div>
+          {/* Sidebar */}
+          <aside className="lg:col-span-1">
+            {/* Table of Contents - Sticky */}
+            <div className="sticky top-24">
+              <Card className="p-4 sm:p-6 mb-6 bg-white dark:bg-gray-800">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                  Содержание
+                </h3>
+                <nav className="space-y-2">
+                  {article.tableOfContents.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className={`block text-sm py-1 px-2 rounded transition-colors ${
+                        activeSection === item.id
+                          ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium"
+                          : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
+                      }`}
+                    >
+                      {item.title}
+                    </a>
+                  ))}
+                </nav>
+              </Card>
+
+              {/* Related Articles */}
+              <Card className="p-4 sm:p-6 bg-white dark:bg-gray-800">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                  Похожие статьи
+                </h3>
+                <div className="space-y-4">
+                  {relatedArticles.map((relatedArticle) => (
+                    <Link
+                      key={relatedArticle.id}
+                      to={`/blog/${relatedArticle.id}`}
+                      className="block group"
+                    >
+                      <div className="p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <h4 className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-1 line-clamp-2">
+                          {relatedArticle.title}
+                        </h4>
+                        <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                          <span>{relatedArticle.category}</span>
+                          <span>•</span>
+                          <span>{relatedArticle.readTime}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </Card>
             </div>
-          </div>
+          </aside>
         </div>
-      </div>
+      </main>
 
       <Footer />
-
-      <style jsx>{`
-        .prose h2 {
-          font-size: 1.875rem;
-          font-weight: 700;
-          color: rgb(17, 24, 39);
-          margin-top: 3rem;
-          margin-bottom: 1.5rem;
-          line-height: 1.2;
-        }
-
-        .prose h3 {
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: rgb(17, 24, 39);
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-        }
-
-        .prose p {
-          color: rgb(55, 65, 81);
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-
-        .prose ul,
-        .prose ol {
-          margin-bottom: 1.5rem;
-          padding-left: 1.5rem;
-        }
-
-        .prose li {
-          color: rgb(55, 65, 81);
-          line-height: 1.7;
-          margin-bottom: 0.5rem;
-        }
-
-        .prose strong {
-          font-weight: 600;
-          color: rgb(17, 24, 39);
-        }
-
-        .article-image {
-          margin: 2rem 0;
-        }
-
-        .article-image img {
-          width: 100%;
-          height: 300px;
-          object-fit: cover;
-          border-radius: 1rem;
-          margin-bottom: 1rem;
-        }
-
-        .image-caption {
-          font-size: 0.875rem;
-          color: rgb(107, 114, 128);
-          text-align: center;
-          font-style: italic;
-        }
-
-        .comparison-table {
-          margin: 2rem 0;
-          overflow-x: auto;
-        }
-
-        .comparison-table table {
-          width: 100%;
-          border-collapse: collapse;
-          background: white;
-          border-radius: 0.5rem;
-          overflow: hidden;
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        .comparison-table th {
-          background: rgb(249, 250, 251);
-          padding: 1rem;
-          text-align: left;
-          font-weight: 600;
-          color: rgb(17, 24, 39);
-          border-bottom: 1px solid rgb(229, 231, 235);
-        }
-
-        .comparison-table td {
-          padding: 1rem;
-          color: rgb(55, 65, 81);
-          border-bottom: 1px solid rgb(229, 231, 235);
-        }
-
-        .comparison-table tr:last-child td {
-          border-bottom: none;
-        }
-      `}</style>
     </div>
   );
 }
