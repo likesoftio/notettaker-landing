@@ -1,9 +1,10 @@
-import { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { Card } from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Search } from "lucide-react";
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import { Card } from "../components/ui/card"
+import { Input } from "../components/ui/input"
+import { Search } from "lucide-react"
 
 const categories = [
   { name: "Последние статьи", count: 12, active: true },
@@ -18,70 +19,64 @@ const categories = [
 const blogPosts = [
   {
     id: 1,
+    slug: "9-chrome-extensions",
     title: "9 лучших расширений Chrome для преобразования речи в текст",
     category: "Технологии и ИИ",
-    description:
-      "Обзор самых эффективных браузерных расширений для транскрипции аудио в реальном времени",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop",
+    description: "Обзор самых эффективных браузерных расширений для транскр��пции аудио в реальном времени",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop",
     featured: true,
-    color: "bg-blue-600",
+    color: "bg-blue-600"
   },
   {
     id: 2,
+    slug: "video-transcription-guide",
     title: "Как извлечь максимум из видео: транскрибация, перевод, конспекты",
     category: "Технологии и ИИ",
-    description:
-      "Полное руководство по работе с видеоконтентом и его трансформации в полезные материалы",
-    image:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
+    description: "Полное руководство по работе с видеоконтентом и его трансформации в полезные материалы",
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
     featured: true,
-    color: "bg-gray-600",
+    color: "bg-gray-600"
   },
   {
     id: 3,
+    slug: "video-translation-methods",
     title: "Как перевести видео: 7 лучших способов для разных языков",
     category: "Технологии и ИИ",
-    description:
-      "Сравнение методов локализации видеоконтента и выбор оптимального решения",
-    image:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
+    description: "Сравнение методов локализации видеоконтента и выбор оптимального решения",
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=500&h=300&fit=crop",
     featured: true,
-    color: "bg-blue-100",
+    color: "bg-blue-100"
   },
   {
     id: 4,
+    slug: "moderation-style-guide",
     title: "Как найти свой стиль модерации: личный бренд ведущего встреч",
     category: "Советы по встречам",
-    description:
-      "Развитие уникального подхода к проведению онлайн и офлайн мероприятий",
-    image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=300&fit=crop",
+    description: "Развитие уникального подхода к проведению онлайн и офлайн мероприятий",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=300&fit=crop",
     featured: false,
-    color: "bg-gray-200",
+    color: "bg-gray-200"
   },
   {
     id: 5,
+    slug: "online-meeting-gamification",
     title: "Игровые механики для вовлечения участников в онлайн-встречи",
     category: "Советы по встречам",
-    description:
-      "Эффективные техники геймификации для повышения активности на виртуальных совещаниях",
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=500&h=300&fit=crop",
+    description: "Эффективные техники геймификации для повышения активности на виртуальных совещаниях",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=500&h=300&fit=crop",
     featured: false,
-    color: "bg-gray-800",
+    color: "bg-gray-800"
   },
   {
     id: 6,
+    slug: "international-meeting-culture",
     title: "Культура встреч в разных странах: особенности деловых переговоров",
     category: "Советы по встречам",
-    description:
-      "Международная специфика организации и проведения деловых встреч",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=500&h=300&fit=crop",
+    description: "Международная специфика организации и проведения деловых встреч",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=500&h=300&fit=crop",
     featured: false,
-    color: "bg-purple-100",
-  },
+    color: "bg-purple-100"
+  }
 ];
 
 export default function Blog() {
@@ -171,13 +166,12 @@ export default function Blog() {
             {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredPosts.map((post) => (
-                <Card
-                  key={post.id}
-                  className={`group cursor-pointer overflow-hidden hover:shadow-lg transition-shadow ${
-                    post.featured ? "md:col-span-2" : ""
-                  }`}
-                >
-                  <div className="relative overflow-hidden">
+                <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Card
+                    className={`group cursor-pointer overflow-hidden hover:shadow-lg transition-shadow ${
+                      post.featured ? 'md:col-span-2' : ''
+                    }`}
+                  >
                     <div
                       className={`${post.color} h-48 ${post.featured ? "md:h-64" : ""} relative`}
                     >
@@ -220,7 +214,8 @@ export default function Blog() {
                       {post.description}
                     </p>
                   </div>
-                </Card>
+                  </Card>
+                </Link>
               ))}
             </div>
 
