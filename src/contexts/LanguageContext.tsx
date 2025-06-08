@@ -88,6 +88,16 @@ const translations = {
     "pricing.export": "Экспорт в форматы DOCX, SRT и XLSX",
     "pricing.tryFree": "Попробовать бесплатно",
     "pricing.payOrganization": "Оплатить со счета организации",
+    "pricing.monthly": "Ежемесячно",
+    "pricing.biannual": "На 6 месяцев",
+    "pricing.popular": "Популярный",
+    "pricing.free": "Начальный",
+    "pricing.базовый": "Базовый",
+    "pricing.lite": "Lite",
+    "pricing.pro": "Pro",
+    "pricing.ultra": "Ultra",
+    "pricing.features.included": "Доступ к платформе, включая:",
+    "pricing.discount.info": "Экономьте до 20% при оплате на 6 месяцев вперед",
 
     // FAQ
     "faq.title": "Часто задаваемые вопросы",
