@@ -189,6 +189,7 @@ export default function BlogAdmin() {
       await loadData();
       setIsCreateDialogOpen(false);
       resetForm();
+      setGeneralErrors([]);
     } catch (error) {
       console.error("Failed to create post:", error);
       setValidationErrors([
@@ -228,6 +229,7 @@ export default function BlogAdmin() {
       await loadData();
       setEditingPost(null);
       resetForm();
+      setGeneralErrors([]);
     } catch (error) {
       console.error("Failed to update post:", error);
       setValidationErrors([
@@ -573,7 +575,7 @@ export default function BlogAdmin() {
             <div className="page-header text-left mb-0">
               <DisplayLG>Управление блогом</DisplayLG>
               <BodyLG className="text-gray-600 dark:text-gray-300">
-                Создава��те, редактируйте и управляйте статьями блога
+                Создавайте, редактируйте и управляйте статьями блога
               </BodyLG>
             </div>
 
