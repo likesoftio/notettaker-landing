@@ -18,7 +18,7 @@ import {
   TrendingUp,
   Sparkles,
 } from "lucide-react";
-import BlogAPI from "../lib/blog-api";
+import BlogAPI from "../lib/blog-api-switcher";
 import { BlogPost, BlogCategory } from "../lib/database";
 
 export default function BlogCategoryPage() {

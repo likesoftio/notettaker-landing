@@ -15,7 +15,7 @@ import {
   BookOpen,
   Sparkles,
 } from "lucide-react";
-import BlogAPI from "../lib/blog-api";
+import BlogAPI from "../lib/blog-api-switcher";
 import { BlogPost, BlogCategory } from "../lib/database";
 import "../styles/blog-mobile-enhanced.css";
 
@@ -309,7 +309,7 @@ export default function Blog() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-300">
-                        Всего ст��тей:
+                        Всего статей:
                       </span>
                       <span className="font-semibold text-blue-600 dark:text-blue-400">
                         {posts.length}

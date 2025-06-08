@@ -56,7 +56,7 @@ import {
   AlertCircle,
   Folder,
 } from "lucide-react";
-import BlogAPI from "../../lib/blog-api";
+import BlogAPI from "../../lib/blog-api-switcher";
 import { useAuth } from "../../hooks/useAuth";
 import {
   BlogPost,
@@ -193,7 +193,7 @@ export default function BlogAdmin() {
     } catch (error) {
       console.error("Failed to create post:", error);
       setValidationErrors([
-        `Ош��бка при создании статьи: ${error.message || error}`,
+        `Ошибка при создании статьи: ${error.message || error}`,
       ]);
     }
   };
@@ -329,7 +329,7 @@ export default function BlogAdmin() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="title">Загол��вок *</Label>
+          <Label htmlFor="title">Заголовок *</Label>
           <Input
             id="title"
             value={formData.title}
@@ -462,7 +462,7 @@ export default function BlogAdmin() {
               setFormData({ ...formData, featured: checked })
             }
           />
-          <Label htmlFor="featured">Рекомендуемая статья</Label>
+          <Label htmlFor="featured">Рекомендуем��я статья</Label>
         </div>
       </div>
 
