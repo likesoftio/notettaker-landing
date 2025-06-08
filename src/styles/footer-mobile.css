@@ -1,0 +1,426 @@
+/* Мобильные стили для Footer */
+
+@media (max-width: 768px) {
+  /* Основной контейнер футера */
+  .footer-mobile {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 2rem 1rem 1rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .footer-mobile-container {
+    max-width: 100%;
+  }
+
+  /* Верхняя часть футера */
+  .footer-mobile-top {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-mobile-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-mobile-logo img {
+    height: 32px;
+    width: auto;
+  }
+
+  .footer-mobile-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .footer-mobile-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Основные ссылки */
+  .footer-mobile-main-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-mobile-link {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #e5e7eb;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-mobile-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-mobile-link-icon {
+    width: 20px;
+    height: 20px;
+    color: #667eea;
+    flex-shrink: 0;
+  }
+
+  /* Секции ссылок */
+  .footer-mobile-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-mobile-section {
+    text-align: center;
+  }
+
+  .footer-mobile-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .footer-mobile-section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 1px;
+  }
+
+  .footer-mobile-section-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-mobile-section-link {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+  }
+
+  .footer-mobile-section-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Социальные сети */
+  .footer-mobile-social {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-mobile-social-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .footer-mobile-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-mobile-social-link {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-mobile-social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-mobile-social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Подписка на рассылку */
+  .footer-mobile-newsletter {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-mobile-newsletter-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .footer-mobile-newsletter-description {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .footer-mobile-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-mobile-newsletter-input {
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .footer-mobile-newsletter-input::placeholder {
+    color: #9ca3af;
+  }
+
+  .footer-mobile-newsletter-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+  }
+
+  .footer-mobile-newsletter-button {
+    padding: 0.875rem 1rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .footer-mobile-newsletter-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  }
+
+  /* Нижняя часть футера */
+  .footer-mobile-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-mobile-legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-mobile-legal-link {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-mobile-legal-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-mobile-copyright {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+
+  .footer-mobile-copyright-highlight {
+    color: #667eea;
+    font-weight: 500;
+  }
+
+  /* Аккордеон для мобильных секций */
+  .footer-mobile-accordion {
+    display: none;
+  }
+
+  /* Кнопка "Вверх" */
+  .footer-mobile-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .footer-mobile-back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .footer-mobile-back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  }
+
+  .footer-mobile-back-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Маленькие мобильные экраны */
+@media (max-width: 480px) {
+  .footer-mobile {
+    padding: 1.5rem 0.75rem 1rem 0.75rem;
+  }
+
+  .footer-mobile-main-links {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .footer-mobile-social-links {
+    gap: 0.75rem;
+  }
+
+  .footer-mobile-social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footer-mobile-newsletter {
+    padding: 1.25rem;
+  }
+
+  .footer-mobile-legal-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+  .footer-mobile-main-links {
+    gap: 0.5rem;
+  }
+
+  .footer-mobile-link {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-mobile-newsletter {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+}
+
+/* Темная тема футера уже учтена в базовых стилях */
+.dark .footer-mobile {
+  background: #111827;
+}
+
+.dark .footer-mobile-link {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .footer-mobile-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark .footer-mobile-newsletter {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .footer-mobile-social-link {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .footer-mobile-social-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Анимации появления */
+.footer-mobile {
+  animation: footerMobileFadeIn 0.6s ease-out;
+}
+
+@keyframes footerMobileFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
