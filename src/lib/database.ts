@@ -79,7 +79,14 @@ class BlogDatabase {
 
     // Force clear and reinitialize for demo
     // Remove these lines in production
-    console.log("Initializing blog database...");
+    console.log("📚 Initializing blog database...");
+
+    // Force initialization even if data exists (for demo)
+    const existingPostsRaw = localStorage.getItem(STORAGE_KEYS.POSTS);
+    const existingPosts = existingPostsRaw ? JSON.parse(existingPostsRaw) : [];
+    console.log(
+      `📊 Found ${existingPosts.length} existing posts in localStorage`,
+    );
 
     // Initialize sample categories
     if (!localStorage.getItem(STORAGE_KEYS.CATEGORIES)) {
@@ -177,7 +184,11 @@ class BlogDatabase {
 
     // Initialize sample posts (force reload for demo)
     const existingPosts = localStorage.getItem(STORAGE_KEYS.POSTS);
-    if (!existingPosts || JSON.parse(existingPosts).length === 0) {
+    const shouldInitialize =
+      !existingPosts || JSON.parse(existingPosts).length < 25;
+
+    if (shouldInitialize) {
+      console.log("📝 Creating sample posts...");
       const samplePosts: BlogPost[] = [
         // Технологии и ИИ (6 статей)
         {
@@ -254,7 +265,7 @@ class BlogDatabase {
         },
         {
           id: "machine-learning-transcription",
-          title: "Машинное обуч��ние в транскрипции: от теории к практике",
+          title: "Машинное обучение в транскрипции: от теории к практике",
           slug: "machine-learning-transcription",
           content: this.getSampleContent("ml-transcription"),
           excerpt:
@@ -276,7 +287,7 @@ class BlogDatabase {
           slug: "nlp-meeting-analysis",
           content: this.getSampleContent("nlp-analysis"),
           excerpt:
-            "Применение обработки естественного языка для автоматического а��ализа содержания встреч.",
+            "Применение обработки естественного языка для автоматического анализа содержания встреч.",
           heroImage:
             "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
           category: "tech-ai",
@@ -509,7 +520,7 @@ class BlogDatabase {
         },
         {
           id: "meeting-note-taking-tips",
-          title: "Искус��тво ведения заметок: лучшие практики для встреч",
+          title: "Искусство ведения заметок: лучшие практики для встреч",
           slug: "meeting-note-taking-tips",
           content: this.getSampleContent("note-taking"),
           excerpt:
@@ -730,7 +741,7 @@ class BlogDatabase {
         <p>В современном мире эффективность и скорость обработки информации играют ключевую роль в успехе любого бизнеса. Расширения Chrome для преобразования речи в текст стали незаменимыми инструментами для профессионалов различных сфер.</p>
 
         <h2 id="intro">Введение</h2>
-        <p>Технологии распознавания речи значи��ельно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
+        <p>Технологии распознавания речи значительно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
 
         <h2 id="top-extensions">ТОП-9 расширений Chrome</h2>
 
@@ -770,7 +781,7 @@ class BlogDatabase {
         <h2>Признаки выгорания от встреч</h2>
         <p>Как распознать первые симптомы усталости от постоянных совещаний и видеоконференций.</p>
 
-        <h2>Стратегии здоровых в��треч</h2>
+        <h2>Стратегии здоровых встреч</h2>
         <p>Практические рекомендации по планированию встреч с учетом психологического комфорта участников.</p>
       `,
       "kanban-meetings": `

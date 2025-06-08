@@ -26,35 +26,73 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadData();
+    // Force database initialization first
+    initializeDatabase();
   }, []);
+
+  const initializeDatabase = async () => {
+    console.log("🔄 Initializing blog database...");
+
+    // Clear any existing data to force refresh
+    localStorage.removeItem("blog_posts");
+    localStorage.removeItem("blog_categories");
+    localStorage.removeItem("blog_authors");
+
+    // Wait a bit for localStorage to clear
+    await new Promise((resolve) => setTimeout(resolve, 100));
+
+    // Now load data which will trigger reinitialization
+    loadData();
+  };
 
   const loadData = async () => {
     setLoading(true);
-    try {
-      console.log("Loading blog data...");
 
+    try {
+      console.log("📚 Loading blog data...");
+
+      // Import database directly to ensure it's initialized
+      const { blogDB } = await import("../lib/database");
+
+      // Get data directly from database
       const [postsData, categoriesData] = await Promise.all([
-        BlogAPI.getPublishedPosts(),
-        BlogAPI.getCategoriesWithPosts(),
+        blogDB.getPublishedPosts(),
+        blogDB.getCategoriesWithPosts(),
       ]);
 
       console.log(
-        `Loaded ${postsData.length} posts and ${categoriesData.length} categories`,
+        `✅ Loaded ${postsData.length} posts and ${categoriesData.length} categories`,
       );
 
       setPosts(postsData);
       setCategories(categoriesData);
 
-      // If no posts found, try to reinitialize
+      // If still no posts, force database reinitialization
       if (postsData.length === 0) {
-        console.log("No posts found, attempting to reinitialize...");
-        // Force refresh of data
-        window.location.reload();
+        console.log("❌ No posts found, forcing database reinitialization...");
+        localStorage.clear();
+        setTimeout(() => window.location.reload(), 500);
       }
     } catch (error) {
-      console.error("Failed to load blog data:", error);
+      console.error("❌ Failed to load blog data:", error);
+
+      // Try to reinitialize database on error
+      try {
+        localStorage.clear();
+        const { blogDB } = await import("../lib/database");
+        const posts = await blogDB.getAllPosts();
+        console.log(`🔄 Reinitialized database with ${posts.length} posts`);
+
+        if (posts.length > 0) {
+          setPosts(posts.filter((p) => p.status === "published"));
+          const cats = await blogDB.getCategoriesWithPosts();
+          setCategories(cats);
+        }
+      } catch (retryError) {
+        console.error("❌ Retry failed:", retryError);
+      }
     }
+
     setLoading(false);
   };
 
@@ -106,7 +144,7 @@ export default function Blog() {
             "продуктивность встреч",
             "управление задачами",
             "новости продукта",
-            "сове��ы по встречам",
+            "советы по встречам",
             "истории клиентов",
           ]}
           url="https://mymeet.ai/blog"
@@ -233,7 +271,7 @@ export default function Blog() {
                           <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-1">
                             Пошаговое руководство по mymeet.ai. Узнайте, как
                             записывать встречи, создавать транскрипты,
-                            использовать AI Отчеты и чат для эффективной работ��
+                            использовать AI Отчеты и чат для эффективной работы
                             с информацией из онлайн-встреч.
                           </p>
                           <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
