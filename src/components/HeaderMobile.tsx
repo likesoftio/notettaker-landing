@@ -274,13 +274,11 @@ export default function HeaderMobile() {
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                          <img
-                            src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
-                            alt="notetaker.ru"
-                            className="w-5 h-5"
-                          />
-                        </div>
+                        <img
+                          src="https://framerusercontent.com/images/Mcs1qDPkdgWKjbdQ985Mr4CXq7U.png"
+                          alt="notetaker.ru"
+                          className="w-8 h-8"
+                        />
                         <div>
                           <div className="font-semibold text-gray-900 dark:text-white text-sm">
                             notetaker.ru
