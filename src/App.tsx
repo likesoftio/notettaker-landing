@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import BlogArticleClassic from "./pages/BlogArticleClassic";
 import TestBlogDatabase from "./pages/TestBlogDatabase";
+import BlogArticleV2 from "./pages/BlogArticleV2";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import DebugBlog from "./pages/DebugBlog";
 import TestBlog from "./pages/TestBlog";
