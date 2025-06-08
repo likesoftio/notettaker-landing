@@ -52,7 +52,7 @@ export default function HowItWorksEnhanced() {
       bgColor: "bg-purple-50",
       title: "Получите инсайты",
       description:
-        "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
+        "Обработанная встреча состоит из транскрипт�� с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     },
@@ -83,10 +83,10 @@ export default function HowItWorksEnhanced() {
       className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 overflow-hidden"
     >
       {/* Параллакс фон */}
-      <div className="parallax-element absolute inset-0 opacity-30">
+      <div className="parallax-bg absolute inset-0 opacity-30">
         <div className="absolute top-10 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="parallax-element absolute top-10 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div className="parallax-element absolute bottom-10 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        <div className="parallax-bg absolute top-10 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="parallax-bg absolute bottom-10 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
