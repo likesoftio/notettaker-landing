@@ -62,9 +62,8 @@ export default function Blog() {
         // Wait and try again
         setTimeout(async () => {
           try {
-            const { blogDB: freshDB } = await import("../lib/database");
-            const freshPosts = await freshDB.getPublishedPosts();
-            const freshCategories = await freshDB.getCategoriesWithPosts();
+            const freshPosts = await BlogAPI.getPublishedPosts();
+            const freshCategories = await BlogAPI.getCategoriesWithPosts();
 
             console.log(`🔄 Retry loaded ${freshPosts.length} posts`);
             setPosts(freshPosts);
@@ -131,7 +130,7 @@ export default function Blog() {
             "блог mymeet.ai",
             "статьи об ИИ",
             "продуктивность встреч",
-            "управление задачами",
+            "уп��авление задачами",
             "новости продукта",
             "советы по встречам",
             "истории клиентов",
@@ -162,7 +161,7 @@ export default function Blog() {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
                     type="text"
-                    placeholder="Поиск"
+                    placeholder="П��иск"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10 bg-gray-50 dark:bg-gray-800 border-0 focus:bg-white dark:focus:bg-gray-700 transition-colors"
