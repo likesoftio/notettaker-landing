@@ -1,7 +1,10 @@
 // API Configuration for DRF Backend
 export const API_CONFIG = {
   // Base URL для DRF backend
-  BASE_URL: process.env.REACT_APP_API_URL || "http://localhost:8000",
+  BASE_URL:
+    import.meta.env.VITE_API_URL ||
+    import.meta.env.REACT_APP_API_URL ||
+    "http://localhost:8000",
 
   // API версия
   API_VERSION: "v1",
@@ -35,8 +38,8 @@ export const API_CONFIG = {
 } as const;
 
 // Environment-specific settings
-export const isDevelopment = process.env.NODE_ENV === "development";
-export const isProduction = process.env.NODE_ENV === "production";
+export const isDevelopment = import.meta.env.DEV;
+export const isProduction = import.meta.env.PROD;
 
 // Build full API URL
 export const buildApiUrl = (endpoint: string): string => {
