@@ -5,14 +5,7 @@ const VisuallyHidden = React.forwardRef<
   HTMLSpanElement,
   React.HTMLAttributes<HTMLSpanElement>
 >(({ className, ...props }, ref) => (
-  <span
-    ref={ref}
-    className={cn(
-      "absolute w-px h-px p-0 -m-px overflow-hidden clip-rect(0,0,0,0) whitespace-nowrap border-0",
-      className,
-    )}
-    {...props}
-  />
+  <span ref={ref} className={cn("sr-only", className)} {...props} />
 ));
 VisuallyHidden.displayName = "VisuallyHidden";
 
