@@ -32,7 +32,7 @@ import {
 } from "../components/Typography";
 
 export default function DRFSetup() {
-  const [apiUrl, setApiUrl] = useState(
+  const [apiUrl, setApiUrl] = useState(import.meta.env.VITE_API_URL || import.meta.env.REACT_APP_API_URL || 'http://localhost:8000');
     process.env.REACT_APP_API_URL || "http://localhost:8000",
   );
   const [testResult, setTestResult] = useState<{
@@ -169,7 +169,7 @@ class BlogPost(models.Model):
         ('published', 'Published'),
         ('archived', 'Archived'),
     ]
-    
+
     title = models.CharField(max_length=200)
     content = models.TextField()
     excerpt = models.TextField()
@@ -205,18 +205,18 @@ from .models import BlogPost, BlogCategory
 
 class CategorySerializer(serializers.ModelSerializer):
     post_count = serializers.ReadOnlyField()
-    
+
     class Meta:
         model = BlogCategory
         fields = ['id', 'name', 'slug', 'description', 'color', 'image', 'post_count', 'created_at', 'updated_at']
 
 class AuthorSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = User
         fields = ['id', 'name', 'email']
-    
+
     def get_name(self, obj):
         return f"{obj.first_name} {obj.last_name}".strip() or obj.username
 
@@ -224,10 +224,10 @@ class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
     author = AuthorSerializer(read_only=True)
     read_time = serializers.ReadOnlyField()
-    
+
     class Meta:
         model = BlogPost
-        fields = ['id', 'title', 'content', 'excerpt', 'slug', 'hero_image', 
+        fields = ['id', 'title', 'content', 'excerpt', 'slug', 'hero_image',
                  'category', 'author', 'tags', 'status', 'featured', 'views',
                  'read_time', 'seo_title', 'seo_description', 'seo_keywords',
                  'published_at', 'created_at', 'updated_at']`;
