@@ -1,0 +1,216 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Global font configuration */
+@layer base {
+  :root {
+    /* Color scheme */
+    --color-primary: 59 130 246; /* blue-500 */
+    --color-primary-hover: 37 99 235; /* blue-600 */
+    --color-primary-light: 147 197 253; /* blue-300 */
+
+    --color-gray-50: 249 250 251;
+    --color-gray-100: 243 244 246;
+    --color-gray-200: 229 231 235;
+    --color-gray-300: 209 213 219;
+    --color-gray-400: 156 163 175;
+    --color-gray-500: 107 114 128;
+    --color-gray-600: 75 85 99;
+    --color-gray-700: 55 65 81;
+    --color-gray-800: 31 41 55;
+    --color-gray-900: 17 24 39;
+
+    /* Typography */
+    --font-sans:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  [data-theme="dark"] {
+    --color-bg: var(--color-gray-900);
+    --color-surface: var(--color-gray-800);
+    --color-text: var(--color-gray-50);
+    --color-text-muted: var(--color-gray-300);
+    --color-border: var(--color-gray-700);
+  }
+
+  [data-theme="light"] {
+    --color-bg: white;
+    --color-surface: var(--color-gray-50);
+    --color-text: var(--color-gray-900);
+    --color-text-muted: var(--color-gray-600);
+    --color-border: var(--color-gray-200);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: rgb(var(--color-text));
+    background-color: rgb(var(--color-bg));
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Unified typography scale */
+  .text-display-2xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .text-display-xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .text-display-lg {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight;
+  }
+
+  .text-heading-xl {
+    @apply text-xl sm:text-2xl lg:text-3xl font-semibold;
+  }
+
+  .text-heading-lg {
+    @apply text-lg sm:text-xl lg:text-2xl font-semibold;
+  }
+
+  .text-heading-md {
+    @apply text-base sm:text-lg lg:text-xl font-semibold;
+  }
+
+  .text-body-lg {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+
+  .text-body-md {
+    @apply text-sm sm:text-base leading-relaxed;
+  }
+
+  .text-caption {
+    @apply text-xs sm:text-sm text-gray-600 dark:text-gray-400;
+  }
+
+  /* Unified spacing system */
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max-width {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .content-max-width {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .prose-max-width {
+    @apply max-w-3xl mx-auto;
+  }
+
+  /* Unified component styles */
+  .card-base {
+    @apply bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200;
+  }
+
+  .button-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  .button-secondary {
+    @apply bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium px-6 py-3 rounded-lg transition-colors;
+  }
+
+  .input-base {
+    @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+
+  /* Page layout consistency */
+  .page-container {
+    @apply min-h-screen bg-white dark:bg-gray-900 transition-colors;
+  }
+
+  .page-main {
+    @apply container-max-width container-padding section-padding;
+  }
+
+  .page-header {
+    @apply text-center mb-12;
+  }
+
+  .page-title {
+    @apply text-display-xl text-gray-900 dark:text-white mb-4;
+  }
+
+  .page-subtitle {
+    @apply text-body-lg text-gray-600 dark:text-gray-300 prose-max-width;
+  }
+
+  /* Grid system */
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+  }
+
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+
+  /* Dark mode improvements */
+  .dark-theme-transition {
+    @apply transition-colors duration-300;
+  }
+
+  /* Focus states for accessibility */
+  .focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100;
+  }
+}
+
+/* Component-specific overrides */
+@layer components {
+  .prose-content {
+    @apply prose prose-gray dark:prose-invert max-w-none prose-lg;
+    @apply prose-headings:font-semibold prose-headings:text-gray-900 dark:prose-headings:text-white;
+    @apply prose-h1:text-display-lg prose-h2:text-heading-xl prose-h3:text-heading-lg;
+    @apply prose-p:text-body-md prose-p:text-gray-600 dark:prose-p:text-gray-300;
+    @apply prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline;
+    @apply prose-strong:text-gray-900 dark:prose-strong:text-white;
+    @apply prose-code:text-blue-600 dark:prose-code:text-blue-400 prose-code:bg-gray-100 dark:prose-code:bg-gray-800;
+  }
+
+  .nav-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors;
+  }
+
+  .nav-link-active {
+    @apply text-gray-900 dark:text-white font-semibold;
+  }
+}

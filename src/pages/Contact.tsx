@@ -52,7 +52,7 @@ export default function Contact() {
     {
       icon: Users,
       title: "Поддержка 19 языков",
-      description: "Высокая точность распознавания речи",
+      description: "Высокая точн��сть распознавания речи",
     },
     {
       icon: Zap,
@@ -62,18 +62,21 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+    <div className="page-container">
       <Header />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        {/* Header Section */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
-            Запланируйте демонстрацию
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Узнайте, как mymeet.ai может повысить эффективность ваших встреч и
-            сэкономить время на обработке информации
+      <main className="page-main">
+        {/* Header */}
+        <div className="page-header">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+              <MessageSquare className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h1 className="page-title">Свяжитесь с нами</h1>
+          </div>
+          <p className="page-subtitle">
+            Готовы узнать, как mymeet.ai может улучшить ваши встречи? Оставьте
+            заявку на демонстрацию или свяжитесь с нами любым удобным способом
           </p>
         </div>
 
@@ -322,7 +325,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener"
                 >
-                  Н��чать бесплатно
+                  Начать бесплатно
                 </a>
               </Button>
             </Card>

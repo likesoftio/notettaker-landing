@@ -6,10 +6,10 @@ import { ArrowLeft, FileText } from "lucide-react";
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+    <div className="page-container">
       <Header />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <main className="content-max-width container-padding section-padding">
         {/* Back button */}
         <div className="mb-6">
           <Link to="/">
@@ -24,26 +24,24 @@ export default function TermsOfService() {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="page-header">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
               <FileText className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
-              Пользовательское соглашение
-            </h1>
+            <h1 className="page-title">Пользовательское соглашение</h1>
           </div>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-body-lg text-gray-600 dark:text-gray-300">
             Условия использования сервиса Notetaker
           </p>
-          <div className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          <div className="text-caption mt-4">
             Последнее обновление: 15 декабря 2024 г.
           </div>
         </div>
 
         {/* Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 sm:p-8 lg:p-12">
-          <div className="prose prose-gray dark:prose-invert max-w-none prose-lg prose-headings:font-semibold prose-h2:text-xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-3 prose-p:mb-4 prose-ul:mb-4 prose-ol:mb-4 prose-li:mb-1">
+        <div className="card-base p-6 sm:p-8 lg:p-12">
+          <div className="prose-content">
             <h2>1. Общие положения</h2>
             <p>
               Настоящее Пользовательское соглашение (далее — «Соглашение»)
@@ -93,7 +91,7 @@ export default function TermsOfService() {
             <h3>4.1. Пользователь имеет право:</h3>
             <ul>
               <li>Использовать Сервис в соответствии с его назначением</li>
-              <li>Получать техническую поддержку</li>
+              <li>По��учать техническую поддержку</li>
               <li>Экспортировать результаты транскрипции</li>
               <li>Удалить свой аккаунт и данные</li>
             </ul>
@@ -118,7 +116,7 @@ export default function TermsOfService() {
 
             <h2>6. Конфиденциальность и защита данных</h2>
             <p>
-              Администрация обязуется обеспечивать конфиденциальность
+              Администрация обязуется об��спечивать конфиденциальность
               персональных данных Пользователей в соответствии с Федеральным
               законом «О персональных данных» № 152-ФЗ.
             </p>
@@ -133,7 +131,7 @@ export default function TermsOfService() {
               </li>
               <li>Передавать доступы к аккаунту третьим лицам</li>
               <li>
-                Предпринимать попытки взлома или несанкционированного д��ступа к
+                Предпринимать попытки взлома или несанкц��онированного доступа к
                 Сервису
               </li>
               <li>
@@ -179,7 +177,7 @@ export default function TermsOfService() {
             <h2>12. Заключительные положения</h2>
             <p>
               Настоящее Соглашение вступает в силу с момента начала
-              использования Сервиса Пользователем и действует до момента
+              использования Сервиса П��льзователем и действует до момента
               прекращения использования Сервиса.
             </p>
 
