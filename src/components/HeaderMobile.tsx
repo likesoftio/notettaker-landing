@@ -277,14 +277,6 @@ export default function HeaderMobile() {
                           </div>
                         </div>
                       </div>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setIsOpen(false)}
-                        className="w-8 h-8 p-0 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg"
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
                     </div>
 
                     {/* Navigation */}
@@ -313,7 +305,7 @@ export default function HeaderMobile() {
                                 <Sparkles className="h-4 w-4 text-purple-600 dark:text-purple-400" />
                               </div>
                               <span className="font-medium">
-                                {t("header.solutions") || "Решения"}
+                                {t("header.solutions") || "��ешения"}
                               </span>
                             </div>
                             <ChevronRight
