@@ -36,13 +36,10 @@ export default function Blog() {
     try {
       console.log("📚 Loading blog data...");
 
-      // Import database directly to ensure it's initialized
-      const { blogDB } = await import("../lib/database");
-
-      // Get data directly from database
+      // Get data using BlogAPI
       const [postsData, categoriesData] = await Promise.all([
-        blogDB.getPublishedPosts(),
-        blogDB.getCategoriesWithPosts(),
+        BlogAPI.getPublishedPosts(),
+        BlogAPI.getCategoriesWithPosts(),
       ]);
 
       console.log(
@@ -453,7 +450,7 @@ export default function Blog() {
                       href="/test/blog"
                       className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
                     >
-                      Ди��гностика
+                      Диагностика
                     </a>
                   </div>
                 </div>
