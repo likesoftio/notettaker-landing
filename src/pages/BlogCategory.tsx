@@ -132,6 +132,19 @@ export default function BlogCategoryPage() {
                 </Link>
               </Button>
             </div>
+
+            {/* Category Image Mobile */}
+            {category.image && (
+              <div className="mb-4 rounded-lg overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-32 object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
             <div className="flex items-center gap-3 mb-2">
               <div className={`w-3 h-3 rounded-full ${category.color}`}></div>
               <h1>{category.name}</h1>
@@ -172,6 +185,19 @@ export default function BlogCategoryPage() {
                     </Link>
                   </Button>
                 </div>
+
+                {/* Category Image Desktop */}
+                {category.image && (
+                  <div className="mb-6 rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-40 object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+
                 <div className="flex items-center gap-3 mb-3">
                   <div
                     className={`w-4 h-4 rounded-full ${category.color}`}
@@ -241,32 +267,42 @@ export default function BlogCategoryPage() {
                     to={`/blog/${filteredPosts[0].slug}`}
                     className="group block h-full"
                   >
-                    <Card
-                      className={`h-full overflow-hidden ${category.color.replace("bg-", "bg-gradient-to-br from-").replace("-600", "-600 via-").replace("600", "700 to-").replace("700", "800")} text-white border-0 hover:scale-[1.02] transition-transform duration-300 shadow-xl`}
-                    >
-                      <div className="p-6 lg:p-8 h-full flex flex-col justify-between relative min-h-[280px] lg:min-h-[320px]">
-                        <div className="absolute top-4 right-4 lg:top-6 lg:right-6">
-                          <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 rounded-full flex items-center justify-center">
-                            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6" />
+                    <Card className="h-full overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 shadow-lg">
+                      {/* Hero Image */}
+                      {filteredPosts[0].heroImage && (
+                        <div className="relative overflow-hidden h-48 lg:h-64">
+                          <img
+                            src={filteredPosts[0].heroImage}
+                            alt={filteredPosts[0].title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                          <div className="absolute top-4 right-4">
+                            <div
+                              className={`p-2 rounded-full ${category.color} bg-opacity-90`}
+                            >
+                              <Sparkles className="w-4 h-4 text-white" />
+                            </div>
                           </div>
-                        </div>
-
-                        <div>
-                          <div className="mb-3 lg:mb-4">
-                            <span className="inline-flex items-center gap-1 bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          <div className="absolute bottom-4 left-4">
+                            <span className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
                               <TrendingUp className="w-3 h-3" />
                               {category.name}
                             </span>
                           </div>
-                          <h2 className="text-xl lg:text-3xl font-bold mb-3 lg:mb-4 leading-tight">
-                            {filteredPosts[0].title}
-                          </h2>
-                          <p className="text-white/90 opacity-90 text-sm lg:text-lg leading-relaxed">
-                            {filteredPosts[0].excerpt}
-                          </p>
                         </div>
+                      )}
 
-                        <div className="flex items-center gap-4 text-white/80 text-xs lg:text-sm mt-4">
+                      <div className="p-6 lg:p-8">
+                        <h2 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4 leading-tight text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          {filteredPosts[0].title}
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm lg:text-base leading-relaxed mb-4">
+                          {filteredPosts[0].excerpt}
+                        </p>
+
+                        <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 text-xs lg:text-sm">
                           <div className="flex items-center gap-1">
                             <Clock className="w-3 h-3 lg:w-4 lg:h-4" />
                             <span>{filteredPosts[0].readTime} мин</span>
@@ -290,6 +326,19 @@ export default function BlogCategoryPage() {
                       className="group block"
                     >
                       <Card className="overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                        {/* Article Image */}
+                        {post.heroImage && (
+                          <div className="relative overflow-hidden h-28">
+                            <img
+                              src={post.heroImage}
+                              alt={post.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                          </div>
+                        )}
+
                         <div className="p-4">
                           <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
                             {post.title}
@@ -335,14 +384,15 @@ export default function BlogCategoryPage() {
                     >
                       <Link to={`/blog/${post.slug}`} className="block">
                         {/* Image */}
-                        {post.featuredImage && (
-                          <div className="aspect-video overflow-hidden">
+                        {post.heroImage && (
+                          <div className="aspect-video overflow-hidden relative">
                             <img
-                              src={post.featuredImage}
+                              src={post.heroImage}
                               alt={post.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               loading="lazy"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                           </div>
                         )}
 
