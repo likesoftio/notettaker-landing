@@ -573,7 +573,7 @@ export default function BlogAdmin() {
             <div className="page-header text-left mb-0">
               <DisplayLG>Управление блогом</DisplayLG>
               <BodyLG className="text-gray-600 dark:text-gray-300">
-                Создавайте, редактируйте и управляйте статьями блога
+                Создава��те, редактируйте и управляйте статьями блога
               </BodyLG>
             </div>
 
@@ -674,6 +674,20 @@ export default function BlogAdmin() {
                   </DialogContent>
                 </Dialog>
               </div>
+
+              {/* General Errors */}
+              {generalErrors.length > 0 && (
+                <Alert variant="destructive" className="mb-4">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>
+                    <ul className="list-disc list-inside space-y-1">
+                      {generalErrors.map((error, index) => (
+                        <li key={index}>{error}</li>
+                      ))}
+                    </ul>
+                  </AlertDescription>
+                </Alert>
+              )}
 
               {/* Posts List */}
               <div className="grid gap-4">
