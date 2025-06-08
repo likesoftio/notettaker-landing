@@ -32,8 +32,10 @@ import {
 } from "../components/Typography";
 
 export default function DRFSetup() {
-  const [apiUrl, setApiUrl] = useState(import.meta.env.VITE_API_URL || import.meta.env.REACT_APP_API_URL || 'http://localhost:8000');
-    process.env.REACT_APP_API_URL || "http://localhost:8000",
+  const [apiUrl, setApiUrl] = useState(
+    import.meta.env.VITE_API_URL ||
+      import.meta.env.REACT_APP_API_URL ||
+      "http://localhost:8000",
   );
   const [testResult, setTestResult] = useState<{
     success: boolean;
