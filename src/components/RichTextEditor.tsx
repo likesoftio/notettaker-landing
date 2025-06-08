@@ -5,6 +5,7 @@ import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Underline from "@tiptap/extension-underline";
+import CharacterCount from "@tiptap/extension-character-count";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -77,6 +78,7 @@ export default function RichTextEditor({
         types: ["heading", "paragraph"],
       }),
       Underline,
+      CharacterCount,
     ],
     content,
     onUpdate: ({ editor }) => {
@@ -97,7 +99,7 @@ export default function RichTextEditor({
         .focus()
         .setImage({
           src: imageUrl,
-          alt: imageAlt || "Изображение статьи",
+          alt: imageAlt || "Изображение ста��ьи",
         })
         .run();
       setImageUrl("");
