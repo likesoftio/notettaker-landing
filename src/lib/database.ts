@@ -46,6 +46,7 @@ export interface BlogCategory {
   slug: string;
   description?: string;
   color?: string;
+  image?: string;
   postCount: number;
 }
 
@@ -97,10 +98,12 @@ class BlogDatabase {
       const sampleCategories: BlogCategory[] = [
         {
           id: "tech-ai",
-          name: "Те��нологии и ИИ",
+          name: "Технологии и ИИ",
           slug: "tech-ai",
           description: "Статьи о новых технологиях и искусственном интеллекте",
           color: "bg-blue-600",
+          image:
+            "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
           postCount: 0,
         },
         {
@@ -110,6 +113,8 @@ class BlogDatabase {
           description:
             "Методы и инструменты для эффективного управления задачами",
           color: "bg-green-600",
+          image:
+            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
           postCount: 0,
         },
         {
@@ -118,6 +123,8 @@ class BlogDatabase {
           slug: "product-news",
           description: "Обновления и новые функции mymeet.ai",
           color: "bg-purple-600",
+          image:
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
           postCount: 0,
         },
         {
@@ -126,6 +133,8 @@ class BlogDatabase {
           slug: "meeting-tips",
           description: "Практические советы для проведения эффективных встреч",
           color: "bg-orange-600",
+          image:
+            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&h=400&fit=crop",
           postCount: 0,
         },
         {
@@ -134,6 +143,8 @@ class BlogDatabase {
           slug: "customer-stories",
           description: "Реальные кейсы использования mymeet.ai",
           color: "bg-indigo-600",
+          image:
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
           postCount: 0,
         },
         {
@@ -142,6 +153,8 @@ class BlogDatabase {
           slug: "sales-art",
           description: "Техники и стратегии успешных продаж",
           color: "bg-red-600",
+          image:
+            "https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=800&h=400&fit=crop",
           postCount: 0,
         },
       ];
@@ -245,7 +258,7 @@ class BlogDatabase {
             twitter:
               "Обзор 9 лучших расширений Chrome для преобразования речи в текст. Повысьте свою продуктивность! #Chrome #SpeechToText #mymeetai",
             linkedin:
-              "Подробный анализ расширений Chrome для тра��скрипции. Какое выбрать для вашей работы?",
+              "Подробный анализ расширений Chrome для транскрипции. Какое выбрать для вашей работы?",
           },
           tableOfContents: [
             { id: "intro", title: "Введение", level: 1 },
@@ -363,7 +376,8 @@ class BlogDatabase {
         },
         {
           id: "productivity-tools-2024",
-          title: "15 инструментов продуктивности, которые изменят ваш 2024 год",
+          title:
+            "15 инструментов продуктивности, которы�� изменят ваш 2024 год",
           slug: "productivity-tools-2024",
           content: this.getSampleContent("default"),
           excerpt:
@@ -517,7 +531,7 @@ class BlogDatabase {
           tableOfContents: [
             { id: "company-background", title: "О компании", level: 1 },
             { id: "challenges", title: "Вызовы", level: 1 },
-            { id: "solution", title: "Решение", level: 1 },
+            { id: "solution", title: "��ешение", level: 1 },
             { id: "results", title: "Результаты", level: 1 },
             { id: "lessons", title: "Выводы", level: 1 },
           ],
@@ -594,7 +608,7 @@ class BlogDatabase {
           slug: "meeting-fatigue-solutions",
           content: this.getSampleContent("default"),
           excerpt:
-            "Изучаем феномен meeting fatigue и предлагаем конкретные стратегии для сн��жения нагрузки на сотрудников.",
+            "Изучаем феномен meeting fatigue и предлагаем конкретные стратегии для снижения нагрузки на сотрудников.",
           heroImage:
             "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=400&fit=crop",
           category: "meeting-tips",
@@ -741,7 +755,7 @@ class BlogDatabase {
           slug: "agile-retrospectives-virtual",
           content: this.getSampleContent("default"),
           excerpt:
-            "Как проводить эффективные ретроспективы в ра��пределенных Agile-командах. Инструменты, форматы и лучшие практики.",
+            "Как проводить эффективные ретроспективы в распределенных Agile-командах. Инструменты, форматы и лучшие практики.",
           heroImage:
             "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
           category: "task-management",
@@ -810,7 +824,7 @@ class BlogDatabase {
           slug: "b2b-sales-discovery-questions",
           content: this.getSampleContent("default"),
           excerpt:
-            "Большая коллекция проверенных вопросов для этапа исследования потребностей в B2B продажах. Категории и примеры испол��зования.",
+            "Большая коллекция проверенных вопросов для этапа исследования потребностей в B2B продажах. Категории и примеры использования.",
           heroImage:
             "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
           category: "sales-art",
@@ -885,7 +899,7 @@ class BlogDatabase {
             },
             { id: "lighting", title: "Освещение", level: 1 },
             { id: "furniture", title: "Мебель и планировка", level: 1 },
-            { id: "software", title: "Пр��граммное обеспечение", level: 1 },
+            { id: "software", title: "Программное обеспечение", level: 1 },
           ],
         },
         {
@@ -976,7 +990,7 @@ class BlogDatabase {
       "chrome-extensions": `
         <p class="lead">В современном мире эффективность и скорость обработки информации играют ключевую роль в успехе любого бизнеса. Расширения Chrome для преобразования речи в текст стали незаменимыми инструментами для профессионалов различных сфер.</p>
 
-        <h2 id="intro">Введение</h2>
+        <h2 id="intro">Вве��ение</h2>
         <p>Технологии распознавания речи значительно продвинулись за последние годы. Современные алгоритмы машинного обучения позволяют достигать точности более 95% в идеальных условиях.</p>
 
         <h3 id="why-important">Почему это важно</h3>
@@ -1008,7 +1022,7 @@ class BlogDatabase {
         <p>Расширения Chrome для преобразования речи в текст значительно повышают продуктивность работы. Выбор конкретного инструмента зависит от ваших потребностей и бюджета.</p>
       `,
       "vr-meetings": `
-        <p class="lead">Виртуальная реальность открывает новые горизонты для деловы�� встреч. Современные VR-платформы позволяют создавать иммерсивные пространства для командной работы, где участники могут взаимодействовать с 3D-объектами и совместно решать задачи.</p>
+        <p class="lead">Виртуальная реальность открывает новые горизонты для деловых встреч. Современные VR-платформы позволяют создавать иммерсивные пространства для командной работы, где участники могут взаимодействовать с 3D-объектами и совместно решать задачи.</p>
 
         <h2 id="intro">Введение</h2>
         <p>Пандемия COVID-19 ускорила переход к удаленной работе, но традиционные видеоконференции не всегда обеспечивают достаточный уровень взаимодействия. VR-технологии предлагают революционный подход к проведению встреч, создавая ощущение физического присутствия в одном пространстве.</p>
