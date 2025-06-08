@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Head from "../components/SEO/Head";
 import { Card } from "../components/ui/card";
 import { Input } from "../components/ui/input";
-import { Search, Calendar, User, Eye, Clock } from "lucide-react";
+import { Search, Clock, Eye } from "lucide-react";
 import BlogAPI from "../lib/blog-api";
 import { BlogPost, BlogCategory } from "../lib/database";
 import {
@@ -34,7 +34,7 @@ export default function Blog() {
     try {
       const [postsData, categoriesData] = await Promise.all([
         BlogAPI.getPublishedPosts(),
-        BlogAPI.getCategoriesWithPosts(), // Получаем только категории с постами
+        BlogAPI.getCategoriesWithPosts(),
       ]);
 
       setPosts(postsData);
@@ -61,24 +61,15 @@ export default function Blog() {
 
   const featuredPosts = filteredPosts.filter((post) => post.featured);
   const regularPosts = filteredPosts.filter((post) => !post.featured);
-
-  // Получить текущую категорию для отображения
-  const getCurrentCategoryName = () => {
-    if (activeCategory === "all") return "Все статьи";
-    const category = categories.find((cat) => cat.id === activeCategory);
-    return category?.name || "Статьи";
-  };
+  const latestPosts = filteredPosts.slice(0, 6);
 
   if (loading) {
     return (
       <HelmetProvider>
-        <div className="page-container">
-          <Head
-            title="Блог - Загрузка"
-            description="Загрузка статей блога mymeet.ai"
-          />
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+          <Head title="Блог - Загрузка" />
           <Header />
-          <div className="page-main flex items-center justify-center">
+          <div className="flex items-center justify-center py-24">
             <div className="text-center">
               <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
               <BodyLG>Загрузка статей...</BodyLG>
@@ -92,7 +83,7 @@ export default function Blog() {
 
   return (
     <HelmetProvider>
-      <div className="page-container">
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
         <Head
           title="Блог mymeet.ai - Статьи о продуктивности встреч и ИИ"
           description="Читайте наш блог о технологиях ИИ, эффективности встреч, управлении задачами и новостях продукта mymeet.ai. Полезные советы и инсайты для профессионалов."
@@ -110,190 +101,306 @@ export default function Blog() {
 
         <Header />
 
-        <main className="page-main">
-          {/* Header */}
-          <div className="page-header">
-            <DisplayLG>Блог mymeet.ai</DisplayLG>
-            <BodyLG className="page-subtitle">
-              Статьи о технологиях ИИ, эффективности встреч и управлении
-              задачами
-            </BodyLG>
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex gap-8">
+            {/* Left Sidebar */}
+            <aside className="w-80 flex-shrink-0">
+              <div className="sticky top-8">
+                {/* Header */}
+                <div className="mb-8">
+                  <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Статьи и обновления
+                  </h1>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Советы по эффективным встречам, ИИ-технологии и новости
+                    продукта
+                  </p>
+                </div>
 
-            {/* Stats */}
-            <div className="flex items-center justify-center gap-6 mt-4 text-caption">
-              <div className="flex items-center gap-1">
-                <span className="font-medium">{posts.length}</span>
-                <span>статей</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="font-medium">{categories.length}</span>
-                <span>категорий</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="font-medium">
-                  {posts.reduce((sum, post) => sum + post.views, 0)}
-                </span>
-                <span>просмотров</span>
-              </div>
-            </div>
-          </div>
+                {/* Search */}
+                <div className="relative mb-8">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <Input
+                    type="text"
+                    placeholder="Поиск"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10 bg-gray-50 dark:bg-gray-800 border-0 focus:bg-white dark:focus:bg-gray-700 transition-colors"
+                  />
+                </div>
 
-          {/* Search and filters */}
-          <div className="grid-responsive-2 mb-12">
-            {/* Main content */}
-            <div className="lg:col-span-1 order-2 lg:order-1">
-              {/* Search */}
-              <div className="relative mb-8">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <Input
-                  type="text"
-                  placeholder="Поиск статей по заголовку, содержанию или тегам..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="input-base pl-12"
-                />
-              </div>
-
-              {/* Featured posts */}
-              {featuredPosts.length > 0 && (
-                <>
-                  <HeadingXL className="mb-8">Рекомендуемые статьи</HeadingXL>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                    {featuredPosts.map((post) => (
-                      <FeaturedPostCard
-                        key={post.id}
-                        post={post}
-                        categories={categories}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
-
-              {/* All posts */}
-              <div>
-                <HeadingXL className="mb-8">
-                  {getCurrentCategoryName()}
-                  {activeCategory !== "all" && (
-                    <span className="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">
-                      ({filteredPosts.length}{" "}
-                      {filteredPosts.length === 1 ? "статья" : "статей"})
-                    </span>
-                  )}
-                </HeadingXL>
-
-                {regularPosts.length > 0 ? (
-                  <div className="grid-responsive-3">
-                    {regularPosts.map((post) => (
-                      <RegularPostCard
-                        key={post.id}
-                        post={post}
-                        categories={categories}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-12">
-                    <BodyLG className="text-gray-500 dark:text-gray-400">
-                      {searchTerm || activeCategory !== "all"
-                        ? "Статьи не найдены. Попробуйте изменить поисковый запрос или выбрать другую категорию."
-                        : "Пока нет статей в этой категории."}
-                    </BodyLG>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Categories sidebar */}
-            <div className="lg:order-2 order-1">
-              <div className="sticky top-8 space-y-6">
+                {/* Categories */}
                 <div>
-                  <HeadingMD className="mb-6">Категории</HeadingMD>
-                  <div className="space-y-2">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                    Последние статьи
+                  </h3>
+                  <div className="space-y-1">
                     <button
                       onClick={() => setActiveCategory("all")}
-                      className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                         activeCategory === "all"
-                          ? "bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 font-medium"
-                          : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          ? "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-medium"
+                          : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                       }`}
                     >
-                      <BodyMD>Все статьи</BodyMD>
-                      <Caption className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
-                        {posts.length}
-                      </Caption>
+                      Все статьи
                     </button>
 
                     {categories.map((category) => (
                       <button
                         key={category.id}
                         onClick={() => setActiveCategory(category.id)}
-                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
+                        className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                           activeCategory === category.id
-                            ? "bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 font-medium"
-                            : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            ? "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-medium"
+                            : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                         }`}
                       >
-                        <BodyMD>{category.name}</BodyMD>
-                        <Caption className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
-                          {category.postCount}
-                        </Caption>
+                        {category.name}
                       </button>
                     ))}
                   </div>
                 </div>
+              </div>
+            </aside>
 
-                {/* Popular posts */}
-                <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                  <HeadingMD className="mb-4">Популярные статьи</HeadingMD>
-                  <div className="space-y-3">
-                    {posts
-                      .sort((a, b) => b.views - a.views)
-                      .slice(0, 5)
-                      .map((post) => (
-                        <Link
-                          key={post.id}
-                          to={`/blog/${post.slug}`}
-                          className="block group"
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center flex-shrink-0">
-                              <Eye className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+            {/* Main Content */}
+            <div className="flex-1">
+              {/* Hero Section */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+                {/* Large Hero Card */}
+                <div className="lg:col-span-2">
+                  <Link
+                    to="/blog/9-chrome-extensions"
+                    className="group block h-full"
+                  >
+                    <Card className="h-full overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white border-0 hover:scale-[1.02] transition-transform duration-300">
+                      <div className="p-8 h-full flex flex-col justify-center relative">
+                        <div className="absolute top-6 right-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                          <svg
+                            className="w-6 h-6"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 9.949 5.16-.21 9-4.399 9-9.949V7l-10-5z" />
+                          </svg>
+                        </div>
+                        <h2 className="text-3xl font-bold mb-4">
+                          Начало работы
+                          <br />в mymeet.ai
+                        </h2>
+                        <p className="text-blue-100 text-lg opacity-90">
+                          Полное руководство по использованию ИИ для анализа
+                          встреч
+                        </p>
+                      </div>
+                    </Card>
+                  </Link>
+                </div>
+
+                {/* Right Article Card */}
+                <div>
+                  {featuredPosts.slice(0, 1).map((post) => (
+                    <Link
+                      key={post.id}
+                      to={`/blog/${post.slug}`}
+                      className="group block h-full"
+                    >
+                      <Card className="h-full overflow-hidden bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                        <div className="p-6 h-full flex flex-col">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded-full">
+                              Первые шаги
+                            </span>
+                          </div>
+                          <h3 className="font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                            Как начать работу с mymeet.ai: руководство для
+                            новичков
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-1">
+                            Пошаговое руководство по mymeet.ai. Узнайте, как
+                            записывать встречи, создавать транскрипты,
+                            использовать AI Отчеты и чат для эффективной работы
+                            с информацией из онлайн-встреч.
+                          </p>
+                          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              <span>{post.readTime} мин</span>
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <BodyMD className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
-                                {post.title}
-                              </BodyMD>
-                              <Caption>{post.views} просмотров</Caption>
+                            <div className="flex items-center gap-1">
+                              <Eye className="w-3 h-3" />
+                              <span>{post.views}</span>
                             </div>
                           </div>
-                        </Link>
-                      ))}
-                  </div>
-                </div>
-
-                {/* Newsletter signup */}
-                <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-lg">
-                  <HeadingMD className="mb-3">Не пропустите новое!</HeadingMD>
-                  <BodyMD className="text-gray-600 dark:text-gray-300 mb-4">
-                    Подпишитесь на уведомления о новых статьях и обновлениях
-                    продукта.
-                  </BodyMD>
-                  <div className="space-y-3">
-                    <Input
-                      type="email"
-                      placeholder="Ваш email"
-                      className="input-base"
-                    />
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
-                      Подписаться
-                    </button>
-                  </div>
-                  <Caption className="text-gray-500 dark:text-gray-400 mt-2">
-                    Никакого спама, только полезные материалы
-                  </Caption>
+                        </div>
+                      </Card>
+                    </Link>
+                  ))}
                 </div>
               </div>
+
+              {/* Featured Articles Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                {latestPosts.slice(0, 3).map((post) => {
+                  const category = categories.find(
+                    (cat) => cat.id === post.category,
+                  );
+                  return (
+                    <Link
+                      key={post.id}
+                      to={`/blog/${post.slug}`}
+                      className="group block"
+                    >
+                      <Card className="h-full overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300">
+                        <div className="relative">
+                          <div className="h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                            <div className="absolute top-4 right-4 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                              <svg
+                                className="w-5 h-5 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 9.949 5.16-.21 9-4.399 9-9.949V7l-10-5z" />
+                              </svg>
+                            </div>
+                            <h4 className="text-white text-lg font-medium px-4 text-center">
+                              {post.title.length > 50
+                                ? post.title.substring(0, 50) + "..."
+                                : post.title}
+                            </h4>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs font-medium text-blue-600 dark:text-blue-400">
+                              {category?.name}
+                            </span>
+                          </div>
+                          <h3 className="font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">
+                            {post.title}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-4">
+                            {post.excerpt}
+                          </p>
+                          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              <span>{post.readTime} мин</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Eye className="w-3 h-3" />
+                              <span>{post.views}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Latest Articles Section */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+                  Последние статьи
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {latestPosts.slice(3, 6).map((post) => {
+                    const category = categories.find(
+                      (cat) => cat.id === post.category,
+                    );
+                    const gradientClasses = [
+                      "from-blue-500 to-blue-600",
+                      "from-gray-600 to-gray-700",
+                      "from-indigo-500 to-indigo-600",
+                    ];
+                    const gradientClass =
+                      gradientClasses[
+                        latestPosts.indexOf(post) % gradientClasses.length
+                      ];
+
+                    return (
+                      <Link
+                        key={post.id}
+                        to={`/blog/${post.slug}`}
+                        className="group block"
+                      >
+                        <Card className="h-full overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300">
+                          <div className="relative">
+                            <div
+                              className={`h-48 bg-gradient-to-br ${gradientClass} flex items-center justify-center p-6`}
+                            >
+                              <div className="absolute top-4 right-4 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                                <svg
+                                  className="w-5 h-5 text-white"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 9.949 5.16-.21 9-4.399 9-9.949V7l-10-5z" />
+                                </svg>
+                              </div>
+                              <h4 className="text-white text-lg font-medium text-center">
+                                {post.title.length > 40
+                                  ? post.title.substring(0, 40) + "..."
+                                  : post.title}
+                              </h4>
+                            </div>
+                          </div>
+                          <div className="p-6">
+                            <div className="flex items-center gap-2 mb-3">
+                              <span className="text-xs font-medium text-blue-600 dark:text-blue-400">
+                                {category?.name}
+                              </span>
+                            </div>
+                            <h3 className="font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">
+                              {post.title}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-4">
+                              {post.excerpt}
+                            </p>
+                            <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                              <div className="flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                <span>{post.readTime} мин</span>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <Eye className="w-3 h-3" />
+                                <span>{post.views}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </Card>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Show More Button */}
+              {filteredPosts.length > 6 && (
+                <div className="text-center mt-12">
+                  <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
+                    Показать больше статей
+                  </button>
+                </div>
+              )}
+
+              {/* No Results */}
+              {filteredPosts.length === 0 && (
+                <div className="text-center py-24">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                    <Search className="w-8 h-8 text-gray-400" />
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+                    Статьи не найдены
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Попробуйте изменить поисковый запрос или выбрать другую
+                    категорию
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </main>
@@ -301,142 +408,5 @@ export default function Blog() {
         <Footer />
       </div>
     </HelmetProvider>
-  );
-}
-
-// Featured Post Card Component
-function FeaturedPostCard({
-  post,
-  categories,
-}: {
-  post: BlogPost;
-  categories: BlogCategory[];
-}) {
-  const category = categories.find((cat) => cat.id === post.category);
-
-  return (
-    <Link to={`/blog/${post.slug}`} className="group">
-      <Card className="card-base card-hover h-full overflow-hidden">
-        <div className="relative h-48 overflow-hidden">
-          <img
-            src={post.heroImage}
-            alt={post.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 bg-blue-600 text-white text-caption rounded-full font-medium">
-              Рекомендуем
-            </span>
-          </div>
-          <div className="absolute bottom-4 right-4">
-            <div className="flex items-center gap-1 bg-black/50 text-white px-2 py-1 rounded-full">
-              <Eye className="w-3 h-3" />
-              <Caption className="text-white">{post.views}</Caption>
-            </div>
-          </div>
-        </div>
-        <div className="p-6">
-          <div className="flex items-center gap-4 mb-3">
-            {category && (
-              <Caption className="text-blue-600 dark:text-blue-400 font-medium">
-                {category.name}
-              </Caption>
-            )}
-            <div className="flex items-center gap-1">
-              <Clock className="w-3 h-3 text-gray-400" />
-              <Caption>{post.readTime} мин чтения</Caption>
-            </div>
-          </div>
-
-          <HeadingMD className="mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            {post.title}
-          </HeadingMD>
-
-          <BodyMD className="text-gray-600 dark:text-gray-300 mb-4">
-            {post.excerpt}
-          </BodyMD>
-
-          <div className="flex items-center justify-between">
-            <Caption>{BlogAPI.formatDate(post.publishedAt)}</Caption>
-            <div className="flex flex-wrap gap-1">
-              {post.tags.slice(0, 2).map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-caption rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Card>
-    </Link>
-  );
-}
-
-// Regular Post Card Component
-function RegularPostCard({
-  post,
-  categories,
-}: {
-  post: BlogPost;
-  categories: BlogCategory[];
-}) {
-  const category = categories.find((cat) => cat.id === post.category);
-
-  return (
-    <Link to={`/blog/${post.slug}`} className="group">
-      <Card className="card-base card-hover h-full overflow-hidden">
-        <div className="relative h-40 overflow-hidden">
-          <img
-            src={post.heroImage}
-            alt={post.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute bottom-2 right-2">
-            <div className="flex items-center gap-1 bg-black/50 text-white px-2 py-1 rounded-full">
-              <Eye className="w-3 h-3" />
-              <Caption className="text-white">{post.views}</Caption>
-            </div>
-          </div>
-        </div>
-        <div className="p-6">
-          <div className="flex items-center gap-4 mb-3">
-            {category && (
-              <Caption className="text-blue-600 dark:text-blue-400 font-medium">
-                {category.name}
-              </Caption>
-            )}
-            <div className="flex items-center gap-1">
-              <Clock className="w-3 h-3 text-gray-400" />
-              <Caption>{post.readTime} мин чтения</Caption>
-            </div>
-          </div>
-
-          <HeadingMD className="mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            {post.title}
-          </HeadingMD>
-
-          <BodyMD className="text-gray-600 dark:text-gray-300 mb-4">
-            {post.excerpt}
-          </BodyMD>
-
-          <div className="flex items-center justify-between">
-            <Caption>{BlogAPI.formatDate(post.publishedAt)}</Caption>
-            <div className="flex flex-wrap gap-1">
-              {post.tags.slice(0, 1).map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-caption rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Card>
-    </Link>
   );
 }
