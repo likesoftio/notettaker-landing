@@ -79,13 +79,7 @@ class BlogDatabase {
 
     // Force clear and reinitialize for demo
     // Remove these lines in production
-    console.log("📚 Initializing blog database...");
-
-    // Force initialization even if data exists (for demo)
-    const existingPostsRaw = localStorage.getItem(STORAGE_KEYS.POSTS);
-    const existingPosts = existingPostsRaw ? JSON.parse(existingPostsRaw) : [];
-    console.log(
-      `📊 Found ${existingPosts.length} existing posts in localStorage`,
+    console.log('📚 Initializing blog database...');
     );
 
     // Initialize sample categories
@@ -183,12 +177,21 @@ class BlogDatabase {
     }
 
     // Initialize sample posts (force reload for demo)
-    const existingPosts = localStorage.getItem(STORAGE_KEYS.POSTS);
-    const shouldInitialize =
-      !existingPosts || JSON.parse(existingPosts).length < 25;
+    const existingPostsData = localStorage.getItem(STORAGE_KEYS.POSTS);
+    let existingPostsCount = 0;
+
+    try {
+      existingPostsCount = existingPostsData ? JSON.parse(existingPostsData).length : 0;
+    } catch (error) {
+      console.log('📊 Invalid existing posts data, will reinitialize');
+      existingPostsCount = 0;
+    }
+
+    console.log(`📊 Found ${existingPostsCount} existing posts in localStorage`);
+    const shouldInitialize = existingPostsCount < 25;
 
     if (shouldInitialize) {
-      console.log("📝 Creating sample posts...");
+      console.log('📝 Creating sample posts...');
       const samplePosts: BlogPost[] = [
         // Технологии и ИИ (6 статей)
         {
@@ -326,7 +329,7 @@ class BlogDatabase {
           slug: "task-automation-meetings",
           content: this.getSampleContent("task-automation"),
           excerpt:
-            "Как автоматически извлекать и создавать задачи из записей встреч для повышения продуктивности команды.",
+            "Как автоматически извлекать и создавать ��адачи из записей встреч для повышения продуктивности команды.",
           heroImage:
             "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
           category: "task-management",
@@ -425,7 +428,7 @@ class BlogDatabase {
           heroImage:
             "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop",
           category: "product-news",
-          tags: ["мобильное приложение", "iOS", "Android", "запуск"],
+          tags: ["мобильно�� приложение", "iOS", "Android", "запуск"],
           author: "team-mymeet",
           publishedAt: new Date("2024-11-18").toISOString(),
           updatedAt: new Date("2024-11-18").toISOString(),
@@ -685,7 +688,7 @@ class BlogDatabase {
           tags: [
             "безопасность",
             "обновления",
-            "защита данных",
+            "защ��та данных",
             "конфиденциальность",
           ],
           author: "team-mymeet",
@@ -764,7 +767,7 @@ class BlogDatabase {
         <p>Современные ИИ-инструменты позволяют автоматически создавать протоколы встреч, выделять ключевые решения и даже анализировать настроение участников.</p>
 
         <h2>Что ждет нас в будущем</h2>
-        <p>Прогнозируется развитие технологий реального времени перевода, эмоционального анализа и автоматического планирования встреч.</p>
+        <p>Прогнозируется развитие технологий реального времени перевода, эмоционального анализа и автома��ического планирования встреч.</p>
       `,
       "vr-meetings": `
         <p>Виртуальная реальность открывает новые горизонты для деловых встреч. Современные VR-платформы позволяют создавать иммерсивные пространства для командной работы, где участники могут взаимодействовать с 3D-объектами и совместно решать задачи.</p>
@@ -776,7 +779,7 @@ class BlogDatabase {
         <p>Обзор ведущих решений для проведения VR-встреч: от Meta Horizon Workrooms до специализированных бизнес-платформ.</p>
       `,
       "burnout-prevention": `
-        <p>Эмоциональное выгорание стало серьезной проблемой современного рабочего мира. Неправильно организованные встречи часто становятся источником стресса и усталости для сотрудников.</p>
+        <p>Эмоциональное выгорание стало серьезной проблемой современн��го рабочего мира. Неправильно организованные встречи часто становятся источником стресса и усталости для сотрудников.</p>
 
         <h2>Признаки выгорания от встреч</h2>
         <p>Как распознать первые симптомы усталости от постоянных совещаний и видеоконференций.</p>
