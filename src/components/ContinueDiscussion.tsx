@@ -77,7 +77,7 @@ export default function ContinueDiscussion() {
             AI Чат
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Продолжайте обсуждени��{" "}
+            Продолжайте обсуждение{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
               после завершения встречи
             </span>
@@ -224,7 +224,7 @@ export default function ContinueDiscussion() {
         </div>
 
         {/* Статистики */}
-        <div className="parallax-element bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+        <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200 dark:border-gray-700 z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
