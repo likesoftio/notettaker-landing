@@ -193,7 +193,7 @@ export default function BlogAdmin() {
     } catch (error) {
       console.error("Failed to create post:", error);
       setValidationErrors([
-        `Ошибка при создании статьи: ${error.message || error}`,
+        `Ош��бка при создании статьи: ${error.message || error}`,
       ]);
     }
   };
@@ -277,6 +277,7 @@ export default function BlogAdmin() {
       seoKeywords: post.seoKeywords?.join(", ") || "",
     });
     setValidationErrors([]);
+    setGeneralErrors([]);
   };
 
   const resetForm = () => {
@@ -328,7 +329,7 @@ export default function BlogAdmin() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="title">Заголовок *</Label>
+          <Label htmlFor="title">Загол��вок *</Label>
           <Input
             id="title"
             value={formData.title}
