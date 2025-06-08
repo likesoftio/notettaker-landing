@@ -86,6 +86,7 @@ export default function BlogAdmin() {
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
+  const [generalErrors, setGeneralErrors] = useState<string[]>([]);
 
   // Form state for new/edit post
   const [formData, setFormData] = useState({
@@ -245,13 +246,14 @@ export default function BlogAdmin() {
 
       if (result) {
         await loadData();
+        setGeneralErrors([]);
       } else {
-        setValidationErrors(["Не удалось удалить статью"]);
+        setGeneralErrors(["Не удалось удалить статью"]);
       }
     } catch (error) {
       console.error("Failed to delete post:", error);
-      setValidationErrors([
-        `Ошибка при удалении статьи: ${error.message || error}`,
+      setGeneralErrors([`Ошибка при удалении статьи: ${error.message || error}`]);
+    }
       ]);
     }
   };
