@@ -9,58 +9,63 @@ import blogDB, {
 class BlogAPI {
   // Posts API
   static async getAllPosts(): Promise<BlogPost[]> {
-    return await blogDB.getAllPosts();
+    return Promise.resolve(blogDB.getAllPosts());
   }
 
   static async getPublishedPosts(): Promise<BlogPost[]> {
-    return await blogDB.getPublishedPosts();
+    return Promise.resolve(blogDB.getPublishedPosts());
   }
 
   static async getPostBySlug(slug: string): Promise<BlogPost | null> {
-    const post = await blogDB.getPostBySlug(slug);
+    const post = blogDB.getPostBySlug(slug);
     if (post && post.status === "published") {
       // Increment view count
-      await blogDB.incrementViews(slug);
+      blogDB.incrementViews(slug);
     }
-    return post;
+    return Promise.resolve(post);
   }
 
   static async getPostsByCategory(
     categorySlug: string,
     limit?: number,
   ): Promise<BlogPost[]> {
-    const posts = await blogDB.getPostsByCategory(categorySlug);
-    return limit ? posts.slice(0, limit) : posts;
+    const posts = blogDB.getPostsByCategory(categorySlug);
+    return Promise.resolve(limit ? posts.slice(0, limit) : posts);
   }
 
   static async getFeaturedPosts(limit?: number): Promise<BlogPost[]> {
-    const posts = await blogDB.getFeaturedPosts();
-    return limit ? posts.slice(0, limit) : posts;
+    const posts = blogDB.getFeaturedPosts();
+    return Promise.resolve(limit ? posts.slice(0, limit) : posts);
   }
 
   static async getLatestPosts(limit: number = 10): Promise<BlogPost[]> {
-    const posts = await blogDB.getPublishedPosts();
-    return posts
-      .sort(
-        (a, b) =>
-          new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-      )
-      .slice(0, limit);
+    const posts = blogDB.getPublishedPosts();
+    return Promise.resolve(
+      posts
+        .sort(
+          (a, b) =>
+            new Date(b.publishedAt).getTime() -
+            new Date(a.publishedAt).getTime(),
+        )
+        .slice(0, limit),
+    );
   }
 
   static async getPopularPosts(limit: number = 5): Promise<BlogPost[]> {
-    const posts = await blogDB.getPublishedPosts();
-    return posts.sort((a, b) => b.views - a.views).slice(0, limit);
+    const posts = blogDB.getPublishedPosts();
+    return Promise.resolve(
+      posts.sort((a, b) => b.views - a.views).slice(0, limit),
+    );
   }
 
   static async getRelatedPosts(
     postId: string,
     limit: number = 3,
   ): Promise<BlogPost[]> {
-    const currentPost = await blogDB.getPostBySlug(postId);
-    if (!currentPost) return [];
+    const currentPost = blogDB.getPostBySlug(postId);
+    if (!currentPost) return Promise.resolve([]);
 
-    const allPosts = await blogDB.getPublishedPosts();
+    const allPosts = blogDB.getPublishedPosts();
 
     // Find related posts by category and tags
     const relatedPosts = allPosts
@@ -86,11 +91,11 @@ class BlogAPI {
       .slice(0, limit)
       .map((item) => item.post);
 
-    return relatedPosts;
+    return Promise.resolve(relatedPosts);
   }
 
   static async searchPosts(query: string): Promise<BlogPost[]> {
-    return await blogDB.searchPosts(query);
+    return Promise.resolve(blogDB.searchPosts(query));
   }
 
   // CRUD operations for posts
@@ -111,15 +116,15 @@ class BlogAPI {
 
   // Categories API
   static async getAllCategories(): Promise<BlogCategory[]> {
-    return await blogDB.getAllCategories();
+    return Promise.resolve(blogDB.getAllCategories());
   }
 
   static async getCategoriesWithPosts(): Promise<BlogCategory[]> {
-    return await blogDB.getCategoriesWithPosts();
+    return Promise.resolve(blogDB.getCategoriesWithPosts());
   }
 
   static async getCategoryBySlug(slug: string): Promise<BlogCategory | null> {
-    return await blogDB.getCategoryBySlug(slug);
+    return Promise.resolve(blogDB.getCategoryBySlug(slug));
   }
 
   // CRUD operations for categories
@@ -142,25 +147,25 @@ class BlogAPI {
 
   // Authors API
   static async getAllAuthors(): Promise<BlogAuthor[]> {
-    return await blogDB.getAllAuthors();
+    return Promise.resolve(blogDB.getAllAuthors());
   }
 
   static async getAuthorById(id: string): Promise<BlogAuthor | null> {
-    return await blogDB.getAuthorById(id);
+    return Promise.resolve(blogDB.getAuthorById(id));
   }
 
   static async getAuthorPosts(
     authorId: string,
     limit?: number,
   ): Promise<BlogPost[]> {
-    const posts = await blogDB.getPublishedPosts();
+    const posts = blogDB.getPublishedPosts();
     const authorPosts = posts.filter((post) => post.author === authorId);
-    return limit ? authorPosts.slice(0, limit) : authorPosts;
+    return Promise.resolve(limit ? authorPosts.slice(0, limit) : authorPosts);
   }
 
   // Statistics API
   static async getBlogStats(): Promise<BlogStats> {
-    return await blogDB.getBlogStats();
+    return Promise.resolve(blogDB.getBlogStats());
   }
 
   // Utility methods
