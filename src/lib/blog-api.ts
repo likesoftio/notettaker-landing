@@ -6,7 +6,7 @@ import blogDB, {
   BlogStats,
 } from "./database";
 
-export class BlogAPI {
+class BlogAPI {
   // Posts API
   static async getAllPosts(): Promise<BlogPost[]> {
     return await blogDB.getAllPosts();
@@ -300,7 +300,7 @@ export class BlogAPI {
     }
 
     if (!post.excerpt || post.excerpt.trim().length < 50) {
-      errors.push("Краткое описание должно содержать минимум 50 ��имволов");
+      errors.push("Краткое описание должно содержать минимум 50 символов");
     }
 
     if (!post.category) {
@@ -322,5 +322,5 @@ export class BlogAPI {
   }
 }
 
-export default BlogAPI;
 export { BlogAPI };
+export default BlogAPI;
