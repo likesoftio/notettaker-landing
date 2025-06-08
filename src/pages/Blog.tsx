@@ -266,7 +266,24 @@ export default function Blog() {
                             : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                         }`}
                       >
-                        <span>{category.name}</span>
+                        <div className="flex items-center gap-3">
+                          {category.image && (
+                            <div className="w-8 h-8 rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-700 flex-shrink-0">
+                              <img
+                                src={category.image}
+                                alt={category.name}
+                                className="w-full h-full object-cover"
+                                loading="lazy"
+                              />
+                            </div>
+                          )}
+                          {!category.image && (
+                            <div
+                              className={`w-3 h-3 rounded-full ${category.color || "bg-gray-400"}`}
+                            ></div>
+                          )}
+                          <span>{category.name}</span>
+                        </div>
                         <span
                           className={`text-xs px-2 py-1 rounded-full ${
                             activeCategory === category.id
@@ -292,7 +309,7 @@ export default function Blog() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-300">
-                        Всего статей:
+                        Всего ст��тей:
                       </span>
                       <span className="font-semibold text-blue-600 dark:text-blue-400">
                         {posts.length}
