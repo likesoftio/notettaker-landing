@@ -17,12 +17,20 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Head from "../components/SEO/Head";
 
+// Новые компоненты
+import HowItWorksEnhanced from "../components/HowItWorksEnhanced";
+import TranscriptionQuality from "../components/TranscriptionQuality";
+import ContinueDiscussion from "../components/ContinueDiscussion";
+import FeaturesWithTabs from "../components/FeaturesWithTabs";
+import TestimonialsEnhanced from "../components/TestimonialsEnhanced";
+import SecurityEnhanced from "../components/SecurityEnhanced";
+
 export default function Index() {
   return (
     <HelmetProvider>
       <div className="page-container">
         <Head
-          title="mymeet.ai - Умная транскрипция и анализ встреч с помощью ИИ"
+          title="notetaker.ru - Умная транскрипция и анализ встреч с помощью ИИ"
           description="Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых решений. Поддержка 73 языков. 180 минут бесплатно."
           keywords={[
             "транскрипция встреч",
@@ -31,21 +39,21 @@ export default function Index() {
             "автоматические протоколы",
             "распознавание речи",
             "анализ совещаний",
-            "mymeet.ai",
+            "notetaker.ru",
             "notetaker",
             "умный помощник для встреч",
           ]}
           type="website"
-          url="https://mymeet.ai"
+          url="https://notetaker.ru"
           structuredData={{
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "mymeet.ai",
+            name: "notetaker.ru",
             description: "ИИ платформа для анализа и транскрипции встреч",
-            url: "https://mymeet.ai",
+            url: "https://notetaker.ru",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://mymeet.ai/blog?q={search_term_string}",
+              target: "https://notetaker.ru/blog?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           }}
@@ -54,16 +62,20 @@ export default function Index() {
         <Header />
         <main>
           <Hero />
+          <HowItWorksEnhanced />
+          <TranscriptionQuality />
+          <FeaturesWithTabs />
           <ProcessSteps />
           <Features />
+          <ContinueDiscussion />
           <AdvantagesSection />
           <CompanyLogos />
-          <SecuritySection />
+          <SecurityEnhanced />
           <IntegrationsSection />
           <CallToActionSection />
           <UseCasesSection />
           <HowItWorksSection />
-          <TestimonialsSection />
+          <TestimonialsEnhanced />
           <Pricing />
           <CTASection />
           <FAQ />
