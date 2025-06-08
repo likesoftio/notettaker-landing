@@ -47,6 +47,7 @@ export default function CategoryManager({
     slug: "",
     description: "",
     color: "bg-blue-600",
+    image: "",
   });
 
   const colorOptions = [
@@ -56,7 +57,7 @@ export default function CategoryManager({
     { value: "bg-orange-600", label: "Оранжевый", class: "bg-orange-600" },
     { value: "bg-red-600", label: "Красный", class: "bg-red-600" },
     { value: "bg-indigo-600", label: "Индиго", class: "bg-indigo-600" },
-    { value: "bg-yellow-600", label: "Желтый", class: "bg-yellow-600" },
+    { value: "bg-yellow-600", label: "Же��тый", class: "bg-yellow-600" },
     { value: "bg-pink-600", label: "Розовый", class: "bg-pink-600" },
   ];
 
@@ -184,6 +185,7 @@ export default function CategoryManager({
       slug: category.slug,
       description: category.description || "",
       color: category.color || "bg-blue-600",
+      image: category.image || "",
     });
     setError("");
   };
@@ -194,6 +196,7 @@ export default function CategoryManager({
       slug: "",
       description: "",
       color: "bg-blue-600",
+      image: "",
     });
     setError("");
   };
