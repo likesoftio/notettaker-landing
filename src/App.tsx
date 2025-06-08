@@ -10,6 +10,7 @@ import { AuthProvider } from "./hooks/useAuth";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
+import BlogArticleClassic from "./pages/BlogArticleClassic";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import DebugBlog from "./pages/DebugBlog";
 import TestBlog from "./pages/TestBlog";
