@@ -23,7 +23,8 @@ import {
   AlertCircle,
   Tag,
 } from "lucide-react";
-import blogDB, { BlogCategory } from "../lib/database";
+import { BlogCategory } from "../lib/database";
+import { BlogAPI } from "../lib/blog-api";
 import { HeadingXL, BodyMD, Caption } from "./Typography";
 
 interface CategoryManagerProps {
@@ -76,7 +77,7 @@ export default function CategoryManager({
   const loadCategories = async () => {
     setLoading(true);
     try {
-      const categoriesData = await blogDB.getAllCategories();
+      const categoriesData = await BlogAPI.getAllCategories();
       setCategories(categoriesData);
     } catch (error) {
       console.error("Failed to load categories:", error);
@@ -123,7 +124,7 @@ export default function CategoryManager({
     if (!validateForm()) return;
 
     try {
-      await blogDB.createCategory({
+      await BlogAPI.createCategory({
         name: formData.name,
         slug: formData.slug,
         description: formData.description,
@@ -144,7 +145,7 @@ export default function CategoryManager({
     if (!editingCategory || !validateForm()) return;
 
     try {
-      await blogDB.updateCategory(editingCategory.id, {
+      await BlogAPI.updateCategory(editingCategory.id, {
         name: formData.name,
         slug: formData.slug,
         description: formData.description,
