@@ -202,7 +202,7 @@ export default function BlogArticle() {
         {seoData && (
           <Head
             {...seoData}
-            url={`https://mymeet.ai/blog/${article.slug}`}
+            url={`https://notetaker.ru/blog/${article.slug}`}
             structuredData={{
               "@context": "https://schema.org",
               "@type": "Article",
@@ -210,25 +210,25 @@ export default function BlogArticle() {
               description: article.excerpt,
               author: {
                 "@type": "Person",
-                name: author?.name || "mymeet.ai Team",
+                name: author?.name || "notetaker.ru Team",
               },
               publisher: {
                 "@type": "Organization",
-                name: "mymeet.ai",
+                name: "notetaker.ru",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://mymeet.ai/logo.png",
+                  url: "https://notetaker.ru/logo.png",
                 },
               },
               datePublished: article.publishedAt,
               dateModified: article.updatedAt,
               image: article.heroImage,
-              url: `https://mymeet.ai/blog/${article.slug}`,
+              url: `https://notetaker.ru/blog/${article.slug}`,
               articleSection: category?.name,
               keywords: article.tags.join(", "),
               mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://mymeet.ai/blog/${article.slug}`,
+                "@id": `https://notetaker.ru/blog/${article.slug}`,
               },
             }}
           />
@@ -656,7 +656,7 @@ export default function BlogArticle() {
                         </FloatingElement>
                         <div className="flex-1">
                           <h3 className="heading-xl text-white mb-3 text-glow">
-                            Попробуйте mymeet.ai в действии
+                            Попробуйте notetaker.ru в действии
                           </h3>
                           <p className="body-lg text-blue-100 mb-6 leading-relaxed">
                             Начните использовать ИИ для анализа ваших встреч уже
