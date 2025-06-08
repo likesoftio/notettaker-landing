@@ -11,6 +11,8 @@
 /* Blog Article Styles */
 @import "./blog-article.css";
 @import "./blog-content.css";
+@import "./blog-mobile.css";
+@import "./legal-pages.css";
 
 /* Global font configuration */
 @layer base {
