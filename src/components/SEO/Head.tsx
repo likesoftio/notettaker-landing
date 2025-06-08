@@ -23,8 +23,8 @@ export interface SEOProps {
 }
 
 const DEFAULT_SEO = {
-  siteName: "mymeet.ai - ИИ для анализа встреч",
-  title: "mymeet.ai - Умная транскрипция и анализ встреч с помощью ИИ",
+  siteName: "notetaker.ru - ИИ для анализа встреч",
+  title: "notetaker.ru - Умная транскрипция и анализ встреч с помощью ИИ",
   description:
     "Превратите любую встречу в структурированные инсайты с помощью искусственного интеллекта. Автоматическая транскрипция, анализ задач и принятых решений. Поддержка 73 языков.",
   keywords: [
@@ -35,10 +35,10 @@ const DEFAULT_SEO = {
     "распознавание речи",
     "анализ совещаний",
     "мымит ai",
-    "mymeet ai",
+    "notetaker ru",
   ],
-  image: "https://mymeet.ai/og-image.jpg",
-  url: "https://mymeet.ai",
+  image: "https://notetaker.ru/og-image.jpg",
+  url: "https://notetaker.ru",
   locale: "ru_RU",
   twitterCard: "summary_large_image" as const,
 };
