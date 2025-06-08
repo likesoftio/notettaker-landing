@@ -20,8 +20,8 @@ import Head from "../components/SEO/Head";
 // Новые компоненты
 import HowItWorksEnhanced from "../components/HowItWorksEnhanced";
 import TranscriptionQuality from "../components/TranscriptionQuality";
-// import ContinueDiscussion from "../components/ContinueDiscussion";
-// import FeaturesWithTabs from "../components/FeaturesWithTabs";
+import ContinueDiscussion from "../components/ContinueDiscussion";
+import FeaturesWithTabs from "../components/FeaturesWithTabs";
 // import TestimonialsEnhanced from "../components/TestimonialsEnhanced";
 // import SecurityEnhanced from "../components/SecurityEnhanced";
 
