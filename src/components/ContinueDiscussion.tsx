@@ -63,10 +63,10 @@ export default function ContinueDiscussion() {
       className="relative py-20 lg:py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 dark:from-indigo-900 dark:via-blue-900 dark:to-cyan-900 overflow-hidden"
     >
       {/* Параллакс фон */}
-      <div className="parallax-element absolute inset-0 opacity-20">
+      <div className="parallax-bg absolute inset-0 opacity-20">
         <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="parallax-element absolute top-40 right-20 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div className="parallax-element absolute bottom-20 left-1/3 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        <div className="parallax-bg absolute top-40 right-20 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="parallax-bg absolute bottom-20 left-1/3 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@ export default function ContinueDiscussion() {
             AI Чат
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Продолжайте обсуждение{" "}
+            Продолжайте обсуждени��{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
               после завершения встречи
             </span>
