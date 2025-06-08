@@ -461,7 +461,7 @@ export default function BlogArticleClassic() {
               </header>
 
               {/* Article Content */}
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div className="blog-content">
                 <div
                   dangerouslySetInnerHTML={{
                     __html: BlogAPI.processContent(article.content),
