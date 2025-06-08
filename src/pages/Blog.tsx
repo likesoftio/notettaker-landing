@@ -34,7 +34,7 @@ export default function Blog() {
     try {
       const [postsData, categoriesData] = await Promise.all([
         BlogAPI.getPublishedPosts(),
-        BlogAPI.getAllCategories(),
+        BlogAPI.getCategoriesWithPosts(), // Получаем только категории с постами
       ]);
 
       setPosts(postsData);
@@ -62,6 +62,13 @@ export default function Blog() {
   const featuredPosts = filteredPosts.filter((post) => post.featured);
   const regularPosts = filteredPosts.filter((post) => !post.featured);
 
+  // Получить текущую категорию для отображения
+  const getCurrentCategoryName = () => {
+    if (activeCategory === "all") return "Все статьи";
+    const category = categories.find((cat) => cat.id === activeCategory);
+    return category?.name || "Статьи";
+  };
+
   if (loading) {
     return (
       <HelmetProvider>
@@ -72,7 +79,10 @@ export default function Blog() {
           />
           <Header />
           <div className="page-main flex items-center justify-center">
-            <BodyLG>Загрузка статей...</BodyLG>
+            <div className="text-center">
+              <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <BodyLG>Загрузка статей...</BodyLG>
+            </div>
           </div>
           <Footer />
         </div>
@@ -108,84 +118,42 @@ export default function Blog() {
               Статьи о технологиях ИИ, эффективности встреч и управлении
               задачами
             </BodyLG>
+
+            {/* Stats */}
+            <div className="flex items-center justify-center gap-6 mt-4 text-caption">
+              <div className="flex items-center gap-1">
+                <span className="font-medium">{posts.length}</span>
+                <span>статей</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="font-medium">{categories.length}</span>
+                <span>категорий</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="font-medium">
+                  {posts.reduce((sum, post) => sum + post.views, 0)}
+                </span>
+                <span>просмотров</span>
+              </div>
+            </div>
           </div>
 
           {/* Search and filters */}
           <div className="grid-responsive-2 mb-12">
-            {/* Search */}
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Поиск статей по заголовку, содержанию или тегам..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="input-base pl-12"
-              />
-            </div>
-
-            {/* Categories sidebar */}
-            <div className="lg:order-last">
-              <HeadingMD className="mb-6">Категории</HeadingMD>
-              <div className="space-y-2">
-                <button
-                  onClick={() => setActiveCategory("all")}
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
-                    activeCategory === "all"
-                      ? "bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 font-medium"
-                      : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                  }`}
-                >
-                  <BodyMD>Все статьи</BodyMD>
-                  <Caption className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
-                    {posts.length}
-                  </Caption>
-                </button>
-
-                {categories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setActiveCategory(category.id)}
-                    className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
-                      activeCategory === category.id
-                        ? "bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 font-medium"
-                        : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    }`}
-                  >
-                    <BodyMD>{category.name}</BodyMD>
-                    <Caption className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
-                      {category.postCount}
-                    </Caption>
-                  </button>
-                ))}
-              </div>
-
-              {/* Quick Stats */}
-              <div className="mt-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <HeadingMD className="mb-4">Статистика блога</HeadingMD>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <Caption>Всего статей:</Caption>
-                    <Caption className="font-medium">{posts.length}</Caption>
-                  </div>
-                  <div className="flex justify-between">
-                    <Caption>Рекомендуемых:</Caption>
-                    <Caption className="font-medium">
-                      {featuredPosts.length}
-                    </Caption>
-                  </div>
-                  <div className="flex justify-between">
-                    <Caption>Общих просмотров:</Caption>
-                    <Caption className="font-medium">
-                      {posts.reduce((sum, post) => sum + post.views, 0)}
-                    </Caption>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Main content */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 order-2 lg:order-1">
+              {/* Search */}
+              <div className="relative mb-8">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Поиск статей по заголовку, содержанию или тегам..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="input-base pl-12"
+                />
+              </div>
+
               {/* Featured posts */}
               {featuredPosts.length > 0 && (
                 <>
@@ -205,10 +173,13 @@ export default function Blog() {
               {/* All posts */}
               <div>
                 <HeadingXL className="mb-8">
-                  {activeCategory === "all"
-                    ? "Все статьи"
-                    : categories.find((cat) => cat.id === activeCategory)
-                        ?.name || "Статьи"}
+                  {getCurrentCategoryName()}
+                  {activeCategory !== "all" && (
+                    <span className="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">
+                      ({filteredPosts.length}{" "}
+                      {filteredPosts.length === 1 ? "статья" : "статей"})
+                    </span>
+                  )}
                 </HeadingXL>
 
                 {regularPosts.length > 0 ? (
@@ -230,6 +201,98 @@ export default function Blog() {
                     </BodyLG>
                   </div>
                 )}
+              </div>
+            </div>
+
+            {/* Categories sidebar */}
+            <div className="lg:order-2 order-1">
+              <div className="sticky top-8 space-y-6">
+                <div>
+                  <HeadingMD className="mb-6">Категории</HeadingMD>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => setActiveCategory("all")}
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
+                        activeCategory === "all"
+                          ? "bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 font-medium"
+                          : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      }`}
+                    >
+                      <BodyMD>Все статьи</BodyMD>
+                      <Caption className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
+                        {posts.length}
+                      </Caption>
+                    </button>
+
+                    {categories.map((category) => (
+                      <button
+                        key={category.id}
+                        onClick={() => setActiveCategory(category.id)}
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
+                          activeCategory === category.id
+                            ? "bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 font-medium"
+                            : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        }`}
+                      >
+                        <BodyMD>{category.name}</BodyMD>
+                        <Caption className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full">
+                          {category.postCount}
+                        </Caption>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Popular posts */}
+                <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <HeadingMD className="mb-4">Популярные статьи</HeadingMD>
+                  <div className="space-y-3">
+                    {posts
+                      .sort((a, b) => b.views - a.views)
+                      .slice(0, 5)
+                      .map((post) => (
+                        <Link
+                          key={post.id}
+                          to={`/blog/${post.slug}`}
+                          className="block group"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center flex-shrink-0">
+                              <Eye className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <BodyMD className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                                {post.title}
+                              </BodyMD>
+                              <Caption>{post.views} просмотров</Caption>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Newsletter signup */}
+                <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-lg">
+                  <HeadingMD className="mb-3">Не пропустите новое!</HeadingMD>
+                  <BodyMD className="text-gray-600 dark:text-gray-300 mb-4">
+                    Подпишитесь на уведомления о новых статьях и обновлениях
+                    продукта.
+                  </BodyMD>
+                  <div className="space-y-3">
+                    <Input
+                      type="email"
+                      placeholder="Ваш email"
+                      className="input-base"
+                    />
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
+                      Подписаться
+                    </button>
+                  </div>
+                  <Caption className="text-gray-500 dark:text-gray-400 mt-2">
+                    Никакого спама, только полезные материалы
+                  </Caption>
+                </div>
               </div>
             </div>
           </div>

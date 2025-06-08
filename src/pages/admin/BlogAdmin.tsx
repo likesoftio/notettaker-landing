@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import Head from "../../components/SEO/Head";
 import AdminLogin from "../../components/AdminLogin";
 import ImageUpload from "../../components/ImageUpload";
+import CategoryManager from "../../components/CategoryManager";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
@@ -52,6 +53,7 @@ import {
   Settings,
   Shield,
   AlertCircle,
+  Folder,
 } from "lucide-react";
 import BlogAPI from "../../lib/blog-api";
 import { useAuth } from "../../hooks/useAuth";
@@ -467,7 +469,7 @@ export default function BlogAdmin() {
               onChange={(e) =>
                 setFormData({ ...formData, seoDescription: e.target.value })
               }
-              placeholder="SEO описание (оставьте пустым для автоматического)"
+              placeholder="SEO описан��е (оставьте пустым для автоматического)"
               rows={3}
             />
             <Caption className="mt-1">
@@ -579,8 +581,9 @@ export default function BlogAdmin() {
           </div>
 
           <Tabs defaultValue="posts" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="posts">Статьи</TabsTrigger>
+              <TabsTrigger value="categories">Категории</TabsTrigger>
               <TabsTrigger value="stats">Статистика</TabsTrigger>
             </TabsList>
 
@@ -774,6 +777,10 @@ export default function BlogAdmin() {
               </div>
             </TabsContent>
 
+            <TabsContent value="categories">
+              <CategoryManager onCategoriesChange={loadData} />
+            </TabsContent>
+
             <TabsContent value="stats">
               {stats && (
                 <div className="grid-responsive-4 mb-8">
@@ -815,12 +822,12 @@ export default function BlogAdmin() {
 
                   <Card className="card-base p-6">
                     <div className="flex items-center gap-3">
-                      <Edit2 className="w-8 h-8 text-orange-600" />
+                      <Folder className="w-8 h-8 text-orange-600" />
                       <div>
                         <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                          {stats.draftPosts}
+                          {categories.length}
                         </div>
-                        <Caption>Черновиков</Caption>
+                        <Caption>Категорий</Caption>
                       </div>
                     </div>
                   </Card>
