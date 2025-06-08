@@ -84,14 +84,14 @@ export default function Head({
     description,
     author: {
       "@type": "Person",
-      name: author || "mymeet.ai Team",
+      name: author || "notetaker.ru Team",
     },
     publisher: {
       "@type": "Organization",
       name: siteName,
       logo: {
         "@type": "ImageObject",
-        url: "https://mymeet.ai/logo.png",
+        url: "https://notetaker.ru/logo.png",
       },
     },
     datePublished: publishedTime,
@@ -110,10 +110,10 @@ export default function Head({
   const organizationStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "mymeet.ai",
+    name: "notetaker.ru",
     description: "ИИ платформа для анализа и транскрипции встреч",
-    url: "https://mymeet.ai",
-    logo: "https://mymeet.ai/logo.png",
+    url: "https://notetaker.ru",
+    logo: "https://notetaker.ru/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+7-xxx-xxx-xxxx",
@@ -144,7 +144,7 @@ export default function Head({
   const softwareStructuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "mymeet.ai",
+    name: "notetaker.ru",
     description:
       "ИИ платформа для анализа встреч и автоматической транскрипции",
     applicationCategory: "BusinessApplication",
@@ -174,7 +174,7 @@ export default function Head({
       <meta name="keywords" content={keywords.join(", ")} />
       <meta name="robots" content={robots} />
       <meta name="language" content={locale} />
-      <meta name="author" content={author || "mymeet.ai Team"} />
+      <meta name="author" content={author || "notetaker.ru Team"} />
 
       {/* Canonical URL */}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
