@@ -11,6 +11,7 @@ import BlogArticle from "./pages/BlogArticle";
 import TermsOfService from "./pages/TermsOfService";
 import OfferAgreement from "./pages/OfferAgreement";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
               />
               <Route path="/oferta" element={<OfferAgreement />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/contact" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

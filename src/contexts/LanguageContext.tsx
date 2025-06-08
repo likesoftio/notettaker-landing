@@ -15,12 +15,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 const translations = {
   ru: {
     // Header
-    "header.howItWorks": "Как работает",
-    "header.pricing": "Сколько стоит",
-    "header.blog": "Блог",
-    "header.faq": "FAQ",
-    "header.addFile": "Добавить файл",
+    "header.solutions": "Решения",
+    "header.resources": "Ресурсы",
+    "header.pricing": "Стоимость",
     "header.login": "Войти",
+    "header.bookDemo": "Записаться на демо",
+
+    // Solutions dropdown
+    "solutions.transcription": "Транскрипция встреч",
+    "solutions.analysis": "Анализ разговоров",
+    "solutions.integration": "Интеграции",
+    "solutions.api": "API для разработчиков",
+
+    // Resources dropdown
+    "resources.blog": "Блог",
+    "resources.helpCenter": "Центр поддержки",
+    "resources.documentation": "Документация",
+    "resources.tutorials": "Обучающие материалы",
 
     // Hero
     "hero.title": "Онлайн-конвертер аудио в текст",
@@ -98,12 +109,23 @@ const translations = {
   },
   en: {
     // Header
-    "header.howItWorks": "How it works",
+    "header.solutions": "Solutions",
+    "header.resources": "Resources",
     "header.pricing": "Pricing",
-    "header.blog": "Blog",
-    "header.faq": "FAQ",
-    "header.addFile": "Add file",
     "header.login": "Login",
+    "header.bookDemo": "Book a demo",
+
+    // Solutions dropdown
+    "solutions.transcription": "Meeting Transcription",
+    "solutions.analysis": "Conversation Analysis",
+    "solutions.integration": "Integrations",
+    "solutions.api": "Developer API",
+
+    // Resources dropdown
+    "resources.blog": "Blog",
+    "resources.helpCenter": "Help Center",
+    "resources.documentation": "Documentation",
+    "resources.tutorials": "Tutorials",
 
     // Hero
     "hero.title": "Online Audio to Text Converter",
