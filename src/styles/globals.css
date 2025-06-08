@@ -2,6 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Modern Typography */
+@import "./modern-typography.css";
+
+/* Modern Animations */
+@import "./modern-animations.css";
+
 /* Blog Article Styles */
 @import "./blog-article.css";
 
