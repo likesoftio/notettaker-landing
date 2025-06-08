@@ -304,7 +304,7 @@ export default function BlogArticleV2() {
                     {post.difficulty && (
                       <Badge variant="outline">
                         {post.difficulty === "beginner" && "Начинающий"}
-                        {post.difficulty === "intermediate" && "Средний"}
+                        {post.difficulty === "intermediate" && "С��едний"}
                         {post.difficulty === "advanced" && "Продвинутый"}
                       </Badge>
                     )}
@@ -364,20 +364,7 @@ export default function BlogArticleV2() {
                 {/* Article Content */}
                 <div className="p-8">
                   <div
-                    className="prose prose-lg dark:prose-invert max-w-none
-                      prose-headings:text-gray-900 dark:prose-headings:text-white
-                      prose-p:text-gray-700 dark:prose-p:text-gray-300
-                      prose-p:leading-relaxed
-                      prose-a:text-blue-600 dark:prose-a:text-blue-400
-                      prose-strong:text-gray-900 dark:prose-strong:text-white
-                      prose-code:bg-gray-100 dark:prose-code:bg-gray-800
-                      prose-code:px-2 prose-code:py-1 prose-code:rounded
-                      prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950
-                      prose-blockquote:border-blue-600 prose-blockquote:bg-blue-50 dark:prose-blockquote:bg-blue-900/20
-                      prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-lg
-                      prose-ul:text-gray-700 dark:prose-ul:text-gray-300
-                      prose-ol:text-gray-700 dark:prose-ol:text-gray-300
-                      prose-li:text-gray-700 dark:prose-li:text-gray-300"
+                    className="blog-content"
                     dangerouslySetInnerHTML={{
                       __html: BlogAPI.processContent(post.content),
                     }}
@@ -492,7 +479,7 @@ export default function BlogArticleV2() {
                     </div>
                     <div className="text-center">
                       <Sparkles className="w-4 h-4 mx-auto mb-1" />
-                      <span>Все данные защищены</span>
+                      <span>Все данные за��ищены</span>
                     </div>
                   </div>
                 </div>
