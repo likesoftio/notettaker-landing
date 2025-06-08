@@ -349,24 +349,19 @@ class PostSerializer(serializers.ModelSerializer):
                     </BodyMD>
                     <div className="bg-gray-900 text-gray-100 p-4 rounded-lg relative">
                       <code className="text-sm">
-                        # .env
-                        <br />
-                        REACT_APP_API_URL=http://localhost:8000
-                        <br />
-                        REACT_APP_USE_DRF=true
+                        # .env<br/>
+                        VITE_API_URL=http://localhost:8000<br/>
+                        VITE_USE_DRF=true
                       </code>
                       <Button
                         size="sm"
                         variant="outline"
                         className="absolute top-2 right-2"
-                        onClick={() =>
-                          copyToClipboard(
-                            "REACT_APP_API_URL=http://localhost:8000\nREACT_APP_USE_DRF=true",
-                          )
-                        }
+                        onClick={() => copyToClipboard('VITE_API_URL=http://localhost:8000\nVITE_USE_DRF=true')}
                       >
                         <Copy className="w-4 h-4" />
                       </Button>
+                    </div>
                     </div>
                   </div>
                 </div>
