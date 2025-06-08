@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { resetDatabase, checkDatabase } from "../lib/reset-db";
 
 export default function TestBlog() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [dbHealth, setDbHealth] = useState(null);
 
   useEffect(() => {
     loadAndTestData();
@@ -17,23 +19,36 @@ export default function TestBlog() {
     try {
       console.log("🧪 Testing blog database...");
 
-      // Force clear and reinitialize
-      localStorage.removeItem("blog_posts");
-      localStorage.removeItem("blog_categories");
-      localStorage.removeItem("blog_authors");
+      // Check current database health
+      const healthCheck = await checkDatabase();
+      setDbHealth(healthCheck);
 
-      // Import fresh database instance
-      const { blogDB } = await import("../lib/database");
+      if (!healthCheck.isHealthy) {
+        console.log("🔄 Database needs reinitialization...");
 
-      // Wait for initialization
-      await new Promise((resolve) => setTimeout(resolve, 500));
+        // Force clear and reinitialize
+        localStorage.removeItem("blog_posts");
+        localStorage.removeItem("blog_categories");
+        localStorage.removeItem("blog_authors");
+
+        // Import fresh database instance
+        const { blogDB } = await import("../lib/database");
+
+        // Wait for initialization
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        // Check health again
+        const newHealthCheck = await checkDatabase();
+        setDbHealth(newHealthCheck);
+      }
 
       // Get all posts
+      const { blogDB } = await import("../lib/database");
       const allPosts = await blogDB.getAllPosts();
-      console.log(`📊 Database initialized with ${allPosts.length} posts`);
+      console.log(`📊 Database has ${allPosts.length} posts`);
 
       if (allPosts.length === 0) {
-        setError("Database is empty after initialization");
+        setError("Database is still empty after initialization");
       } else {
         setPosts(allPosts);
         console.log("✅ Test successful - posts loaded");
@@ -47,8 +62,7 @@ export default function TestBlog() {
   };
 
   const clearAndReload = () => {
-    localStorage.clear();
-    window.location.reload();
+    resetDatabase();
   };
 
   if (loading) {
@@ -99,6 +113,20 @@ export default function TestBlog() {
           <h2 className="text-xl font-semibold mb-4">
             Database Status: {posts.length > 0 ? "✅ Working" : "❌ Empty"}
           </h2>
+
+          {dbHealth && (
+            <div className="mb-4 p-3 bg-gray-50 rounded">
+              <h3 className="font-medium mb-2">Health Check:</h3>
+              <div className="grid grid-cols-3 gap-4 text-sm">
+                <div>Posts: {dbHealth.posts}</div>
+                <div>Categories: {dbHealth.categories}</div>
+                <div>Authors: {dbHealth.authors}</div>
+              </div>
+              <div className="mt-2">
+                Status: {dbHealth.isHealthy ? "✅ Healthy" : "❌ Needs Fix"}
+              </div>
+            </div>
+          )}
 
           <div className="mb-4">
             <p className="text-lg">
