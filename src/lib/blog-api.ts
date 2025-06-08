@@ -93,6 +93,22 @@ export class BlogAPI {
     return await blogDB.searchPosts(query);
   }
 
+  // CRUD operations for posts
+  static async createPost(post: Omit<BlogPost, "id">): Promise<BlogPost> {
+    return blogDB.createPost(post);
+  }
+
+  static async updatePost(
+    id: string,
+    updates: Partial<BlogPost>,
+  ): Promise<BlogPost | null> {
+    return blogDB.updatePost(id, updates);
+  }
+
+  static async deletePost(id: string): Promise<boolean> {
+    return blogDB.deletePost(id);
+  }
+
   // Categories API
   static async getAllCategories(): Promise<BlogCategory[]> {
     return await blogDB.getAllCategories();
