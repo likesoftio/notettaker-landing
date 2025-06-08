@@ -1,57 +1,81 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { ArrowLeft } from "lucide-react";
+import Head from "../components/SEO/Head";
+import { MobileLayout } from "../components/mobile";
+import { Button } from "../components/ui/button";
+import { ArrowLeft, FileText, Mail, Phone, MapPin } from "lucide-react";
 
 export default function OfferAgreement() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <MobileLayout
+      headerProps={{ showBorder: true }}
+      footerProps={{ variant: "minimal" }}
+    >
+      <Head
+        title="Договор оферта - mymeet.ai"
+        description="Договор оферта возмездного оказания услуг по предоставлению услуг автоматической транскрипции аудио и видео файлов в сервисе mymeet.ai."
+        keywords={[
+          "договор оферта",
+          "пользовательское соглашение",
+          "условия использования",
+          "mymeet.ai",
+          "юридические документы",
+        ]}
+        url="https://mymeet.ai/offer"
+      />
 
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* Back Button */}
-        <div className="mb-8">
-          <Link
-            to="/"
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+      <main className="container mx-auto px-4 py-6 sm:py-8 lg:py-12 max-w-4xl">
+        {/* Навигация назад */}
+        <div className="mb-6">
+          <Button
+            variant="ghost"
+            asChild
+            className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            На главную
-          </Link>
+            <Link to="/">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              На главную
+            </Link>
+          </Button>
         </div>
 
-        {/* Page Header */}
-        <div className="mb-12">
-          <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            ДОГОВОР ОФЕРТА
-          </h1>
-          <h2 className="text-xl lg:text-2xl font-semibold text-gray-700 mb-4">
+        {/* Заголовок страницы */}
+        <header className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <FileText className="w-8 h-8 text-blue-600" />
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+              ДОГОВОР ОФЕРТА
+            </h1>
+          </div>
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
             ВОЗМЕЗДНОГО ОКАЗАНИЯ УСЛУГ
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-2">
             по предоставлению услуг автоматической транскрипции аудио и видео
             файлов
           </p>
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-gray-500 dark:text-gray-500">
             Дата публикации: 30 мая 2025 г.
           </p>
-        </div>
+        </header>
 
-        {/* Agreement Content */}
-        <div className="prose prose-lg max-w-none">
-          <div className="bg-blue-50 p-6 rounded-lg mb-8">
-            <p className="text-sm text-blue-800 font-medium mb-2">
-              ��НИМАНИЕ! ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ
+        <div className="prose prose-gray dark:prose-invert max-w-none">
+          {/* Важное уведомление */}
+          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 sm:p-6 mb-8">
+            <p className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
+              ВНИМАНИЕ! ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ
             </p>
-            <p className="text-sm text-blue-700">
+            <p className="text-sm text-blue-700 dark:text-blue-300 mb-0">
               Настоящий документ является публичной офертой в соответствии со
-              статьей 437 Гражданского кодекса Российской Федерации. Принятие
+              статьей 437 Гражданского кодекса Российской Федерации. П��инятие
               настоящей оферты осуществляется путём совершения Заказчиком
               действий по оплате услуг.
             </p>
           </div>
 
-          <h2>1. ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            1. ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ
+          </h2>
           <p>В настоящем договоре используются следующие термины:</p>
           <ul>
             <li>
@@ -79,7 +103,9 @@ export default function OfferAgreement() {
             </li>
           </ul>
 
-          <h2>2. ПРЕДМЕТ ДОГОВОРА</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            2. ПРЕДМЕТ ДОГОВОРА
+          </h2>
           <p>
             2.1. Исполнитель обязуется оказать Заказчику услуги по
             автоматической транскрипции аудио и видео файлов с использованием
@@ -102,16 +128,18 @@ export default function OfferAgreement() {
             <li>Экспорт результатов в форматы DOCX, SRT, XLSX.</li>
           </ul>
 
-          <h2>3. СТОИМОСТЬ УСЛУГ И ПОРЯДОК РАСЧЁТОВ</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            3. СТОИМОСТЬ УСЛУГ И ПОРЯДОК РАСЧЁТОВ
+          </h2>
           <p>
             3.1. Стоимость услуг рассчитывается исходя из длительности
             обрабатываемого аудио:
           </p>
-          <div className="bg-gray-50 p-6 rounded-lg my-6">
-            <h3 className="text-lg font-semibold mb-4">
+          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 my-6">
+            <h3 className="text-lg font-semibold mb-4 mt-0">
               Тарифы на услуги транскрипции:
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 mb-0">
               <li>
                 <strong>Базовый тариф:</strong> 2 рубля за минуту обработки
               </li>
@@ -143,7 +171,9 @@ export default function OfferAgreement() {
             банковские переводы.
           </p>
 
-          <h2>4. ТЕХНИЧЕСКИЕ ТРЕБОВАНИЯ И ОГРАНИЧЕНИЯ</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            4. ТЕХНИЧЕСКИЕ ТРЕБОВАНИЯ И ОГРАНИЧЕНИЯ
+          </h2>
           <p>4.1. К обработке принимаются файлы следующих форматов:</p>
           <ul>
             <li>
@@ -161,7 +191,9 @@ export default function OfferAgreement() {
             <li>Рекомендуемое качество: 44,1 кГц, 16-24 бит.</li>
           </ul>
 
-          <h2>5. КАЧЕСТВО УСЛУГ</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            5. КАЧЕСТВО УСЛУГ
+          </h2>
           <p>5.1. Исполнитель гарантирует точность транскрипции:</p>
           <ul>
             <li>Для высококачественных записей: до 98,86%;</li>
@@ -178,65 +210,9 @@ export default function OfferAgreement() {
             </li>
           </ul>
 
-          <h2>6. ПОРЯДОК ОКАЗАНИЯ УСЛУГ</h2>
-          <p>
-            6.1. Заказчик загружает файл через веб-интерфейс сервиса Notetaker.
-          </p>
-          <p>
-            6.2. Система автоматически определяет длительность и рассчитывает
-            стоимость.
-          </p>
-          <p>
-            6.3. После подтверждения заказа и оплаты начинается обработка файла.
-          </p>
-          <p>
-            6.4. Время обработки составляет от 10% до 50% от длительности
-            исходного файла.
-          </p>
-          <p>
-            6.5. По завершении обработки результат направляется на указанный
-            email и становится доступен для скачивания в личном кабинете.
-          </p>
-
-          <h2>7. ПРАВА И ОБЯЗАННОСТИ СТОРОН</h2>
-          <h3>7.1. Исполнитель обязуется:</h3>
-          <ul>
-            <li>Оказать услуги в полном объёме и в срок;</li>
-            <li>Обеспечить конфиденциальность обрабатываемых данных;</li>
-            <li>Предоставить результат в заявленных форматах;</li>
-            <li>Обеспечить техническую поддержку пользователей.</li>
-          </ul>
-
-          <h3>7.2. Заказчик обязуется:</h3>
-          <ul>
-            <li>Своевременно оплачивать заказанные услуги;</li>
-            <li>
-              Предоставлять файлы, соответствующие техническим требованиям;
-            </li>
-            <li>Не нарушать авторские права третьих лиц;</li>
-            <li>Не загружать файлы с незаконным содержанием.</li>
-          </ul>
-
-          <h2>8. ОТВЕТСТВЕННОСТЬ СТОРОН</h2>
-          <p>
-            8.1. За нарушение обязательств по договору стороны несут
-            ответственность в соответствии с действующим законодательством
-            Российской Федерации.
-          </p>
-          <p>8.2. Исполнитель не несёт ответственности за:</p>
-          <ul>
-            <li>
-              Неточности транскрипции, обусловленные низким качеством исходного
-              файла;
-            </li>
-            <li>Временную недоступность сервиса по техническим причинам;</li>
-            <li>
-              Ущерб, ��ричинённый использованием результатов транскрипции;
-            </li>
-            <li>Нарушение Заказчиком авторских прав третьих лиц.</li>
-          </ul>
-
-          <h2>9. ВОЗВРАТ ДЕНЕЖНЫХ СРЕДСТВ</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            9. ВОЗВРАТ ДЕНЕЖНЫХ СРЕДСТВ
+          </h2>
           <p>9.1. Возврат денежных средств производится в следующих случаях:</p>
           <ul>
             <li>
@@ -254,20 +230,9 @@ export default function OfferAgreement() {
             заявления.
           </p>
 
-          <h2>10. ИНТЕЛЛЕКТУАЛЬНАЯ СОБСТВЕННОСТЬ</h2>
-          <p>
-            10.1. Исключительные права на загружаемые файлы остаются у
-            Заказчика.
-          </p>
-          <p>
-            10.2. Результаты транскрипции передаются Заказчику в полном объёме.
-          </p>
-          <p>
-            10.3. Исполнитель обязуется удалить исходные файлы и результаты
-            обработки через 30 дней после оказания услуг.
-          </p>
-
-          <h2>11. КОНФИДЕНЦИАЛЬНОСТЬ</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            11. КОНФИДЕНЦИАЛЬНОСТЬ
+          </h2>
           <p>
             11.1. Исполнитель гарантирует конфиденциальность всех данных
             Заказчика.
@@ -278,46 +243,20 @@ export default function OfferAgreement() {
           </p>
           <p>
             11.3. Подробная информация о обработке персональных данных изложена
-            в
+            в{" "}
             <Link
-              to="/privacy-policy"
-              className="text-blue-600 hover:text-blue-800"
+              to="/privacy"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
             >
               Политике конфиденциальности
             </Link>
             .
           </p>
 
-          <h2>12. ФОРС-МАЖОР</h2>
-          <p>
-            12.1. Стороны освобождаются от ответственности за частичное или
-            полное неисполнение обязательств, если это явилось следствием
-            обстоятельств непреодолимой силы.
-          </p>
-
-          <h2>13. РАЗРЕШЕНИЕ СПОРОВ</h2>
-          <p>13.1. Все споры решаются путём переговоров между сторонами.</p>
-          <p>
-            13.2. При невозможности досудебного урегулирования споры
-            рассматриваются в судебном порядке по месту нахождения Исполнителя.
-          </p>
-
-          <h2>14. ЗАКЛЮЧИТЕЛЬНЫЕ ПОЛОЖЕНИЯ</h2>
-          <p>
-            14.1. Настоящая оферта вступает в силу с момента её размещения на
-            сайте.
-          </p>
-          <p>
-            14.2. Исполнитель имеет право вносить изменения в настоящую оферту с
-            уведомлением за 7 дней.
-          </p>
-          <p>
-            14.3. Принятие оферты осуществляется путём оплаты услуг и означает
-            полное согласие с её условиями.
-          </p>
-
-          <h2>15. РЕКВИЗИТЫ ИСПОЛНИТЕЛЯ</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            15. РЕКВИЗИТЫ ИСПОЛНИТЕЛЯ
+          </h2>
+          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6">
             <p className="font-semibold mb-4">Индивидуальный предприниматель</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -336,7 +275,7 @@ export default function OfferAgreement() {
                   <strong>Телефон:</strong>{" "}
                   <a
                     href="tel:89856219221"
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     8 (985) 621-92-21
                   </a>
@@ -345,7 +284,7 @@ export default function OfferAgreement() {
                   <strong>Email:</strong>{" "}
                   <a
                     href="mailto:hi@notetaker.ru"
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     hi@notetaker.ru
                   </a>
@@ -357,59 +296,19 @@ export default function OfferAgreement() {
             </div>
           </div>
 
-          <div className="mt-12 p-6 bg-green-50 rounded-lg">
-            <p className="text-sm text-green-800">
-              <strong>Акцепт оферты:</strong> Оплачивая услуги сервиса
+          <div className="mt-8 p-4 sm:p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+            <p className="text-sm text-green-800 dark:text-green-200 mb-0">
+              <strong>Акцепт оф��рты:</strong> Оплачивая услуги сервиса
               Notetaker, Вы выражаете полное и безоговорочное согласие с
               условиями настоящего договора оферты и обязуетесь их исполнять.
             </p>
           </div>
+
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">
+            © 2024 ООО «MyMeet AI». Все права защищены.
+          </p>
         </div>
-      </div>
-
-      <Footer />
-
-      <style jsx>{`
-        .prose h2 {
-          font-size: 1.875rem;
-          font-weight: 700;
-          color: rgb(17, 24, 39);
-          margin-top: 3rem;
-          margin-bottom: 1.5rem;
-          line-height: 1.2;
-        }
-
-        .prose h3 {
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: rgb(17, 24, 39);
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-        }
-
-        .prose p {
-          color: rgb(55, 65, 81);
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-
-        .prose ul,
-        .prose ol {
-          margin-bottom: 1.5rem;
-          padding-left: 1.5rem;
-        }
-
-        .prose li {
-          color: rgb(55, 65, 81);
-          line-height: 1.7;
-          margin-bottom: 0.5rem;
-        }
-
-        .prose strong {
-          font-weight: 600;
-          color: rgb(17, 24, 39);
-        }
-      `}</style>
-    </div>
+      </main>
+    </MobileLayout>
   );
 }
