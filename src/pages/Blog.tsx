@@ -129,7 +129,7 @@ export default function Blog() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
         <Head
           title="Блог notetaker.ru - Статьи о продуктивности встреч и ИИ"
-          description="Читайте наш блог о технологиях ИИ, эффективности встреч, управ��ении задачами и новостях продукта notetaker.ru. Полезные советы и инсайты для профессионалов."
+          description="Читайте наш блог о технологиях ИИ, эффективности встреч, управлении задачами и новостях продукта notetaker.ru. Полезные советы и инсайты для профессионалов."
           keywords={[
             "блог notetaker.ru",
             "статьи об ИИ",
@@ -227,7 +227,7 @@ export default function Blog() {
                 </div>
 
                 {/* Categories */}
-                <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="sticky top-20 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                     <Filter className="w-4 h-4" />
                     Категории
