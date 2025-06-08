@@ -30,7 +30,7 @@ export default function CallToActionSection() {
           {/* Left content */}
           <div>
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8">
-              {t("cta.title") || "Попробуйте mymeet.ai в деле."}{" "}
+              {t("cta.title") || "Попробуйте notetaker.ru в деле."}{" "}
               <span className="text-blue-600">
                 {t("cta.subtitle") || "Бесплатно."}
               </span>
@@ -85,7 +85,7 @@ export default function CallToActionSection() {
                     <span className="text-white text-sm font-bold">M</span>
                   </div>
                   <span className="font-semibold text-gray-900 dark:text-white">
-                    mymeet.ai
+                    notetaker.ru
                   </span>
                 </div>
 
