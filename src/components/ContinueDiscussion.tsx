@@ -20,7 +20,8 @@ export default function ContinueDiscussion() {
       const rate = scrolled * -0.3;
 
       const parallaxElements =
-        sectionRef.current.querySelectorAll(".parallax-element");
+        sectionRef.current.querySelectorAll(".parallax-bg");
+      sectionRef.current.querySelectorAll(".parallax-element");
       parallaxElements.forEach((element, index) => {
         const speed = 0.3 + index * 0.1;
         (element as HTMLElement).style.transform =
@@ -126,7 +127,7 @@ export default function ContinueDiscussion() {
                     </div>
                     <div className="text-sm space-y-2">
                       <p>
-                        В ходе встречи ��бсуждались несколько стратегий для
+                        В ходе встречи обсуждались несколько стратегий для
                         upselling:
                       </p>
                       <div className="space-y-1">
