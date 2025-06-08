@@ -197,7 +197,7 @@ export class BlogAPI {
   // Social sharing
   static generateSocialShareUrls(
     post: BlogPost,
-    baseUrl: string = "https://mymeet.ai",
+    baseUrl: string = "https://notetaker.ru",
   ) {
     const postUrl = `${baseUrl}/blog/${post.slug}`;
     const text = `${post.title} - ${post.excerpt}`;
@@ -279,7 +279,7 @@ export class BlogAPI {
     }
 
     if (!post.tags || post.tags.length === 0) {
-      errors.push("Нео��ходимо добавить хотя бы один тег");
+      errors.push("Необходимо добавить хотя бы один тег");
     }
 
     return {

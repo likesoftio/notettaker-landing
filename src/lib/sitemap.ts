@@ -18,7 +18,7 @@ export interface SitemapUrl {
 export class SitemapGenerator {
   private baseUrl: string;
 
-  constructor(baseUrl: string = "https://mymeet.ai") {
+  constructor(baseUrl: string = "https://notetaker.ru") {
     this.baseUrl = baseUrl.replace(/\/$/, ""); // Remove trailing slash
   }
 
@@ -153,12 +153,12 @@ Crawl-delay: 1`;
     return {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "mymeet.ai",
+      name: "notetaker.ru",
       description: "ИИ платформа для анализа и транскрипции встреч",
       url: this.baseUrl,
       publisher: {
         "@type": "Organization",
-        name: "mymeet.ai",
+        name: "notetaker.ru",
         logo: {
           "@type": "ImageObject",
           url: `${this.baseUrl}/logo.png`,
@@ -198,7 +198,7 @@ export const SEOUtils = {
   // Generate canonical URL
   generateCanonicalUrl(
     path: string,
-    baseUrl: string = "https://mymeet.ai",
+    baseUrl: string = "https://notetaker.ru",
   ): string {
     return `${baseUrl.replace(/\/$/, "")}${path.startsWith("/") ? path : `/${path}`}`;
   },
