@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Blog Article Styles */
+@import "./blog-article.css";
+
 /* Global font configuration */
 @layer base {
   :root {

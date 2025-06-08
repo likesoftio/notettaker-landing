@@ -1,0 +1,351 @@
+/* Blog Article Enhanced Styles */
+
+/* Content styling */
+.prose-content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.dark .prose-content {
+  color: #d1d5db;
+}
+
+.prose-content .lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.dark .prose-content .lead {
+  color: #9ca3af;
+}
+
+/* Enhanced tables */
+.comparison-table {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.dark .comparison-table {
+  border-color: #374151;
+  background: #1f2937;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.comparison-table th {
+  background: #f3f4f6;
+  color: #111827;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.dark .comparison-table th {
+  background: #374151;
+  color: #f9fafb;
+  border-bottom-color: #4b5563;
+}
+
+.comparison-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .comparison-table td {
+  border-bottom-color: #374151;
+}
+
+.comparison-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.dark .comparison-table tbody tr:hover {
+  background: #374151;
+}
+
+/* Extension/Platform cards */
+.extension-card,
+.platform-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .extension-card,
+.dark .platform-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-color: #475569;
+}
+
+.extension-card::before,
+.platform-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
+}
+
+.extension-card ul,
+.platform-card ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.extension-card li,
+.platform-card li {
+  margin: 0.5rem 0;
+}
+
+/* Enhanced blockquotes */
+.prose-content blockquote {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  position: relative;
+}
+
+.dark .prose-content blockquote {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  border-left-color: #60a5fa;
+}
+
+.prose-content blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: #3b82f6;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  line-height: 1;
+  opacity: 0.3;
+}
+
+.prose-content blockquote footer {
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.dark .prose-content blockquote footer {
+  color: #d1d5db;
+}
+
+.prose-content blockquote cite {
+  font-style: normal;
+}
+
+/* Enhanced headings */
+.prose-content h2 {
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  margin: 3rem 0 1.5rem 0;
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.dark .prose-content h2 {
+  color: #f9fafb;
+  border-bottom-color: #374151;
+}
+
+.prose-content h3 {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 2rem 0 1rem 0;
+}
+
+.dark .prose-content h3 {
+  color: #f3f4f6;
+}
+
+/* Enhanced lists */
+.prose-content ul li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.prose-content ul li::marker {
+  color: #3b82f6;
+}
+
+.prose-content ol li {
+  margin: 0.75rem 0;
+}
+
+.prose-content ol li::marker {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Strong text styling */
+.prose-content strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.dark .prose-content strong {
+  color: #f9fafb;
+}
+
+/* Link styling */
+.prose-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-color: #93c5fd;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.prose-content a:hover {
+  color: #1d4ed8;
+  text-decoration-color: #2563eb;
+}
+
+.dark .prose-content a {
+  color: #60a5fa;
+  text-decoration-color: #3b82f6;
+}
+
+.dark .prose-content a:hover {
+  color: #93c5fd;
+  text-decoration-color: #60a5fa;
+}
+
+/* Code styling */
+.prose-content code {
+  background: #f1f5f9;
+  color: #be185d;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dark .prose-content code {
+  background: #334155;
+  color: #f472b6;
+}
+
+/* Image styling */
+.prose-content img {
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.prose-content img:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.15),
+    0 8px 12px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus improvements */
+.prose-content h2:target,
+.prose-content h3:target {
+  animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: #fef3c7;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+  100% {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.dark .prose-content h2:target,
+.dark .prose-content h3:target {
+  animation: highlightDark 2s ease;
+}
+
+@keyframes highlightDark {
+  0% {
+    background-color: #451a03;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+  100% {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .prose-content {
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .extension-card,
+  .platform-card {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    break-inside: avoid;
+  }
+
+  .comparison-table {
+    break-inside: avoid;
+  }
+}
