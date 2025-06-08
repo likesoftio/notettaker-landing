@@ -7,8 +7,10 @@ import DRFBlogAPI from "./blog-api-drf";
 
 // Determine which API to use based on environment variable
 const useDRF =
-  process.env.REACT_APP_USE_DRF === "true" ||
-  process.env.REACT_APP_API_URL !== undefined;
+  import.meta.env.VITE_USE_DRF === "true" ||
+  import.meta.env.REACT_APP_USE_DRF === "true" ||
+  import.meta.env.VITE_API_URL !== undefined ||
+  import.meta.env.REACT_APP_API_URL !== undefined;
 
 // Export the appropriate API
 const BlogAPI = useDRF ? DRFBlogAPI : LocalStorageBlogAPI;
@@ -18,7 +20,10 @@ export default BlogAPI;
 // Export API status for debugging
 export const getApiStatus = () => ({
   backend: useDRF ? "DRF" : "localStorage",
-  apiUrl: process.env.REACT_APP_API_URL || "Not configured",
+  apiUrl:
+    import.meta.env.VITE_API_URL ||
+    import.meta.env.REACT_APP_API_URL ||
+    "Not configured",
   isDevelopment,
   useDRF,
 });
@@ -26,9 +31,11 @@ export const getApiStatus = () => ({
 // Helper function to switch APIs at runtime (for testing)
 export const switchApi = (toDRF: boolean) => {
   if (toDRF) {
-    if (!process.env.REACT_APP_API_URL) {
+    const apiUrl =
+      import.meta.env.VITE_API_URL || import.meta.env.REACT_APP_API_URL;
+    if (!apiUrl) {
       console.warn(
-        "DRF API URL not configured. Please set REACT_APP_API_URL environment variable.",
+        "DRF API URL not configured. Please set VITE_API_URL or REACT_APP_API_URL environment variable.",
       );
       return false;
     }
