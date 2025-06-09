@@ -103,9 +103,6 @@ export default function Index() {
           <div className="mobile-slide-right">
             <SecurityEnhanced />
           </div>
-          <div className="mobile-fade-in">
-            <IntegrationsSection />
-          </div>
           <div className="mobile-slide-up">
             <CallToActionSection />
           </div>
