@@ -8,8 +8,7 @@ import CompanyLogos from "../components/CompanyLogos";
 import SecuritySection from "../components/SecuritySection";
 import IntegrationsSection from "../components/IntegrationsSection";
 import CallToActionSection from "../components/CallToActionSection";
-import UseCasesSection from "../components/UseCasesSection";
-import HowItWorksSection from "../components/HowItWorksSection";
+
 import TestimonialsSection from "../components/TestimonialsSection";
 import Pricing from "../components/Pricing";
 import CTASection from "../components/CTASection";
@@ -102,12 +101,7 @@ export default function Index() {
           <div className="mobile-slide-up">
             <CallToActionSection />
           </div>
-          <div className="mobile-fade-in">
-            <UseCasesSection />
-          </div>
-          <div className="mobile-scale-in">
-            <HowItWorksSection />
-          </div>
+
           <div className="mobile-slide-right">
             <TestimonialsSection />
           </div>
