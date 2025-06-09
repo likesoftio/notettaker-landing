@@ -19,7 +19,7 @@ export default function WhoIsItFor() {
       icon: Users,
       title: "Рекрутмент",
       description:
-        "Транскрибируем встречу, выявим мотивацию, навыки и оп��т. Проанализируем ответы и сформируем инсайты для коллег.",
+        "Транскрибируем встречу, выявим мотивацию, навыки и опыт. Проанализируем ответы и сформируем инсайты для коллег.",
       background: "bg-gradient-to-br from-emerald-600 to-emerald-800",
       textColor: "text-white",
       featured: true,
@@ -48,10 +48,10 @@ export default function WhoIsItFor() {
   ];
 
   return (
-    <section className="py-20 px-8 bg-white dark:bg-gray-900 relative">
+    <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 bg-white dark:bg-gray-900 relative">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-8 md:mb-12 lg:mb-16">
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800">
               <Users className="w-4 h-4 text-gray-600 dark:text-gray-400" />
@@ -62,7 +62,7 @@ export default function WhoIsItFor() {
           </div>
 
           <div className="max-w-4xl">
-            <h2 className="text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-900 dark:text-white leading-tight">
               Продукт создан для решения задач профессионалов из разных
               индустрий
             </h2>
@@ -70,7 +70,7 @@ export default function WhoIsItFor() {
         </div>
 
         {/* Use Cases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-2">
           {useCases.map((useCase, index) => {
             const IconComponent = useCase.icon;
             const isHovered = hoveredCard === useCase.id;
@@ -79,7 +79,9 @@ export default function WhoIsItFor() {
               <div
                 key={useCase.id}
                 className={`
-                  relative rounded-lg p-6 flex flex-col justify-between h-[464px] group cursor-pointer
+                  relative rounded-lg p-6 flex flex-col justify-between
+                  h-[320px] md:h-[400px] lg:h-[464px]
+                  group cursor-pointer
                   ${useCase.background}
                   transition-all duration-500 ease-out
                   ${isHovered ? "scale-[1.03] shadow-2xl -translate-y-2" : "hover:scale-[1.02] hover:shadow-lg"}
