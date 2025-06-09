@@ -128,7 +128,10 @@ export default function Index() {
           </section>
 
           <div className="section-transition">
-            <div className="section-transition-wave" style={{ color: '#ffffff' }}></div>
+            <div
+              className="section-transition-wave"
+              style={{ color: "#ffffff" }}
+            ></div>
           </div>
 
           {/* 7. Демо видеозвонка - интерфейс в действии */}
@@ -137,8 +140,10 @@ export default function Index() {
           </section>
 
           <div className="section-transition">
-            <div className="section-transition-diagonal" style={{ color: '#1e293b' }}></div>
-          </div>
+            <div
+              className="section-transition-diagonal"
+              style={{ color: "#1e293b" }}
+            ></div>
           </div>
 
           {/* 8. Безопасность - снимаем возражения */}
@@ -153,7 +158,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 8. Процесс работы - пошаговое объяснение */}
+          {/* 9. Процесс работы - пошаговое объяснение */}
           <section className="section-gradient-orange section-padding section-animate">
             <ProcessSteps />
           </section>
@@ -165,7 +170,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 9. Дополнительные возможности */}
+          {/* 10. Дополнительные возможности */}
           <section className="section-light section-padding-sm section-animate">
             <Features />
           </section>
@@ -177,7 +182,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 10. Преимущества */}
+          {/* 11. Преимущества */}
           <section className="section-gradient-mint section-padding section-animate">
             <AdvantagesSection />
           </section>
@@ -189,7 +194,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 11. Логотипы компаний - доверие */}
+          {/* 12. Логотипы компаний - доверие */}
           <section className="section-light section-padding-sm section-animate">
             <CompanyLogos />
           </section>
@@ -201,7 +206,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 12. Отзывы - социальное доказательство */}
+          {/* 13. Отзывы - социальное доказательство */}
           <section className="section-gradient-lavender section-padding section-animate">
             <TestimonialsSection />
           </section>
@@ -213,7 +218,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 13. Тарифы - продажа */}
+          {/* 14. Тарифы - продажа */}
           <section className="section-light-alt section-padding section-animate">
             <Pricing />
           </section>
@@ -225,7 +230,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 14. Призыв к действию - конверсия */}
+          {/* 15. Призыв к действию - конверсия */}
           <section className="section-gradient-blue section-padding section-animate">
             <CallToActionSection />
           </section>
@@ -237,7 +242,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 15. Продолжение общения - ретаргетинг */}
+          {/* 16. Продолжение общения - ретаргетинг */}
           <section className="section-gradient-purple section-padding-sm section-animate">
             <ContinueDiscussion />
           </section>
@@ -249,7 +254,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 16. Финальный призыв к действию */}
+          {/* 17. Финальный призыв к действию */}
           <section className="section-light section-padding section-animate">
             <CTASection />
           </section>
@@ -261,7 +266,7 @@ export default function Index() {
             ></div>
           </div>
 
-          {/* 17. FAQ - снимаем последние возражения */}
+          {/* 18. FAQ - снимаем последние возражения */}
           <section className="section-light-alt section-padding section-animate">
             <FAQ />
           </section>
