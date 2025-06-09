@@ -24,6 +24,7 @@ import ContinueDiscussion from "../components/ContinueDiscussion";
 import FeaturesWithTabs from "../components/FeaturesWithTabs";
 import WhoIsItFor from "../components/WhoIsItFor";
 import SecurityEnhanced from "../components/SecurityEnhanced";
+import AIAnalyticsDemo from "../components/AIAnalyticsDemo";
 // import TestimonialsEnhanced from "../components/TestimonialsEnhanced";
 
 export default function Index() {
@@ -76,6 +77,9 @@ export default function Index() {
           </div>
           <div className="mobile-scale-in">
             <FeaturesWithTabs />
+          </div>
+          <div className="mobile-fade-in">
+            <AIAnalyticsDemo />
           </div>
           <div className="mobile-slide-right">
             <ProcessSteps />
