@@ -42,7 +42,7 @@ export default function AIAnalyticsDemo() {
 
           <div className="lg:pl-8">
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
-              AI Отчеты помогают находить инсайты в интервью, оценивать
+              AI Отчеты помогают находить инсайты в интервью, оцен��вать
               эффективность менеджеров и синхронизировать работу команд
             </p>
 
@@ -88,35 +88,40 @@ export default function AIAnalyticsDemo() {
         </div>
 
         {/* Report Demo */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 rounded-2xl shadow-xl overflow-hidden relative">
+          {/* Background blur effect */}
+          <div className="absolute inset-0 bg-gray-500/80 backdrop-blur-sm"></div>
+
           {/* Tabs */}
-          <div className="bg-gray-700 dark:bg-gray-900 px-6 py-4">
-            <div className="flex gap-4">
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === "meeting"
-                    ? "bg-gray-600 text-white"
-                    : "text-gray-300 hover:text-white"
-                }`}
-                onClick={() => setActiveTab("meeting")}
-              >
-                Обычная встреча
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === "report"
-                    ? "bg-gray-600 text-white"
-                    : "text-gray-300 hover:text-white"
-                }`}
-                onClick={() => setActiveTab("report")}
-              >
-                Пример отчета
-              </button>
+          <div className="relative z-10">
+            <div className="bg-gray-700/90 dark:bg-gray-900/90 px-6 py-4 backdrop-blur-sm">
+              <div className="flex gap-4">
+                <button
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    activeTab === "meeting"
+                      ? "bg-gray-600 text-white"
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                  onClick={() => setActiveTab("meeting")}
+                >
+                  Обычная встреча
+                </button>
+                <button
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    activeTab === "report"
+                      ? "bg-gray-600 text-white"
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                  onClick={() => setActiveTab("report")}
+                >
+                  Пример отчета
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Content */}
-          <div className="p-6 lg:p-8 max-h-[600px] overflow-y-auto">
+          <div className="relative z-10 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm p-6 lg:p-8 max-h-[600px] overflow-y-auto">
             {activeTab === "report" && (
               <div className="space-y-8">
                 {/* Краткое содержание */}
@@ -131,7 +136,7 @@ export default function AIAnalyticsDemo() {
                     Проведено собеседование с кандидатом на позицию
                     бизнес-аналитика. Обсуждена квалификация кандидата, опыт
                     работы с процессами моделирования и аналитическими
-                    инструментами. Кандидат продемонстрировал хорошие знания в
+                    инструментами. Кандидат продемонст��ировал хорошие знания в
                     области системного анализа и управления проектами.
                   </p>
                 </div>
@@ -156,7 +161,7 @@ export default function AIAnalyticsDemo() {
                           (BPMN, UML)
                         </li>
                         <li>
-                          • Владение инструментами для управления проектами
+                          • Владение инструмен��ами для управления проектами
                         </li>
                         <li>• Навыки сбора и анализа требований</li>
                       </ul>
@@ -228,6 +233,33 @@ export default function AIAnalyticsDemo() {
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
                       Не использует Customer Journey Map в своей практике
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Задачи */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <Target className="w-5 h-5 text-blue-600" />
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      Задачи
+                    </h3>
+                  </div>
+                  <ul className="text-gray-700 dark:text-gray-300 space-y-3">
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></span>
+                      <span>
+                        Включить кандидата в список рассылки по электронной
+                        почте для уведомлений о запланированном техническом
+                        обслуживании. (Исполнитель: Сергей)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></span>
+                      <span>
+                        Обсудить с заинтересованными сторонами приоритетность
+                        подготовки команды (Исполнитель: Костя)
+                      </span>
                     </li>
                   </ul>
                 </div>
