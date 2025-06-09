@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Lock, Eye, Package, Shield } from "lucide-react";
 
 export default function SecurityEnhanced() {
+  const [hoveredFeature, setHoveredFeature] = useState<string | null>(null);
+
   const securityFeatures = [
     {
       id: "encryption",
@@ -66,24 +68,76 @@ export default function SecurityEnhanced() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-20">
             {securityFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
+              const isHovered = hoveredFeature === feature.id;
 
               return (
-                <div key={feature.id} className="flex flex-col gap-4 group">
+                <div
+                  key={feature.id}
+                  className="flex flex-col gap-4 group cursor-pointer"
+                  onMouseEnter={() => setHoveredFeature(feature.id)}
+                  onMouseLeave={() => setHoveredFeature(null)}
+                >
                   {/* Icon */}
-                  <div className="w-9 h-9 bg-gray-900 dark:bg-white rounded flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-5 h-5 text-white dark:text-gray-900" />
+                  <div
+                    className={`
+                    w-9 h-9 rounded flex items-center justify-center
+                    transition-all duration-300 ease-out
+                    ${
+                      isHovered
+                        ? "bg-blue-600 dark:bg-blue-500 scale-110 shadow-lg"
+                        : "bg-gray-900 dark:bg-white group-hover:scale-105"
+                    }
+                  `}
+                  >
+                    <IconComponent
+                      className={`
+                      w-5 h-5 transition-colors duration-300
+                      ${
+                        isHovered
+                          ? "text-white"
+                          : "text-white dark:text-gray-900"
+                      }
+                    `}
+                    />
                   </div>
 
                   {/* Content */}
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-lg md:text-xl font-medium text-gray-900 dark:text-white">
+                    <h3
+                      className={`
+                      text-lg md:text-xl font-medium transition-all duration-300
+                      ${
+                        isHovered
+                          ? "text-blue-600 dark:text-blue-400 transform translate-x-1"
+                          : "text-gray-900 dark:text-white"
+                      }
+                    `}
+                    >
                       {feature.title}
                     </h3>
 
-                    <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                    <p
+                      className={`
+                      text-sm leading-relaxed transition-all duration-300
+                      ${
+                        isHovered
+                          ? "text-gray-700 dark:text-gray-300"
+                          : "text-gray-600 dark:text-gray-400"
+                      }
+                    `}
+                    >
                       {feature.description}
                     </p>
                   </div>
+
+                  {/* Hover indicator */}
+                  <div
+                    className={`
+                    h-0.5 bg-gradient-to-r from-blue-600 to-purple-600
+                    transition-all duration-300 ease-out
+                    ${isHovered ? "w-12 opacity-100" : "w-0 opacity-0"}
+                  `}
+                  />
                 </div>
               );
             })}
