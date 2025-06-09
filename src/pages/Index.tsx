@@ -23,9 +23,6 @@ import SecurityEnhanced from "../components/SecurityEnhanced";
 import MeetingTypesDemo from "../components/MeetingTypesDemo";
 import VideoCallDemo from "../components/VideoCallDemo";
 
-// Стили переходов
-import "../styles/section-transitions.css";
-
 export default function Index() {
   return (
     <HelmetProvider>
@@ -36,7 +33,7 @@ export default function Index() {
           keywords={[
             "транскрипция встреч",
             "ИИ анализ встреч",
-            "искусственный интеллект",
+            "��скусственный интеллект",
             "автоматические протоколы",
             "распознавание речи",
             "анализ совещаний",
@@ -63,213 +60,94 @@ export default function Index() {
         <Header />
         <main className="mobile-safe-area">
           {/* 1. Hero - Главный экран */}
-          <section className="section-light section-padding-lg section-animate">
+          <div className="mobile-fade-in">
             <Hero />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#f1f5f9" }}
-            ></div>
           </div>
 
           {/* 2. Как это работает - объясняем продукт */}
-          <section className="section-light-alt section-padding section-animate">
+          <div className="mobile-slide-up">
             <HowItWorksEnhanced />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-curve"
-              style={{ color: "#667eea" }}
-            ></div>
           </div>
 
           {/* 3. Для кого - целевая аудитория */}
-          <section className="section-gradient-blue section-padding section-animate">
+          <div className="mobile-slide-up">
             <WhoIsItFor />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-diagonal"
-              style={{ color: "#a8edea" }}
-            ></div>
           </div>
 
           {/* 4. Качество транскрипции - доказательства */}
-          <section className="section-gradient-purple section-padding section-animate">
+          <div className="mobile-fade-in">
             <TranscriptionQuality />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#ffffff" }}
-            ></div>
           </div>
 
           {/* 5. Функции с табами - основные возможности */}
-          <section className="section-light section-padding section-animate">
+          <div className="mobile-scale-in">
             <FeaturesWithTabs />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-curve"
-              style={{ color: "#d299c2" }}
-            ></div>
           </div>
 
           {/* 6. Демо типов встреч - практические примеры */}
-          <section className="section-gradient-teal section-padding section-animate">
+          <div className="mobile-scale-in">
             <MeetingTypesDemo />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#ffffff" }}
-            ></div>
           </div>
 
           {/* 7. Демо видеозвонка - интерфейс в действии */}
-          <section className="section-light section-padding section-animate">
+          <div className="mobile-fade-in">
             <VideoCallDemo />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-diagonal"
-              style={{ color: "#1e293b" }}
-            ></div>
           </div>
 
           {/* 8. Безопасность - снимаем возражения */}
-          <section className="section-dark section-padding section-animate">
+          <div className="mobile-slide-right">
             <SecurityEnhanced />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#fa709a" }}
-            ></div>
           </div>
 
           {/* 9. Процесс работы - пошаговое объяснение */}
-          <section className="section-gradient-orange section-padding section-animate">
+          <div className="mobile-slide-right">
             <ProcessSteps />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-curve"
-              style={{ color: "#f8fafc" }}
-            ></div>
           </div>
 
           {/* 10. Дополнительные возможности */}
-          <section className="section-light section-padding-sm section-animate">
+          <div className="mobile-fade-in">
             <Features />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-diagonal"
-              style={{ color: "#a8e6cf" }}
-            ></div>
           </div>
 
           {/* 11. Преимущества */}
-          <section className="section-gradient-mint section-padding section-animate">
+          <div className="mobile-fade-in">
             <AdvantagesSection />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#ffffff" }}
-            ></div>
           </div>
 
           {/* 12. Логотипы компаний - доверие */}
-          <section className="section-light section-padding-sm section-animate">
+          <div className="mobile-scale-in">
             <CompanyLogos />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-curve"
-              style={{ color: "#ffecd2" }}
-            ></div>
           </div>
 
           {/* 13. Отзывы - социальное доказательство */}
-          <section className="section-gradient-lavender section-padding section-animate">
+          <div className="mobile-slide-right">
             <TestimonialsSection />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-diagonal"
-              style={{ color: "#f1f5f9" }}
-            ></div>
           </div>
 
           {/* 14. Тарифы - продажа */}
-          <section className="section-light-alt section-padding section-animate">
+          <div className="mobile-fade-in">
             <Pricing />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#667eea" }}
-            ></div>
           </div>
 
           {/* 15. Призыв к действию - конверсия */}
-          <section className="section-gradient-blue section-padding section-animate">
+          <div className="mobile-slide-up">
             <CallToActionSection />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-curve"
-              style={{ color: "#a8edea" }}
-            ></div>
           </div>
 
           {/* 16. Продолжение общения - ретаргетинг */}
-          <section className="section-gradient-purple section-padding-sm section-animate">
+          <div className="mobile-slide-up">
             <ContinueDiscussion />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-diagonal"
-              style={{ color: "#ffffff" }}
-            ></div>
           </div>
 
           {/* 17. Финальный призыв к действию */}
-          <section className="section-light section-padding section-animate">
+          <div className="mobile-slide-up">
             <CTASection />
-          </section>
-
-          <div className="section-transition">
-            <div
-              className="section-transition-wave"
-              style={{ color: "#f1f5f9" }}
-            ></div>
           </div>
 
           {/* 18. FAQ - снимаем последние возражения */}
-          <section className="section-light-alt section-padding section-animate">
+          <div className="mobile-fade-in">
             <FAQ />
-          </section>
+          </div>
         </main>
         <Footer />
       </div>
