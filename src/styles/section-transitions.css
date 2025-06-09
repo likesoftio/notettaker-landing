@@ -1,0 +1,126 @@
+/* Цветовые переходы между секциями */
+.section-light {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+}
+
+.section-light-alt {
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.section-dark {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  position: relative;
+}
+
+.section-gradient-blue {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: relative;
+}
+
+.section-gradient-purple {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  position: relative;
+}
+
+.section-gradient-teal {
+  background: linear-gradient(135deg, #d299c2 0%, #fef9d3 100%);
+  position: relative;
+}
+
+.section-gradient-orange {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  position: relative;
+}
+
+.section-gradient-mint {
+  background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+  position: relative;
+}
+
+.section-gradient-lavender {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  position: relative;
+}
+
+/* Переходные элементы между секциями */
+.section-transition {
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition-wave {
+  background: linear-gradient(180deg, transparent 0%, currentColor 100%);
+  height: 100%;
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+.section-transition-diagonal {
+  background: currentColor;
+  height: 100%;
+  clip-path: polygon(0 100%, 100% 0%, 100% 100%);
+}
+
+.section-transition-curve {
+  background: currentColor;
+  height: 100%;
+  clip-path: ellipse(150% 100% at 50% 100%);
+}
+
+/* Анимации появления секций */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: sectionFadeIn 0.8s ease-out forwards;
+}
+
+.section-animate:nth-child(even) {
+  animation-delay: 0.1s;
+}
+
+.section-animate:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+@keyframes sectionFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Отступы для секций */
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-padding-sm {
+  padding: 60px 0;
+}
+
+.section-padding-lg {
+  padding: 120px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .section-padding-sm {
+    padding: 40px 0;
+  }
+
+  .section-padding-lg {
+    padding: 80px 0;
+  }
+
+  .section-transition {
+    height: 40px;
+  }
+}
