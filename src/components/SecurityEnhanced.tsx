@@ -29,9 +29,16 @@ export default function SecurityEnhanced() {
   ];
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 bg-white dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white dark:bg-gray-900 rounded-lg p-6 md:p-8 lg:p-12">
+    <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 bg-white dark:bg-gray-900 overflow-hidden relative">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-transparent to-purple-100 dark:from-blue-900 dark:to-purple-900"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200 dark:bg-blue-800 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-200 dark:bg-purple-800 rounded-full blur-3xl opacity-20"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 md:p-8 lg:p-12 border border-gray-100 dark:border-gray-800">
           {/* Header Section */}
           <div className="mb-12 lg:mb-16">
             {/* Security Icon */}
