@@ -73,7 +73,7 @@ export default function SecurityEnhanced() {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-20">
             {securityFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               const isHovered = hoveredFeature === feature.id;
@@ -81,9 +81,14 @@ export default function SecurityEnhanced() {
               return (
                 <div
                   key={feature.id}
-                  className="flex flex-col gap-4 group cursor-pointer"
+                  className="flex flex-col gap-4 group cursor-pointer p-4 rounded-lg hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-all duration-300"
                   onMouseEnter={() => setHoveredFeature(feature.id)}
                   onMouseLeave={() => setHoveredFeature(null)}
+                  onClick={() =>
+                    setHoveredFeature(
+                      hoveredFeature === feature.id ? null : feature.id,
+                    )
+                  }
                 >
                   {/* Icon */}
                   <div
