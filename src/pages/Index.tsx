@@ -21,6 +21,7 @@ import FeaturesWithTabs from "../components/FeaturesWithTabs";
 import WhoIsItFor from "../components/WhoIsItFor";
 import SecurityEnhanced from "../components/SecurityEnhanced";
 import MeetingTypesDemo from "../components/MeetingTypesDemo";
+import VideoCallDemo from "../components/VideoCallDemo";
 
 // Стили переходов
 import "../styles/section-transitions.css";
@@ -127,13 +128,20 @@ export default function Index() {
           </section>
 
           <div className="section-transition">
-            <div
-              className="section-transition-diagonal"
-              style={{ color: "#1e293b" }}
-            ></div>
+            <div className="section-transition-wave" style={{ color: '#ffffff' }}></div>
           </div>
 
-          {/* 7. Безопасность - снимаем возражения */}
+          {/* 7. Демо видеозвонка - интерфейс в действии */}
+          <section className="section-light section-padding section-animate">
+            <VideoCallDemo />
+          </section>
+
+          <div className="section-transition">
+            <div className="section-transition-diagonal" style={{ color: '#1e293b' }}></div>
+          </div>
+          </div>
+
+          {/* 8. Безопасность - снимаем возражения */}
           <section className="section-dark section-padding section-animate">
             <SecurityEnhanced />
           </section>
