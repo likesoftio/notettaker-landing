@@ -35,14 +35,14 @@ export default function SecurityEnhanced() {
           {/* Header Section */}
           <div className="mb-12 lg:mb-16">
             {/* Security Icon */}
-            <div className="mb-8">
-              <div className="w-9 h-12 relative">
+            <div className="mb-8 group">
+              <div className="w-9 h-12 relative transform transition-transform duration-500 group-hover:scale-110">
                 <Shield className="w-full h-full text-gray-900 dark:text-white" />
               </div>
             </div>
 
             {/* Title and Description */}
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 overflow-hidden">
               <div className="w-full lg:w-[56%]">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white leading-tight">
                   Безопасность
@@ -50,18 +50,19 @@ export default function SecurityEnhanced() {
               </div>
 
               <div className="w-full lg:w-[32%]">
-                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                  Защита данных пользователей — приоритет. Для сервиса
-                  используются методы обеспечения безопасности корпоративного
-                  уровня
-                </p>
+                <div className="overflow-hidden">
+                  <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 text-left">
+                    Защита данных пользователей — приоритет. Для сервиса
+                    используются методы обеспечения безопасности корпоративного
+                    уровня
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-
           {/* Divider */}
           <div className="mb-12 lg:mb-16">
-            <div className="h-px bg-gray-200 dark:bg-gray-700 w-full"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-700 w-full"></div>
           </div>
 
           {/* Features Grid */}
