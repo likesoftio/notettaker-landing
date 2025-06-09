@@ -23,8 +23,8 @@ import TranscriptionQuality from "../components/TranscriptionQuality";
 import ContinueDiscussion from "../components/ContinueDiscussion";
 import FeaturesWithTabs from "../components/FeaturesWithTabs";
 import WhoIsItFor from "../components/WhoIsItFor";
+import SecurityEnhanced from "../components/SecurityEnhanced";
 // import TestimonialsEnhanced from "../components/TestimonialsEnhanced";
-// import SecurityEnhanced from "../components/SecurityEnhanced";
 
 export default function Index() {
   return (
@@ -93,7 +93,7 @@ export default function Index() {
             <CompanyLogos />
           </div>
           <div className="mobile-slide-right">
-            <SecuritySection />
+            <SecurityEnhanced />
           </div>
           <div className="mobile-fade-in">
             <IntegrationsSection />
