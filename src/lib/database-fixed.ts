@@ -270,7 +270,7 @@ class BlogDatabase {
           slug: "virtual-reality-meetings",
           content: this.getSampleContent("vr-meetings"),
           excerpt:
-            "Исследуем возможности виртуальной реальности для проведения и��мерсивных встреч и командной работы.",
+            "Исследуем возможности виртуальной реальности для проведения иммерсивных встреч и командной работы.",
           heroImage:
             "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=400&fit=crop",
           category: "tech-ai",

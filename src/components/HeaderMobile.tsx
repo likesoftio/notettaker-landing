@@ -305,7 +305,7 @@ export default function HeaderMobile() {
                                 <Sparkles className="h-4 w-4 text-purple-600 dark:text-purple-400" />
                               </div>
                               <span className="font-medium">
-                                {t("header.solutions") || "��ешения"}
+                                {t("header.solutions") || "Решения"}
                               </span>
                             </div>
                             <ChevronRight

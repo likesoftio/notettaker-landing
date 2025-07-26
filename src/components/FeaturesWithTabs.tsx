@@ -55,7 +55,7 @@ export default function FeaturesWithTabs() {
       image:
         "https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&h=400&fit=crop",
       features: [
-        "Распознавание 73 языков",
+        "Распознавание 19 языков",
         "Разделение по спикерам",
         "Очистка от слов-паразитов",
         "Временные метки",
@@ -70,10 +70,9 @@ export default function FeaturesWithTabs() {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       features: [
-        "Zoom, Teams, Google Meet",
-        "CRM системы",
+        "Zoom, Telemost, Google Meet",
         "Календари и планировщики",
-        "Telegram и Slack боты",
+        "Telegram бот",
       ],
       color: "orange",
     },
@@ -170,7 +169,7 @@ export default function FeaturesWithTabs() {
               </div>
 
               {/* Кнопки действий */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* <div className="flex flex-col sm:flex-row gap-4">
                 <button className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
                   <Play className="w-5 h-5" />
                   Посмотреть демо
@@ -179,7 +178,7 @@ export default function FeaturesWithTabs() {
                   <Download className="w-5 h-5" />
                   Скачать пример
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Правая часть - изображение/демо */}
@@ -239,15 +238,15 @@ export default function FeaturesWithTabs() {
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
-              73
+              19
             </div>
             <div className="text-gray-600 dark:text-gray-400 text-sm">
-              Языка поддержки
+              Языков поддержки
             </div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-              20+
+              5
             </div>
             <div className="text-gray-600 dark:text-gray-400 text-sm">
               Интеграций

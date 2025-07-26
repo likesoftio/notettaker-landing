@@ -52,7 +52,7 @@ export default function Contact() {
     {
       icon: Users,
       title: "Поддержка 19 языков",
-      description: "Высокая точн��сть распознавания речи",
+      description: "Высокая точность распознавания речи",
     },
     {
       icon: Zap,

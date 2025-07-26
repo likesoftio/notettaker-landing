@@ -7,9 +7,11 @@ import {
   Users,
   MessageSquare,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HowItWorksEnhanced() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +41,9 @@ export default function HowItWorksEnhanced() {
       icon: Upload,
       iconColor: "text-blue-600",
       bgColor: "bg-blue-50",
-      title: "Добавьте встречу",
+      title: t("howItWorks.step1.title") || "Добавьте встречу",
       description:
+        t("howItWorks.step1.description") ||
         "Загрузите файл в любом формате или пригласите бота на встречу. Подключите Telegram или календарь, чтобы записывать каждую встречу автоматически",
       image:
         "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop",
@@ -50,9 +53,10 @@ export default function HowItWorksEnhanced() {
       icon: Sparkles,
       iconColor: "text-purple-600",
       bgColor: "bg-purple-50",
-      title: "Получите инсайты",
+      title: t("howItWorks.step2.title") || "Получите инсайты",
       description:
-        "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с отве��ственными и дедлайнами",
+        t("howItWorks.step2.description") ||
+        "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     },
@@ -61,20 +65,21 @@ export default function HowItWorksEnhanced() {
       icon: FileText,
       iconColor: "text-green-600",
       bgColor: "bg-green-50",
-      title: "Отредактируйте и поделитесь",
+      title: t("howItWorks.step3.title") || "Отредактируйте и поделитесь",
       description:
-        "Переименуйте спикеров и отредактируйте транскрипт. Итоговый отчёт можно отправить команде на почту или скачать в нужном формате",
+        t("howItWorks.step3.description") ||
+        "Переименуйте спикеров и отредактируйте транскрипт. Итоговым отчётом можно поделиться с командой или скачать в нужном формате",
       image:
         "https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&h=400&fit=crop",
     },
   ];
 
   const integrations = [
-    { name: "Zoom", logo: "🎥" },
-    { name: "Google Meet", logo: "📹" },
-    { name: "Microsoft Teams", logo: "🖥️" },
-    { name: "Telegram", logo: "💬" },
-    { name: "Calendar", logo: "📅" },
+    { name: "Zoom", logo: "/icons/zoom.svg" },
+    { name: "Google Meet", logo: "/icons/google-meet.svg" },
+    { name: "Yandex Telemost", logo: "/icons/telemost.svg" },
+    { name: "Telegram", logo: "/icons/telegram.svg" },
+    { name: "Calendar", logo: "/icons/google-calendar.svg" },
   ];
 
   return (
@@ -93,15 +98,15 @@ export default function HowItWorksEnhanced() {
         {/* Заголовок */}
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Как работает{" "}
+            {t("howItWorks.title") || "Как работает Notetaker"}{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               notetaker.ru
             </span>
-            ?
+            {language === "en" && <span>{" " + t("howItWorks.work")}</span>}?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Три простых шага для превращения хаотичных обсуждений в
-            структурированные инсайты
+            {t("howItWorks.description") ||
+              "Три простых шага для превращения хаотичных обсуждений в структурированные инсайты"}
           </p>
         </div>
 
@@ -157,10 +162,12 @@ export default function HowItWorksEnhanced() {
         <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200 dark:border-gray-700 z-10">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Работаем с популярными платформами
+              {t("howItWorks.integrations.title") ||
+                "Работаем с популярными платформами"}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg">
-              Подключайтесь к любимым инструментам одним кликом
+              {t("howItWorks.integrations.description") ||
+                "Подключайтесь к любимым инструментам одним кликом"}
             </p>
           </div>
 
@@ -171,7 +178,11 @@ export default function HowItWorksEnhanced() {
                 className="flex items-center gap-3 bg-gray-50 dark:bg-gray-700 px-6 py-4 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-300 hover:scale-105 transform"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span className="text-3xl">{integration.logo}</span>
+                <img
+                  src={integration.logo}
+                  alt={integration.name}
+                  className="w-10 h-10"
+                />
                 <span className="font-semibold text-gray-900 dark:text-white">
                   {integration.name}
                 </span>
@@ -182,12 +193,16 @@ export default function HowItWorksEnhanced() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <a
+            href="https://app.notetaker.ru"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+          >
             <MessageSquare className="w-6 h-6 inline mr-2" />
-            Попробовать бесплатно
-          </button>
+            {t("howItWorks.cta") || "Попробовать бесплатно"}
+          </a>
           <p className="text-gray-500 dark:text-gray-400 mt-4">
-            180 минут бесплатно • Без привязки карты • Мгновенная настройка
+            {t("howItWorks.ctaDescription") ||
+              "180 минут бесплатно • Без привязки карты • Мгновенная настройка"}
           </p>
         </div>
       </div>

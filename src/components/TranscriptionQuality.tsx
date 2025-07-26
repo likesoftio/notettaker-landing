@@ -7,10 +7,12 @@ import {
   Users,
   Settings,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TranscriptionQuality() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visibleElements, setVisibleElements] = useState<boolean[]>([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,45 +43,56 @@ export default function TranscriptionQuality() {
   }, []);
 
   const languages = [
-    { code: "🇷🇺", name: "Русский", accuracy: "98%" },
-    { code: "🇺🇸", name: "English", accuracy: "99%" },
-    { code: "🇩🇪", name: "Deutsch", accuracy: "97%" },
-    { code: "🇫🇷", name: "Français", accuracy: "96%" },
-    { code: "🇪🇸", name: "Español", accuracy: "97%" },
-    { code: "🇮🇹", name: "Italiano", accuracy: "96%" },
-    { code: "🇯🇵", name: "日本語", accuracy: "95%" },
-    { code: "🇨🇳", name: "中文", accuracy: "94%" },
-    { code: "🇰🇷", name: "한국어", accuracy: "93%" },
-    { code: "🇳🇱", name: "Nederlands", accuracy: "96%" },
-    { code: "🇵🇹", name: "Português", accuracy: "95%" },
-    { code: "🇸🇪", name: "Svenska", accuracy: "94%" },
+    { code: "🇷🇺", name: t("multilanguageSupport.ru"), accuracy: "98%" },
+    { code: "🇺🇸", name: t("multilanguageSupport.en"), accuracy: "99%" },
+    { code: "🇩🇪", name: t("multilanguageSupport.de"), accuracy: "97%" },
+    { code: "🇫🇷", name: t("multilanguageSupport.fr"), accuracy: "96%" },
+    { code: "🇪🇸", name: t("multilanguageSupport.es"), accuracy: "97%" },
+    { code: "🇮🇹", name: t("multilanguageSupport.it"), accuracy: "96%" },
+    { code: "🇯🇵", name: t("multilanguageSupport.ja"), accuracy: "95%" },
+    { code: "🇨🇳", name: t("multilanguageSupport.zh"), accuracy: "94%" },
+    { code: "🇰🇷", name: t("multilanguageSupport.ko"), accuracy: "93%" },
+    { code: "🇹🇷", name: t("multilanguageSupport.tr"), accuracy: "96%" },
+    { code: "🇵🇱", name: t("multilanguageSupport.pl"), accuracy: "94%" },
+    { code: "🇵🇹", name: t("multilanguageSupport.pt"), accuracy: "95%" },
   ];
 
   const features = [
     {
       icon: Volume2,
-      title: "Определение и деление на спикеров",
+      title:
+        t("multilanguageSupport.feature1.title") ||
+        "Определение и деление на спикеров",
       description:
+        t("multilanguageSupport.feature1.description") ||
         "Можно указать количество спикеров, чтобы результат получился точнее",
       color: "blue",
     },
     {
       icon: CheckCircle,
-      title: "Очистка транскрипта",
-      description: 'Убираем из транскрипта "ну", "мда" и прочие слова-паразиты',
+      title: t("multilanguageSupport.feature2.title") || "Очистка транскрипта",
+      description:
+        t("multilanguageSupport.feature2.description") ||
+        'Убираем из транскрипта "ну", "мда" и прочие слова-паразиты',
       color: "green",
     },
     {
       icon: Zap,
-      title: "Высокая скорость обработки",
+      title:
+        t("multilanguageSupport.feature3.title") ||
+        "Высокая скорость обработки",
       description:
+        t("multilanguageSupport.feature3.description") ||
         "Умеем обрабатывать быстро: часовая встреча превратится в транскрипт за 5 минут",
       color: "yellow",
     },
     {
       icon: Settings,
-      title: "AI-улучшение звука встречи",
+      title:
+        t("multilanguageSupport.feature4.title") ||
+        "AI-улучшение звука встречи",
       description:
+        t("multilanguageSupport.feature4.description") ||
         "Используем отдельную модель для очистки дорожки от шумов и посторонних звуков перед обработкой",
       color: "purple",
     },
@@ -116,17 +129,17 @@ export default function TranscriptionQuality() {
         <div className="text-center mb-20 animate-on-scroll">
           <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Volume2 className="w-4 h-4" />
-            Транскрипт
+            {t("transcriptionQuality.label") || "Транскрипт"}
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Транскрибация русского языка{" "}
+            {t("transcriptionQuality.title") || "Транскрибация русского языка"}{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              с высокой точностью
+              {t("transcriptionQuality.titleGradient") || "с высокой точностью"}
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Преобразуем запись в детальный транскрипт за минуты: сохраним знаки,
-            уберём слова-паразиты и разделим текст по участникам
+            {t("transcriptionQuality.description") ||
+              "Преобразуем запись в детальный транскрипт за минуты: сохраним знаки, уберём слова-паразиты и разделим текст по участникам"}
           </p>
         </div>
 
@@ -176,7 +189,7 @@ export default function TranscriptionQuality() {
                 {/* Текущий фрагмент */}
                 <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                   <div className="text-blue-600 dark:text-blue-400 text-sm font-medium mb-1">
-                    Сейчас говорит: Елизавета
+                    {t("transcriptionQuality.nowTalking")} Елизавета
                   </div>
                   <div className="text-gray-800 dark:text-gray-200 font-mono text-sm">
                     "Привет! Как дела у всех?"
@@ -220,11 +233,11 @@ export default function TranscriptionQuality() {
           {/* Правая часть - многоязычность */}
           <div className="animate-on-scroll">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-              Многоязычность
+              {t("multilanguageSupport.title") || "Многоязычность"}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
-              Поддерживаем обработку на 73 язык��х, это не влияет на скорость и
-              качество результата
+              {t("multilanguageSupport.description") ||
+                "Поддерживаем обработку на 19 языках, это не влияет на скорость и качество результата."}
             </p>
 
             {/* Языки сеткой */}
@@ -252,21 +265,21 @@ export default function TranscriptionQuality() {
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-700">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-lg mb-1">你好！</div>
+                  <div className="text-lg mb-1">नमस्ते</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">
-                    Китайский
+                    {t("multilanguageSupport.hi") || "Хинди"}
                   </div>
                 </div>
                 <div>
-                  <div className="text-lg mb-1">¡Hola!</div>
+                  <div className="text-lg mb-1">Xin chào</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">
-                    Испанский
+                    {t("multilanguageSupport.vi") || "Вьетнамский"}
                   </div>
                 </div>
                 <div>
-                  <div className="text-lg mb-1">مرحبا</div>
+                  <div className="text-lg mb-1">Hei</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">
-                    Арабский
+                    {t("multilanguageSupport.fi") || "Финский"}
                   </div>
                 </div>
               </div>
@@ -305,9 +318,12 @@ export default function TranscriptionQuality() {
 
         {/* CTA */}
         <div className="text-center mt-16 animate-on-scroll">
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-            Попробовать бесплатно →
-          </button>
+          <a
+            href="https://app.notetaker.ru"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+          >
+            {t("multilanguageSupport.cta.title")} →
+          </a>
         </div>
       </div>
     </section>

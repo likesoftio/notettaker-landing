@@ -37,6 +37,8 @@ export default function UseCasesSection() {
     },
   ];
 
+  return null;
+
   return (
     <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-6">

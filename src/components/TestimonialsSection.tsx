@@ -4,6 +4,8 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function TestimonialsSection() {
   const { t } = useLanguage();
 
+  return null;
+
   return (
     <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto px-6 text-center">

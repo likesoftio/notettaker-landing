@@ -171,8 +171,7 @@ export default function AdminLogin({ onLogin }: AdminLoginProps) {
             <Alert>
               <Info className="h-4 w-4" />
               <AlertDescription>
-                Для демонстрации используйте один из ��редустановленных
-                аккаунтов
+                Для демонстрации используйте один из предустановленных аккаунтов
               </AlertDescription>
             </Alert>
 

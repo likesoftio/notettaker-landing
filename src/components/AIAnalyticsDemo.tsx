@@ -42,14 +42,17 @@ export default function AIAnalyticsDemo() {
 
           <div className="lg:pl-8">
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
-              AI Отчеты помогают находить инсайты в интервью, оцен��вать
+              AI Отчеты помогают находить инсайты в интервью, оценивать
               эффективность менеджеров и синхронизировать работу команд
             </p>
 
-            <button className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:gap-3 transition-all duration-200">
-              <span>Подробнее</span>
+            <a
+              href="https://app.notetaker.ru"
+              className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:gap-3 transition-all duration-200"
+            >
+              <span>Попробовать</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -136,7 +139,7 @@ export default function AIAnalyticsDemo() {
                     Проведено собеседование с кандидатом на позицию
                     бизнес-аналитика. Обсуждена квалификация кандидата, опыт
                     работы с процессами моделирования и аналитическими
-                    инструментами. Кандидат продемонст��ировал хорошие знания в
+                    инструментами. Кандидат продемонстрировал хорошие знания в
                     области системного анализа и управления проектами.
                   </p>
                 </div>
@@ -161,7 +164,7 @@ export default function AIAnalyticsDemo() {
                           (BPMN, UML)
                         </li>
                         <li>
-                          • Владение инструмен��ами для управления проектами
+                          • Владение инструментами для управления проектами
                         </li>
                         <li>• Навыки сбора и анализа требований</li>
                       </ul>

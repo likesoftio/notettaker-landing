@@ -153,7 +153,7 @@ export default function TestBlogDatabase() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <Card className="p-6">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                📝 С��атьи
+                📝 Статьи
               </h3>
               <div className="text-2xl font-bold text-blue-600">
                 {posts.length}

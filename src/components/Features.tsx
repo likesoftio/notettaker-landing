@@ -31,6 +31,8 @@ export default function Features() {
     },
   ];
 
+  return null;
+
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 dark:from-blue-700 dark:via-blue-800 dark:to-blue-900">
       <div className="max-w-7xl mx-auto px-6">

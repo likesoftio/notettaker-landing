@@ -225,7 +225,7 @@ export default function PrivacyPolicy() {
                   <strong>ИНН:</strong> 1234567890
                 </li>
                 <li>
-                  <strong>Адрес:</strong> 123456, г. Москва, у��. Примерная, д.
+                  <strong>Адрес:</strong> 123456, г. Москва, ул. Примерная, д.
                   1, стр. 1
                 </li>
                 <li>
@@ -320,7 +320,7 @@ export default function PrivacyPolicy() {
 
           <section id="data-usage">
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              4. Как мы исполь��уем данные
+              4. Как мы используем данные
             </h2>
 
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">

@@ -145,7 +145,7 @@ export default function ContinueDiscussion() {
                         </p>
                         <p className="text-xs text-gray-600 dark:text-gray-400 pl-3">
                           Илья также упомянул необходимость "более
-                          персонализированн��го подхода к клиентам"
+                          персонализированного подхода к клиентам"
                         </p>
                         <p>
                           <strong>3. Обработка входящих заявок</strong>
@@ -255,10 +255,13 @@ export default function ContinueDiscussion() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <a
+            href="https://app.notetaker.ru"
+            className="bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+          >
             Задать вопрос AI →
-          </button>
-          <p className="text-gray-500 dark:text-gray-400 mt-4">Подробнее →</p>
+          </a>
+          {/* <p className="text-gray-500 dark:text-gray-400 mt-4">Подробнее →</p> */}
         </div>
       </div>
 

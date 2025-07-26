@@ -188,7 +188,7 @@ export default function MeetingTypesDemo() {
       tasks: [
         "Связаться с DevOps по вопросу настройки сервера до 14:00 (Исполнитель: Тимлид)",
         "Уточнить требования к логированию у Product Owner (Исполнитель: Backend разработчик)",
-        "Запросить обновленные макет�� у дизайнера (Исполнитель: Frontend разработчик)",
+        "Запросить обновленные макета у дизайнера (Исполнитель: Frontend разработчик)",
       ],
     },
   };
@@ -274,7 +274,7 @@ export default function MeetingTypesDemo() {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-2 lg:gap-4">
+          {/* <div className="flex flex-wrap gap-2 lg:gap-4">
             {iconTypes.map((type, index) => {
               const IconComponent = type.icon;
               const isActive = index === 4; // Example active state
@@ -296,7 +296,7 @@ export default function MeetingTypesDemo() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
         {/* Report Demo */}
@@ -308,7 +308,7 @@ export default function MeetingTypesDemo() {
           <div className="relative z-10">
             <div className="bg-gray-700/90 dark:bg-gray-900/90 px-6 py-4 backdrop-blur-sm">
               <div className="flex gap-4">
-                <button
+                {/* <button
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeTab === "meeting"
                       ? "bg-gray-600 text-white"
@@ -317,7 +317,7 @@ export default function MeetingTypesDemo() {
                   onClick={() => setActiveTab("meeting")}
                 >
                   Обычная встреча
-                </button>
+                </button> */}
                 <button
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeTab === "report"

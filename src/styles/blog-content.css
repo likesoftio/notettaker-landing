@@ -180,7 +180,7 @@
   border-bottom-color: #60a5fa;
 }
 
-/* В��деленный текст */
+/* Выделенный текст */
 .blog-content strong,
 .blog-content b {
   font-weight: 600;
@@ -419,7 +419,7 @@
   }
 }
 
-/* С��или для улучшенной читаемости */
+/* Стили для улучшенной читаемости */
 .blog-content {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

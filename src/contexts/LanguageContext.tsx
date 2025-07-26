@@ -44,6 +44,27 @@ const translations = {
     "hero.maxSize":
       "Максимальный размер: 5GB; Максимальная длительность: 5 часов.",
 
+    // How It Works
+    "howItWorks.title": "Как работает",
+    "howItWorks.description":
+      "Три простых шага для превращения хаотичных обсуждений в структурированные инсайты.",
+    "howItWorks.work": "работает",
+    "howItWorks.step1.title": "Добавьте встречу",
+    "howItWorks.step1.description":
+      "Загрузите файл в любом формате или пригласите бота на встречу. Подключите Telegram или календарь, чтобы записывать каждую встречу автоматически",
+    "howItWorks.step2.title": "Получите инсайты",
+    "howItWorks.step2.description":
+      "Обработанная встреча состоит из транскрипта с разделением на главы и спикеров, выбранного AI Отчета и задач с ответственными и дедлайнами",
+    "howItWorks.step3.title": "Отредактируйте и поделитесь",
+    "howItWorks.step3.description":
+      "Переименуйте спикеров и отредактируйте транскрипт. Итоговым отчётом можно поделиться с командой или скачать в нужном формате",
+    "howItWorks.integrations.title": "Работаем с популярными платформами",
+    "howItWorks.integrations.description":
+      "Подключайтесь к любимым инструментам одним кликом",
+    "howItWorks.cta": "Попробовать бесплатно",
+    "howItWorks.ctaDescription":
+      "180 минут бесплатно • Без привязки карты • Мгновенная настройка",
+
     // Process Steps
     "steps.title": "Преобразование аудио в текст за 3 шага",
     "steps.step1.title": "Загрузите файл в Notetaker",
@@ -77,6 +98,47 @@ const translations = {
     "features.accuracy.description":
       "Мы занимаемся непрерывным улучшением системы распознавания голоса. Для качественных аудио мы проводим транскрипцию с точностью до 98.86%.",
 
+    // Transcription Quality
+    "transcriptionQuality.label": "Транскрипция",
+    "transcriptionQuality.title": "Транскрипция русского языка",
+    "transcriptionQuality.titleGradient": "с высокой точностью",
+    "transcriptionQuality.description":
+      "Мы преобразуем записи в детальные транскрипты за минуты: сохраняем знаки препинания, убираем слова-паразиты и сегментируем текст по спикерам.",
+    "transcriptionQuality.nowTalking": "Сейчас говорит:",
+
+    // Multilanguage Support
+    "multilanguageSupport.title": "Многоязычность",
+    "multilanguageSupport.description":
+      "Мы поддерживаем обработку на 19 языках, что не влияет на скорость и качество результата.",
+    "multilanguageSupport.ru": "Русский",
+    "multilanguageSupport.en": "Английский",
+    "multilanguageSupport.de": "Немецкий",
+    "multilanguageSupport.fr": "Французский",
+    "multilanguageSupport.es": "Испанский",
+    "multilanguageSupport.it": "Итальянский",
+    "multilanguageSupport.pt": "Португальский",
+    "multilanguageSupport.hi": "Хинди",
+    "multilanguageSupport.zh": "Китайский",
+    "multilanguageSupport.ja": "Японский",
+    "multilanguageSupport.ko": "Корейский",
+    "multilanguageSupport.tr": "Турецкий",
+    "multilanguageSupport.pl": "Польский",
+    "multilanguageSupport.vi": "Вьетнамский",
+    "multilanguageSupport.fi": "Финский",
+    "multilanguageSupport.feature1.title": "Определение и деление на спикеров",
+    "multilanguageSupport.feature1.description":
+      "Можно указать количество спикеров, чтобы результат получился точнее.",
+    "multilanguageSupport.feature2.title": "Очистка транскрипта",
+    "multilanguageSupport.feature2.description":
+      'Убираем из транскрипта "ну", "мда" и прочие слова-паразиты.',
+    "multilanguageSupport.feature3.title": "Высокая скорость обработки",
+    "multilanguageSupport.feature3.description":
+      "Умеем обрабатывать быстро: часовая встреча превратится в транскрипт за 5 минут.",
+    "multilanguageSupport.feature4.title": "AI-улучшение звука встречи",
+    "multilanguageSupport.feature4.description":
+      "Используем отдельную модель для очистки дорожки от шумов и посторонних звуков перед обработкой.",
+    "multilanguageSupport.cta.title": "Попробовать бесплатно",
+
     // Pricing
     "pricing.fromPrice": "от 2 ₽/минута",
     "pricing.supportedFormats":
@@ -89,7 +151,7 @@ const translations = {
     "pricing.tryFree": "Попробовать бесплатно",
     "pricing.payOrganization": "Оплатить со счета организации",
     "pricing.monthly": "Ежемесячно",
-    "pricing.biannual": "На 6 месяцев",
+    "pricing.biannual": "На год",
     "pricing.popular": "Популярный",
     "pricing.free": "Начальный",
     "pricing.базовый": "Базовый",
@@ -98,6 +160,7 @@ const translations = {
     "pricing.ultra": "Ultra",
     "pricing.features.included": "Доступ к платформе, включая:",
     "pricing.discount.info": "Экономьте до 20% при оплате на 6 месяцев вперед",
+    "pricing.buttonText": "Перейти на тариф",
 
     // FAQ
     "faq.title": "Часто задаваемые вопросы",
@@ -136,6 +199,69 @@ const translations = {
     "resources.helpCenter": "Help Center",
     "resources.documentation": "Documentation",
     "resources.tutorials": "Tutorials",
+
+    // How It Works
+    "howItWorks.title": "How does",
+    "howItWorks.work": "work",
+    "howItWorks.description":
+      "Three simple steps to turn chaotic discussions into structured insights.",
+    "howItWorks.step1.title": "Add a Meeting",
+    "howItWorks.step1.description":
+      "Upload a file in any format or invite the bot to the meeting. Connect Telegram or your calendar to automatically record every meeting.",
+    "howItWorks.step2.title": "Get Insights",
+    "howItWorks.step2.description":
+      "The processed meeting consists of a transcript with speaker separation, selected AI Report, and tasks with assignees and deadlines.",
+    "howItWorks.step3.title": "Edit and Share",
+    "howItWorks.step3.description":
+      "Rename speakers and edit the transcript. The final report can be shared with the team or downloaded in the desired format.",
+    "howItWorks.integrations.title": "Integrations with Popular Platforms",
+    "howItWorks.integrations.description":
+      "Connect to your favorite tools with one click",
+    "howItWorks.cta": "Try for Free",
+    "howItWorks.ctaDescription":
+      "180 minutes free • No card required • Instant setup",
+
+    // Transcription Quality
+    "transcriptionQuality.label": "Transcription",
+    "transcriptionQuality.title": "English language transcription",
+    "transcriptionQuality.titleGradient": "with High Accuracy",
+    "transcriptionQuality.description":
+      "We transform recordings into detailed transcripts in minutes: preserving punctuation, removing filler words, and segmenting text by speakers.",
+    "transcriptionQuality.nowTalking": "Now talking:",
+
+    // Multilanguage Support
+    "multilanguageSupport.title": "Multilanguage Support",
+    "multilanguageSupport.description":
+      "We support processing in 19 languages, which does not affect the speed and quality of the result.",
+    "multilanguageSupport.ru": "Russian",
+    "multilanguageSupport.en": "English",
+    "multilanguageSupport.de": "German",
+    "multilanguageSupport.fr": "French",
+    "multilanguageSupport.es": "Spanish",
+    "multilanguageSupport.it": "Italian",
+    "multilanguageSupport.pt": "Portuguese",
+    "multilanguageSupport.hi": "Hindi",
+    "multilanguageSupport.zh": "Chinese",
+    "multilanguageSupport.ja": "Japanese",
+    "multilanguageSupport.ko": "Korean",
+    "multilanguageSupport.tr": "Turkish",
+    "multilanguageSupport.pl": "Polish",
+    "multilanguageSupport.vi": "Vietnamese",
+    "multilanguageSupport.fi": "Finnish",
+    "multilanguageSupport.feature1.title": "Speaker Detection and Segmentation",
+    "multilanguageSupport.feature1.description":
+      "We automatically detect who is speaking in the audio and segment the text by speakers.",
+    "multilanguageSupport.feature2.title": "Transcript Cleaning",
+    "multilanguageSupport.feature2.description":
+      'We remove filler words like "um", "uh", and other disfluencies from the transcript.',
+    "multilanguageSupport.feature3.title": "High Processing Speed",
+    "multilanguageSupport.feature3.description":
+      "We can process quickly: a one-hour meeting will turn into a transcript in 5 minutes.",
+    "multilanguageSupport.feature4.title":
+      "AI-Powered Meeting Sound Enhancement",
+    "multilanguageSupport.feature4.description":
+      "We use a separate model to clean the audio track from noise and background sounds before processing.",
+    "multilanguageSupport.cta.title": "Try for Free",
 
     // Hero
     "hero.title": "Online Audio to Text Converter",
@@ -182,15 +308,26 @@ const translations = {
       "We continuously improve our voice recognition system. For high-quality audio, we provide transcription with accuracy up to 98.86%.",
 
     // Pricing
-    "pricing.fromPrice": "from $0.02/minute",
+    "pricing.fromPrice": "from 2 ₽/minute",
     "pricing.supportedFormats":
-      "Formats: MP3, MP4, M4A, OGG, WAV, FLAC, WMA, M4A, FLAC, ACC, WEBM and more.",
-    "pricing.speechRecognition": "Speech recognition",
+      "Formats: MP3, MP4, M4A, OGG, WAV, FLAC, WMA, M4A, FLAC, AСC, WEBM и др.",
+    "pricing.speechRecognition": "Speech Recognition",
     "pricing.punctuation": "Punctuation, timestamps, speaker separation",
     "pricing.languages": "Russian, English and other languages",
     "pricing.export": "Export to DOCX, SRT and XLSX formats",
     "pricing.tryFree": "Try for free",
     "pricing.payOrganization": "Pay from organization account",
+    "pricing.monthly": "Monthly",
+    "pricing.biannual": "Biannual",
+    "pricing.popular": "Popular",
+    "pricing.free": "Free",
+    "pricing.basic": "Basic",
+    "pricing.lite": "Lite",
+    "pricing.pro": "Pro",
+    "pricing.ultra": "Ultra",
+    "pricing.features.included": "Access to the platform, including:",
+    "pricing.discount.info": "Save up to 20% when paying yearly in advance",
+    "pricing.buttonText": "Upgrade Now",
 
     // FAQ
     "faq.title": "Frequently Asked Questions",

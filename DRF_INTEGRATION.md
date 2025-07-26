@@ -251,4 +251,4 @@ DEBUG=False
 - Backend: Django 4.2+ + DRF 3.14+ + PostgreSQL
 - Аутентификация: JWT tokens
 - CORS: django-cors-headers
-- Тестирование: Встроенная с��раница диагностики
+- Тестирование: Встроенная свраница диагностики

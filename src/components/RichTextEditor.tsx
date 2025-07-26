@@ -385,7 +385,7 @@ export default function RichTextEditor({
               onClick={() =>
                 editor.chain().focus().toggleHeading({ level: 2 }).run()
               }
-              title="Заго��овок 2"
+              title="Заголовок 2"
             >
               <Heading2 className="w-4 h-4" />
             </Button>

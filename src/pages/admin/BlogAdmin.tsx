@@ -462,7 +462,7 @@ export default function BlogAdmin() {
               setFormData({ ...formData, featured: checked })
             }
           />
-          <Label htmlFor="featured">Рекомендуем��я статья</Label>
+          <Label htmlFor="featured">Рекомендуемая статья</Label>
         </div>
       </div>
 

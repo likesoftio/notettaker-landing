@@ -23,6 +23,8 @@ export default function CallToActionSection() {
     },
   ];
 
+  return null;
+
   return (
     <section className="py-16 lg:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">

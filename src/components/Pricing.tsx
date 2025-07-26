@@ -4,15 +4,16 @@ import { Card } from "./ui/card";
 import { Switch } from "./ui/switch";
 import { Check } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { text } from "stream/consumers";
 
 export default function Pricing() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isYearly, setIsYearly] = useState(false);
 
   const plans = [
     {
-      name: "Базовый",
-      nameEn: "Basic",
+      name: "Free",
+      nameEn: "Free",
       subtitle: "Идеально для начинающих",
       subtitleEn: "Perfect for beginners",
       monthlyPrice: null,
@@ -25,70 +26,90 @@ export default function Pricing() {
       href: "https://app.notetaker.ru/",
       features: [
         {
-          text: "180 бесплатных минут",
-          textEn: "180 free minutes",
+          text: "100 бесплатных минут",
+          textEn: "100 free minutes",
+          included: true,
+        },
+        // {
+        //   text: "10 промптов с AI Чатом",
+        //   textEn: "10 AI Chat prompts",
+        //   included: true,
+        // },
+        // {
+        //   text: "Интеграция со всеми ВКС",
+        //   textEn: "Integration with all VCS",
+        //   included: true,
+        // },
+        // {
+        //   text: "Интеграция с GCalendar",
+        //   textEn: "GCalendar integration",
+        //   included: true,
+        // },
+        // {
+        //   text: "Транскрипт по спикерам",
+        //   textEn: "Speaker-based transcript",
+        //   included: true,
+        // },
+        // {
+        //   text: "ИИ-краткое содержание и задачи",
+        //   textEn: "AI summary and tasks",
+        //   included: true,
+        // },
+        // {
+        //   text: "Ограниченное хранилище",
+        //   textEn: "Limited storage",
+        //   included: true,
+        // },
+        // {
+        //   text: "Авто-отправка участникам",
+        //   textEn: "Auto-send to participants",
+        //   included: true,
+        // },
+        // {
+        //   text: "Экспорт в PDF, DOCX, MD и JSON",
+        //   textEn: "Export to PDF, DOCX, MD and JSON",
+        //   included: true,
+        // },
+        // {
+        //   text: "Файлы размера 1 ГБ",
+        //   textEn: "1 GB file size",
+        //   included: true,
+        // },
+        {
+          text: "Сервис Speech-to-Text транскрипции",
+          textEn: "Speech-to-Text transcription service",
           included: true,
         },
         {
-          text: "10 промптов с AI Чатом",
-          textEn: "10 AI Chat prompts",
+          text: "AI actions и обработка промптов",
+          textEn: "AI actions and prompts processing",
           included: true,
         },
         {
-          text: "Интеграция со всеми ВКС",
-          textEn: "Integration with all VCS",
+          text: "Экспорт в PDF, DOCX, XLSX и SRT",
+          textEn: "Export to PDF, DOCX, XLSX and SRT",
           included: true,
         },
         {
-          text: "Интеграция с GCalendar",
-          textEn: "GCalendar integration",
-          included: true,
-        },
-        {
-          text: "Транскрипт по спикерам",
-          textEn: "Speaker-based transcript",
-          included: true,
-        },
-        {
-          text: "ИИ-краткое содержание и задачи",
-          textEn: "AI summary and tasks",
-          included: true,
-        },
-        {
-          text: "Ограниченное хранилище",
-          textEn: "Limited storage",
-          included: true,
-        },
-        {
-          text: "Авто-отправка участникам",
-          textEn: "Auto-send to participants",
-          included: true,
-        },
-        {
-          text: "Экспорт в PDF, DOCX, MD и JSON",
-          textEn: "Export to PDF, DOCX, MD and JSON",
-          included: true,
-        },
-        {
-          text: "Файлы размера 1 ГБ",
-          textEn: "1 GB file size",
+          text: "500MB хранилище",
+          textEn: "500MB storage",
           included: true,
         },
       ],
     },
     {
-      name: "Lite",
-      nameEn: "Lite",
+      name: "Entry Starter",
+      nameEn: "Entry Starter",
       subtitle: "500 минут",
       subtitleEn: "500 minutes",
-      monthlyPrice: 850,
-      yearlyPrice: 680,
+      monthlyPrice: 590,
+      yearlyPrice: 472,
       monthlyMinutes: "500 мин в месяц для файлов",
       yearlyMinutes: "500 мин в месяц для файлов",
       isPopular: false,
       buttonText: "Купить",
       buttonTextEn: "Buy",
-      href: "https://app.notetaker.ru/upgrade",
+      href: "https://app.notetaker.ru/payment/plans",
       features: [
         {
           text: "500 мин в месяц для файлов",
@@ -96,200 +117,151 @@ export default function Pricing() {
           included: true,
         },
         {
-          text: "10 промптов с AI Чатом",
-          textEn: "10 AI Chat prompts",
+          text: "Сервис Speech-to-Text транскрипции",
+          textEn: "Speech-to-Text transcription service",
           included: true,
         },
         {
-          text: "Интеграция со всеми ВКС",
-          textEn: "Integration with all VCS",
+          text: "AI actions и обработка промптов",
+          textEn: "AI actions and prompts processing",
           included: true,
         },
         {
-          text: "Интеграция с GCalendar",
-          textEn: "GCalendar integration",
+          text: "Экспорт в PDF, DOCX, XLSX и SRT",
+          textEn: "Export to PDF, DOCX, XLSX and SRT",
           included: true,
         },
         {
-          text: "Транскрипт по спикерам",
-          textEn: "Speaker-based transcript",
+          text: "Пользовательские ИИ промпты и шаблоны",
+          textEn: "Custom AI prompts and templates",
           included: true,
         },
         {
-          text: "ИИ-краткое содержание и задачи",
-          textEn: "AI summary and tasks",
+          text: "ИИ-чат по транскриптам",
+          textEn: "AI chat on transcripts",
           included: true,
         },
         {
-          text: "Бесконечное хранилище",
-          textEn: "Unlimited storage",
-          included: true,
-        },
-        {
-          text: "Авто-отправка участникам",
-          textEn: "Auto-send to participants",
-          included: true,
-        },
-        {
-          text: "Экспорт в PDF, DOCX, MD и JSON",
-          textEn: "Export to PDF, DOCX, MD and JSON",
-          included: true,
-        },
-        {
-          text: "Файлы размера 1 ГБ",
-          textEn: "1 GB file size",
+          text: "1GB хранилище",
+          textEn: "1GB storage",
           included: true,
         },
       ],
     },
     {
-      name: "Pro",
-      nameEn: "Pro",
+      name: "Smart Basic",
+      nameEn: "Smart Basic",
       subtitle: "Безлимит для онлайн-встреч и 2000 минут на загрузку",
       subtitleEn: "Unlimited for online meetings and 2000 minutes for uploads",
-      monthlyPrice: 2490,
-      yearlyPrice: 1992,
+      monthlyPrice: 1990,
+      yearlyPrice: 1592,
       monthlyMinutes: "2000 мин в месяц для файлов",
       yearlyMinutes: "2000 мин в месяц для файлов",
       isPopular: true,
       buttonText: "Купить",
       buttonTextEn: "Buy",
-      href: "https://app.notetaker.ru/upgrade",
+      href: "https://app.notetaker.ru/payment/plans",
       features: [
-        {
-          text: "Бесплатные минуты для ВКС",
-          textEn: "Free minutes for VCS",
-          included: true,
-        },
+        // {
+        //   text: "Бесплатные минуты для ВКС",
+        //   textEn: "Free minutes for VCS",
+        //   included: true,
+        // },
         {
           text: "2000 мин в месяц для файлов",
           textEn: "2000 min per month for files",
           included: true,
         },
         {
-          text: "AI Чат без ограничений",
-          textEn: "Unlimited AI Chat",
+          text: "Сервис Speech-to-Text транскрипции",
+          textEn: "Speech-to-Text transcription service",
           included: true,
         },
         {
-          text: "Улучшенные AI Отчеты",
-          textEn: "Enhanced AI Reports",
+          text: "AI actions и обработка промптов",
+          textEn: "AI actions and prompts processing",
           included: true,
         },
         {
-          text: "AI-улучшение транскрипта",
-          textEn: "AI transcript enhancement",
+          text: "Экспорт в PDF, DOCX, XLSX и SRT",
+          textEn: "Export to PDF, DOCX, XLSX and SRT",
           included: true,
         },
         {
-          text: "Файлы размера 3 ГБ",
-          textEn: "3 GB file size",
+          text: "Пользовательские ИИ промпты и шаблоны",
+          textEn: "Custom AI prompts and templates",
           included: true,
         },
         {
-          text: "Интеграция с GCalendar",
-          textEn: "GCalendar integration",
+          text: "ИИ-чат по транскриптам",
+          textEn: "AI chat on transcripts",
           included: true,
         },
         {
-          text: "Транскрипт по спикерам",
-          textEn: "Speaker-based transcript",
-          included: true,
-        },
-        {
-          text: "ИИ-краткое содержание �� задачи",
-          textEn: "AI summary and tasks",
-          included: true,
-        },
-        {
-          text: "Бесконечное хранилище",
-          textEn: "Unlimited storage",
-          included: true,
-        },
-        {
-          text: "Авто-отправка участникам",
-          textEn: "Auto-send to participants",
-          included: true,
-        },
-        {
-          text: "Экспорт в PDF, DOCX, MD и JSON",
-          textEn: "Export to PDF, DOCX, MD and JSON",
+          text: "3GB хранилище",
+          textEn: "3GB storage",
           included: true,
         },
       ],
     },
     {
-      name: "Ultra",
-      nameEn: "Ultra",
+      name: "Business AI",
+      nameEn: "Business AI",
       subtitle: "Безлимит для онлайн-встреч и 5000 минут на загрузку",
       subtitleEn: "Unlimited for online meetings and 5000 minutes for uploads",
-      monthlyPrice: 4290,
-      yearlyPrice: 3432,
+      monthlyPrice: 3490,
+      yearlyPrice: 2792,
       monthlyMinutes: "5000 мин в месяц для файлов",
       yearlyMinutes: "5000 мин в месяц для файлов",
       isPopular: false,
       buttonText: "Купить",
       buttonTextEn: "Buy",
-      href: "https://app.notetaker.ru/upgrade",
+      href: "https://app.notetaker.ru/payment/plans",
       features: [
-        {
-          text: "Бесплатные минуты для ВКС",
-          textEn: "Free minutes for VCS",
-          included: true,
-        },
+        // {
+        //   text: "Бесплатные минуты для ВКС",
+        //   textEn: "Free minutes for VCS",
+        //   included: true,
+        // },
         {
           text: "5000 мин в месяц для файлов",
           textEn: "5000 min per month for files",
           included: true,
         },
         {
-          text: "AI Чат без ограничений",
-          textEn: "Unlimited AI Chat",
+          text: "Сервис Speech-to-Text транскрипции",
+          textEn: "Speech-to-Text transcription service",
           included: true,
         },
         {
-          text: "Улучшенные AI Отчеты",
-          textEn: "Enhanced AI Reports",
+          text: "AI actions и обработка промптов",
+          textEn: "AI actions and prompts processing",
           included: true,
         },
         {
-          text: "AI-улучшение транскрипта",
-          textEn: "AI transcript enhancement",
+          text: "Экспорт в PDF, DOCX, XLSX и SRT",
+          textEn: "Export to PDF, DOCX, XLSX and SRT",
           included: true,
         },
         {
-          text: "Файлы размера 3 ГБ",
-          textEn: "3 GB file size",
+          text: "Пользовательские ИИ промпты и шаблоны",
+          textEn: "Custom AI prompts and templates",
           included: true,
         },
         {
-          text: "Интеграция с GCalendar",
-          textEn: "GCalendar integration",
+          text: "ИИ-чат по транскриптам",
+          textEn: "AI chat on transcripts",
           included: true,
         },
         {
-          text: "Транскрипт по спикерам",
-          textEn: "Speaker-based transcript",
+          textEn:
+            "Integrations with Zoom, Google Meet, Yandex Telemost, Google Calendar, and more",
+          text: "Интеграции с Zoom, Google Meet, Yandex Telemost, Google Calendar и другими",
           included: true,
         },
         {
-          text: "ИИ-краткое содержание и задачи",
-          textEn: "AI summary and tasks",
-          included: true,
-        },
-        {
-          text: "Бесконечное хранилище",
-          textEn: "Unlimited storage",
-          included: true,
-        },
-        {
-          text: "Авто-отправка участникам",
-          textEn: "Auto-send to participants",
-          included: true,
-        },
-        {
-          text: "Экспорт в PDF, DOCX, MD и JSON",
-          textEn: "Export to PDF, DOCX, MD and JSON",
+          text: "10GB хранилище",
+          textEn: "10GB storage",
           included: true,
         },
       ],
@@ -337,7 +309,7 @@ export default function Pricing() {
             <span
               className={`text-lg font-medium ${isYearly ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
             >
-              {t("pricing.biannual") || "На 6 месяцев"}
+              {t("pricing.biannual") || "На год"}
             </span>
           </div>
         </div>
@@ -367,7 +339,7 @@ export default function Pricing() {
                   <h3
                     className={`text-lg font-semibold mb-2 ${getPlanColor(plan.name)}`}
                   >
-                    {t(`pricing.${plan.name.toLowerCase()}`) || plan.name}
+                    {language === "en" ? plan.nameEn : plan.name}
                   </h3>
 
                   {getCurrentPrice(plan) ? (
@@ -376,7 +348,7 @@ export default function Pricing() {
                         {getCurrentPrice(plan)?.toLocaleString()}
                       </div>
                       <div className="text-lg font-semibold text-gray-900 dark:text-white">
-                        ₽/мес
+                        ₽/{language === "en" ? "mo." : "мес"}
                       </div>
                     </div>
                   ) : (
@@ -385,10 +357,9 @@ export default function Pricing() {
                     </div>
                   )}
 
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    {t(`pricing.${plan.name.toLowerCase()}.subtitle`) ||
-                      plan.subtitle}
-                  </p>
+                  {/* <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    {language === "en" ? plan.subtitleEn : plan.subtitle}
+                  </p> */}
                 </div>
 
                 {/* Features */}
@@ -419,8 +390,9 @@ export default function Pricing() {
                               : "text-gray-400 dark:text-gray-500"
                           }`}
                         >
-                          {t(`pricing.features.${featureIndex}`) ||
-                            feature.text}
+                          {language === "en"
+                            ? feature.textEn
+                            : feature.text || feature.text}
                         </span>
                       </div>
                     ))}
@@ -438,8 +410,7 @@ export default function Pricing() {
                 asChild
               >
                 <a href={plan.href} target="_blank" rel="noopener">
-                  {t(`pricing.${plan.name.toLowerCase()}.button`) ||
-                    plan.buttonText}
+                  {t("pricing.buttonText")}
                 </a>
               </Button>
             </Card>

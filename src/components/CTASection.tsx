@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 
 const ctaButtons = [
-  "��идео конвертер",
+  "Видео конвертер",
   "Аудио конвертер",
   "MP3 в Текст",
   "YouTube в текст",
@@ -10,6 +10,8 @@ const ctaButtons = [
 ];
 
 export default function CTASection() {
+  return null;
+
   return (
     <section className="py-16 lg:py-24 bg-blue-50">
       <div className="max-w-7xl mx-auto px-6">

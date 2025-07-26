@@ -56,21 +56,21 @@ export default function Header() {
         icon: PenTool,
         label: t("resources.blog") || "Блог",
       },
-      {
-        href: "/help",
-        icon: HelpCircle,
-        label: t("resources.helpCenter") || "Помощь",
-      },
-      {
-        href: "/docs",
-        icon: FileText,
-        label: t("resources.documentation") || "Документация",
-      },
-      {
-        href: "/tutorials",
-        icon: PlayCircle,
-        label: t("resources.tutorials") || "Уроки",
-      },
+      // {
+      //   href: "/help",
+      //   icon: HelpCircle,
+      //   label: t("resources.helpCenter") || "Помощь",
+      // },
+      // {
+      //   href: "/docs",
+      //   icon: FileText,
+      //   label: t("resources.documentation") || "Документация",
+      // },
+      // {
+      //   href: "/tutorials",
+      //   icon: PlayCircle,
+      //   label: t("resources.tutorials") || "Уроки",
+      // },
     ],
   };
 
@@ -90,7 +90,7 @@ export default function Header() {
             {/* Navigation */}
             <nav className="flex items-center">
               {/* Solutions Dropdown */}
-              <DropdownMenu>
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
@@ -117,10 +117,10 @@ export default function Header() {
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
 
               {/* Resources Dropdown */}
-              <DropdownMenu>
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
@@ -147,7 +147,7 @@ export default function Header() {
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
 
               {/* Pricing Link */}
               <Button variant="ghost" asChild>
@@ -169,7 +169,7 @@ export default function Header() {
               <div className="w-2" />
 
               {/* Login Button */}
-              <Button variant="ghost" size="sm" asChild>
+              {/* <Button variant="ghost" size="sm" asChild>
                 <a
                   href="https://app.notetaker.ru/"
                   target="_blank"
@@ -177,7 +177,7 @@ export default function Header() {
                 >
                   {t("header.login") || "Войти"}
                 </a>
-              </Button>
+              </Button> */}
 
               {/* Book Demo Button */}
               <Button

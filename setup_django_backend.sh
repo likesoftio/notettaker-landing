@@ -56,7 +56,7 @@ pip install python-decouple>=3.8
 # Сохранение зависимостей
 pip freeze > requirements.txt
 
-# ��оздание Django проекта
+# Создание Django проекта
 echo "🔄 Создание Django проекта..."
 django-admin startproject myblog .
 

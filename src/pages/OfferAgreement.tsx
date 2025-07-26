@@ -67,7 +67,7 @@ export default function OfferAgreement() {
             </p>
             <p className="text-sm text-blue-700 dark:text-blue-300 mb-0">
               Настоящий документ является публичной офертой в соответствии со
-              статьей 437 Гражданского кодекса Российской Федерации. П��инятие
+              статьей 437 Гражданского кодекса Российской Федерации. Принятие
               настоящей оферты осуществляется путём совершения Заказчиком
               действий по оплате услуг.
             </p>
@@ -298,7 +298,7 @@ export default function OfferAgreement() {
 
           <div className="mt-8 p-4 sm:p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
             <p className="text-sm text-green-800 dark:text-green-200 mb-0">
-              <strong>Акцепт оф��рты:</strong> Оплачивая услуги сервиса
+              <strong>Акцепт оферты:</strong> Оплачивая услуги сервиса
               Notetaker, Вы выражаете полное и безоговорочное согласие с
               условиями настоящего договора оферты и обязуетесь их исполнять.
             </p>

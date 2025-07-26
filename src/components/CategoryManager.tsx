@@ -218,7 +218,7 @@ export default function CategoryManager({
             id="categoryName"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            placeholder="Назван��е категории"
+            placeholder="Название категории"
           />
         </div>
         <div>

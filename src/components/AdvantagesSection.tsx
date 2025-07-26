@@ -70,7 +70,7 @@ export default function AdvantagesSection() {
     <section className="py-16 lg:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <span className="text-sm font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wide">
@@ -86,58 +86,7 @@ export default function AdvantagesSection() {
             {t("advantages.subtitle") ||
               "Передовые технологии искусственного интеллекта для максимальной эффективности ваших встреч"}
           </p>
-        </div>
-
-        {/* Advantages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {advantages.map((advantage, index) => (
-            <div key={index} className="group relative">
-              <div className="h-full p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                {/* Stats badge */}
-                <div className="absolute top-6 right-6">
-                  <div className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
-                    {advantage.stats}
-                  </div>
-                </div>
-
-                {/* Icon */}
-                <div className="w-14 h-14 bg-blue-600 dark:bg-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-700 dark:group-hover:bg-blue-400 transition-colors">
-                  <advantage.icon className="w-7 h-7 text-white" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {t(`advantages.${index}.title`) || advantage.title}
-                </h3>
-
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {t(`advantages.${index}.description`) ||
-                    advantage.description}
-                </p>
-
-                {/* Hover arrow */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium">
-                    <span className="text-sm">Узнать больше</span>
-                    <svg
-                      className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        </div> */}
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
